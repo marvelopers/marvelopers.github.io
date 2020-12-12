@@ -3,7 +3,7 @@ import React from 'react';
 function footer () {
   return (
     <div>
-      copyright marveloper
+      © Copyright 2020 marveloper All rights reserved.
     </div>
   );
 }

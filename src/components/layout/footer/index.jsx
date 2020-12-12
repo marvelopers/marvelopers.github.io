@@ -1,1 +1,1 @@
-import * from './nav';
+import * from './footer';
