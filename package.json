@@ -10,6 +10,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
+    "deploy": "gatsby build && gh-pages -d public -b master",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
@@ -36,5 +37,8 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
   }
 }
