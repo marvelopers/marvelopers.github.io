@@ -1,7 +1,7 @@
 const metaConfig = require('./gatsby-meta-config');
 
 module.exports = {
-  pathPrefix: "/",
+  // pathPrefix: "/",
   siteMetadata: metaConfig,
   plugins: [
     "gatsby-plugin-styled-components",

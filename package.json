@@ -10,7 +10,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "deploy": "gatsby build && gh-pages -d public -b gh-pages", //gh-pages --dist public --branch gh-pages
+    "deploy": "gh-pages --dist public --branch gh-pages",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
