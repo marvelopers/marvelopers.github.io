@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from "styled-components";
-import { GREY_1 } from '../../styles/styleVariables'
 import { logo } from '../../images/logo.png'
 
 const Header = () => {
   return (
     <StyleHeader>
       <div className="wrapper">
-        <img src={`${logo}`} alt="logo"/>
+        <img src={`${logo}`} alt="logo" />
         <nav>
           <ul className="categories">
             <li>Front-end</li>
@@ -17,6 +16,7 @@ const Header = () => {
             <li>Essay</li>
             {/* TODO GIT  */}
           </ul>
+
         </nav>
       </div>
     </StyleHeader>
@@ -32,18 +32,15 @@ const StyleHeader = styled.header`
   justify-content: center;
   box-shadow : rgba(0, 0, 0, 0.068) 0px 0px 15px;
   img{
-    border: 1px solid ${GREY_1};
+    border: 1px solid #E8E8E8;
     width: 100px;
   }
   .wrapper{
-    border: 1px solid ${GREY_1};
+    border: 1px solid #E8E8E8;
     display: flex;
     justify-content: space-between;
-    max-width: calc(980px - (30px * 2));
-    /* max-width: 980px; */
-  }
-
-  nav{
+    margin: 0 auto;
+    max-width: calc(1020px - (20px * 2)); 
   }
 
   ul{
@@ -54,7 +51,6 @@ const StyleHeader = styled.header`
 
   li{
     font-size: 18px;
-    color: ${GREY_1};
     align-content: center;
     margin: 0px 20px;
     padding: 5px 10px;

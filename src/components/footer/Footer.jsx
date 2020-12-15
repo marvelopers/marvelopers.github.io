@@ -1,18 +1,24 @@
 import React from 'react';
 import styled from "styled-components";
 
-function Footer () {
+function Footer() {
   return (
     <StyledFooter>
-      © Copyright 2020 marveloper All rights reserved.
-    </StyledFooter>
+      <div className="wrapper">
+        © Copyright 2020 marveloper All rights reserved.
+      </div>
+      {/* git */}
+      {/* contact */}
+    </StyledFooter >
   );
 }
 
 export default Footer;
 
 const StyledFooter = styled.footer`
-  color: #292929;
-  max-width: calc(980px - (30px * 2));
-  border: 1px solid #292929;
+    border-top: 1px solid #E8E8E8;
+  .wrapper{
+    margin: 30px auto;
+    max-width: calc(1020px - (20px * 2));
+  }
 `;
