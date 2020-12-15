@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { GREY_1 } from './styleVariables';
 import React from "react";
 
 const ResetStyle = createGlobalStyle`
@@ -29,6 +30,7 @@ const ResetStyle = createGlobalStyle`
     outline: none;
     /* 기본 글꼴 설정, iOS와 IE에서 기기 회전시에 사용자가 확대하지 않아도 글씨 크기가 재조정되는 것을 예방 */
     font-family: 'Noto Sans KR', sans-serif;
+    color: ${GREY_1};
     -ms-text-size-adjust: 100%; 
     -webkit-text-size-adjust: 100%; 
   }
