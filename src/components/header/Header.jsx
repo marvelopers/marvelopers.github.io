@@ -41,6 +41,7 @@ const StyleHeader = styled.header`
     /* border: 1px solid #E8E8E8; */
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 0 auto;
     max-width: calc(1020px - (20px * 2)); 
   }
@@ -55,7 +56,7 @@ const StyleHeader = styled.header`
   }
 
   li{
-    font-size: 18px;
+    font-size: 16px;
     margin: 0px 20px;
     padding: 5px 10px;
   }

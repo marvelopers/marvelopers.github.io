@@ -9,7 +9,6 @@ const Thumbnail = ({ slug, title }) => {
   return (
     <StyleLi>
       <Link to={slug}>
-        {/* <div className="img"></div> */}
         <img src={front} alt="" className="img" />
         <div className="info">
           <h2 className="title">{title}</h2>
@@ -24,15 +23,16 @@ const Thumbnail = ({ slug, title }) => {
 export default Thumbnail;
 
 const StyleLi = styled.li`
-  width: 308px;
-  height: 310px;
+  width: 304px;
+  height: 329px;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.068) 0px 5px 12px;
   margin: 20px 8px;
   .img{
     border-top-left-radius :5px;
     border-top-right-radius :5px;
-    height: 164px;
+    /* height: 164px; */
+    width: 304px;
     background : #e8e8e8;
   }
   .info{
