@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import { Link } from "gatsby"
+import front from '../../images/front.png'
 
 // slug, title
 const Thumbnail = ({ slug, title }) => {
@@ -8,8 +9,8 @@ const Thumbnail = ({ slug, title }) => {
   return (
     <StyleLi>
       <Link to={slug}>
-        <div className="img"></div>
-        {/* <img src="" alt="" className="img" /> */}
+        {/* <div className="img"></div> */}
+        <img src={front} alt="" className="img" />
         <div className="info">
           <h2 className="title">{title}</h2>
           <p className="date">2020.12.15</p>

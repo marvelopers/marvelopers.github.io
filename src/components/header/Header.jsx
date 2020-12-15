@@ -1,22 +1,24 @@
+import { Link } from 'gatsby';
 import React from 'react';
 import styled from "styled-components";
-import { logo } from '../../images/logo.png'
+import logo from '../../images/logo.png'
 
 const Header = () => {
   return (
     <StyleHeader>
       <div className="wrapper">
-        <img src={`${logo}`} alt="logo" />
+        <Link to={"/"}> 
+          <img src={logo} alt="logo" />
+        </Link>
         <nav>
           <ul className="categories">
-            <li>Front-end</li>
-            <li>JS/TS</li>
-            <li>React</li>
-            <li>Marketing</li>
-            <li>Essay</li>
+            <Link to={"/front"}><li>Front-end</li></Link>
+            <Link to={"/js_ts"}><li>JS/TS</li></Link>
+            <Link to={"/react"}><li>React</li></Link>
+            <Link to={"/marketing"}><li>Marketing</li></Link>
+            <Link to={"/essay"}><li>Essay</li></Link>
             {/* TODO GIT  */}
           </ul>
-
         </nav>
       </div>
     </StyleHeader>
@@ -32,11 +34,11 @@ const StyleHeader = styled.header`
   justify-content: center;
   box-shadow : rgba(0, 0, 0, 0.068) 0px 0px 15px;
   img{
-    border: 1px solid #E8E8E8;
-    width: 100px;
+    /* border: 1px solid #E8E8E8; */
+    height: 32px;
   }
   .wrapper{
-    border: 1px solid #E8E8E8;
+    /* border: 1px solid #E8E8E8; */
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
@@ -48,10 +50,12 @@ const StyleHeader = styled.header`
     justify-content: space-between;
     align-items: center;
   }
+  a {
+    text-decoration: none;
+  }
 
   li{
     font-size: 18px;
-    align-content: center;
     margin: 0px 20px;
     padding: 5px 10px;
   }
