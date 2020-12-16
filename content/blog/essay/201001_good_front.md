@@ -1,8 +1,8 @@
 ---
-title: "좋은 개발자의 기준은 무엇인가?"
-date: 2020-12-15
-category: essay
-tags: [dev, developer]
+title: "프론트엔드 기준은 무엇인가?"
+date: 2020-10-01
+category: react
+tags: [frontend, developer]
 draft: false
 # layout: post
 ---
