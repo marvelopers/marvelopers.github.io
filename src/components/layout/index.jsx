@@ -24,7 +24,11 @@ export const BlogLayout = ({ aside, children }) => {
       <GlobalStyle />
       <Header />
       <StyledBlogLayout>
-        <div className="content">{children}</div>
+        <div className="content">
+          <div className="title"></div>
+          <div className="date"></div>
+          <div className="post_des_wrapper"></div>
+        </div>
         <div className="aside">aside</div>
       </StyledBlogLayout>
       <Footer />
@@ -64,3 +68,4 @@ const StyledBlogLayout = styled.main`
     
   }
 `;
+

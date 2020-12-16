@@ -1,19 +1,19 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import styled from "styled-components";
-import logo from '../../images/logo.png'
+import logo from '../../img/logo.png'
 
 const Header = () => {
   return (
     <StyleHeader>
       <div className="wrapper">
-        <Link to={"/"}> 
+        <Link to={"/"}>
           <img src={logo} alt="logo" />
         </Link>
         <nav>
           <ul className="categories">
             <Link to={"/front"}><li>Front-end</li></Link>
-            <Link to={"/js_ts"}><li>JS/TS</li></Link>
+            <Link to={"/script"}><li>JS/TS</li></Link>
             <Link to={"/react"}><li>React</li></Link>
             <Link to={"/marketing"}><li>Marketing</li></Link>
             <Link to={"/essay"}><li>Essay</li></Link>
