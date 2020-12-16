@@ -3,7 +3,7 @@ module.exports = {
   description: `digital-marketing & front-end development.`,
   author: `김서현`,
   introduction: `Web Engineer Interested in marketing and front-end`,
-  siteUrl: `https://marvelopers.github.io`,
+  siteUrl: `https://marvelopers.github.io/`,
   icon: `src/images/favicon.png`,
   social: {
     email: "briller015@gmail.com",

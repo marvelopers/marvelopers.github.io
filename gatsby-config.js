@@ -16,25 +16,46 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-offline",
     // "gatsby-plugin-manifest",
-    "gatsby-transformer-remark",
+    "gatsby-plugin-feed",
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
+    // gatsby-remark-images 마크다운 문서 안에 이미지 파일 
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "images",
-        path: "./src/images/",
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
       },
-      __key: "images",
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        path: `${__dirname}/content/assets`,
+        name: `assets`,
       },
-      __key: "pages",
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 630,
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
