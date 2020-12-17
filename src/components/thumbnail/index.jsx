@@ -24,9 +24,6 @@ import react from '../../img/react.png';
 // console.log(thumbnailImg);
 
 const Thumbnail = ({ title, slug, meta, category, tags }) => {
-
-  console.log('META', meta);
-  console.log('tags', tags);
   return (
     <StyleLi key={slug}>
       <Link to={slug}>

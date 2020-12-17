@@ -14,4 +14,5 @@ export const GREY_2 = '#494949';
 export const GREY_3 = '#767676';
 export const GREY_4 = '#929292';
 export const GREY_5 = '#E8E8E8';
+export const GREY_6 = '#F3F3F3';
 export const WHITE = '#FFFFFF';

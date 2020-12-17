@@ -10,7 +10,6 @@ const PostList = ({ posts }) => {
     <StyleUl>
       {/* Thumnail map */}
       {posts && posts.map(({ title, slug, meta, category, tags }) => {
-        console.log('tags', tags);
         return (
           <Thumbnail
             title={title}
