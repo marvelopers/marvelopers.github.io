@@ -2,6 +2,7 @@ const path = require(`path`)
 const qs = require("querystring")
 
 exports.crateBlogPost = async ({ graphql, actions }) => {
+
   const result = await graphql(`
     {
       allMarkdownRemark(sort: { fields: fields___date, order: DESC }) {
@@ -10,14 +11,10 @@ exports.crateBlogPost = async ({ graphql, actions }) => {
             fields {
               slug
               date
-              beforeGatsby
             }
             frontmatter {
               title
               category
-              permalink
-              seriesId
-              videoId
             }
           }
         }
@@ -32,17 +29,17 @@ exports.crateBlogPost = async ({ graphql, actions }) => {
   // Create blog posts pages.
   const posts = result.data.allMarkdownRemark.edges.map(e => e.node)
 
-  posts.forEach((p, i) => {
+  posts.forEach((post, index) => {
     actions.createPage({
-      path: qs.unescape(p.fields.slug),
-      component: path.resolve(`./src/templates/blog-post/index.tsx`),
+      path: qs.unescape(post.fields.slug),
+      component: path.resolve(`./src/templates/blog-post.jsx`),
       context: {
-        slug: p.fields.slug,
-        date: p.fields.date,
-        seriesId: p.frontmatter.seriesId,
-        videoId: p.frontmatter.videoId,
-        previous: i === posts.length - 1 ? null : posts[i + 1],
-        next: i === 0 ? null : posts[i - 1],
+        slug: post.fields.slug,
+        date: post.fields.date,
+        // seriesId: p.frontmatter.seriesId,
+        // videoId: p.frontmatter.videoId,
+        previous: index === posts.length - 1 ? null : posts[index + 1],
+        next: index === 0 ? null : posts[index - 1],
       },
     })
   })
