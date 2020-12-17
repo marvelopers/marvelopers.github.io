@@ -4,8 +4,8 @@ import { GlobalStyle } from "../styles/GlobalStyle"
 import styled from "styled-components";
 import Footer from "../components/footer/Footer"
 import Header from "../components/header/Header"
-import PostToc from "./PostToc";
 import PostTag from "./PostTag";
+import PostToc from "./PostToc.tsx";
 
 
 export const BlogPostTemplate = ({ data, pageContext }) => {
@@ -40,9 +40,7 @@ export const BlogPostTemplate = ({ data, pageContext }) => {
           <div className="aside">
             {markdownRemark.tableOfContents && (
               <PostToc tableOfContents={markdownRemark.tableOfContents} />)}
-            <button className="goToMain" link to={'/'}>
-              메인으로 돌아가기
-            </button>
+
             {/* {series && (
               <SeriesNav
                 lite
