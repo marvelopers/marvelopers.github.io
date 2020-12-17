@@ -1,8 +1,8 @@
 ---
-title: "프론트엔드 기준은 무엇인가?"
-date: 2020-10-01
-category: react
-tags: [frontend, developer]
+title: "javaScript"
+date: 2020-06-10
+category: script
+tags: [javascript, react, react, react, react]
 draft: false
 layout: post
 ---
