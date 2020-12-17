@@ -11,7 +11,6 @@ import PostToc from "./PostToc.tsx";
 export const BlogPostTemplate = ({ data, pageContext }) => {
   const { site, markdownRemark, series } = data
   const { previous, next } = pageContext
-  console.log('------>postblog', data)
   return (
     <>
       <GlobalStyle />
@@ -58,29 +57,20 @@ export const BlogPostTemplate = ({ data, pageContext }) => {
 
 export default BlogPostTemplate
 
-
-
-//필요한 레이아웃은 몇개인가요? 
-//Route 
-/*
-* /
-* /fornt
-* /ContentsLayout
-*/
-
 const StyledBlogLayout = styled.main`
   margin: 0px auto;
   max-width: calc(1020px - (20px * 2));
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   padding-top: 80px;
   .title{
     font-size: 34px;
     font-weight: 900;
   }
   .publishedDate{
-    font-size: 16px;
-    color: #767676;
+    /* margin-top: 8px; */
+    font-size: 14px;
+    color: #494949;
   }
   .content{
     font-size: 16px;
@@ -89,6 +79,7 @@ const StyledBlogLayout = styled.main`
   }
   .aside{
     margin-left : 20px;
+    margin-top : 110px;
   }
   .goToMain{
     margin-top: 40px;
@@ -103,7 +94,7 @@ const StyledBlogLayout = styled.main`
 `;
 
 const StyledPostContent = styled.div`
-  margin-top: 60px;
+  margin-top: 20px;
   padding-bottom : 40px;
   font-size: 16px;
   width : 720px;
@@ -180,7 +171,7 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       fields {
-        dateStr: date(formatString: "YYYY년 MM월 DD일")
+        dateStr: date(formatString: "YYYY.MM.DD")
         date
         slug
       }

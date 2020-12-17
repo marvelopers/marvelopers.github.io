@@ -42,16 +42,19 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 630,
+              maxWidth: 720,
+              showCaptions: true,
             },
           },
           {
-            resolve: `gatsby-remark-responsive-iframe`,
+            resolve: `gatsby-remark-autolink-headers`, // heading태그에 link를 추가해주는 플러그인, presimjs 보다 먼저 위치해야 함.
+          },
+          {
+            resolve: `gatsby-remark-prismjs`, // 코드 하이라이트 플러그인
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
+              showLineNumbers: false,
             },
           },
-          `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],

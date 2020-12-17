@@ -1,5 +1,5 @@
 ---
-title: "javaScript"
+title: "🎉🎉🎉javaScript"
 date: 2020-06-10
 category: script
 tags: [javascript, react, react, react, react]

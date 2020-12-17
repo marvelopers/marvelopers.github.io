@@ -70,7 +70,7 @@ export const pageQuery = graphql`
         excerpt(pruneLength: 20, format: PLAIN, truncate: true)
         fields {
           slug
-          date(formatString: "YYYY년 MM월 DD일")
+          date(formatString: "YYYY.MM.DD")
         }
         frontmatter {
           title

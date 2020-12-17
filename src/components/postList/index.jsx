@@ -8,7 +8,6 @@ const PostList = ({ posts }) => {
 
   return (
     <StyleUl>
-      {/* Thumnail map */}
       {posts && posts.map(({ title, slug, meta, category, tags }) => {
         return (
           <Thumbnail
@@ -20,11 +19,6 @@ const PostList = ({ posts }) => {
           />)
       })}
       <Thumbnail title={<>여기는 두 줄짜리 제목입니다. 이렇게하면 두 줄이됩니다. < span role="img" aria-label="Party popper emojis">🎉🎉🎉</span> </>} />
-      <Thumbnail title={<>여기에 내용을 치면 됩니다. < span role="img" aria-label="Party popper emojis">🎉🎉🎉</span> </>} />
-      <Thumbnail title={<>여기에 내용을 치면 됩니다. < span role="img" aria-label="Party popper emojis">🎉🎉🎉</span> </>} />
-      <Thumbnail title={<>여기에 내용을 치면 됩니다. < span role="img" aria-label="Party popper emojis">🎉🎉🎉</span> </>} />
-      <Thumbnail title={<>여기에 내용을 치면 됩니다. < span role="img" aria-label="Party popper emojis">🎉🎉🎉</span> </>} />
-      <Thumbnail title={<>여기에 내용을 치면 됩니다. < span role="img" aria-label="Party popper emojis">🎉🎉🎉</span> </>} />
     </StyleUl>
   )
 }
@@ -38,7 +32,6 @@ const StyleUl = styled.ul`
   box-shadow: rgba(0, 0, 0, 0.068) 0px 5px 12px;
   margin: 15px 10px; */
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   .title{
     font-size: 18px;

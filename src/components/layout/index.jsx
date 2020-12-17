@@ -46,17 +46,15 @@ export const BlogLayout = ({ aside, children }) => {
 */
 
 const StyledLayout = styled.main`
-  border: 1px solid #E8E8E8;
   margin: 0px auto;
   max-width: calc(1020px - (20px * 2));
 `;
 
 const StyledBlogLayout = styled.main`
-  border: 1px solid #E8E8E8;
   margin: 0px auto;
   max-width: calc(1020px - (20px * 2));
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: center;
   padding-top: 80px;  
   .content{
     font-size: 16px;
