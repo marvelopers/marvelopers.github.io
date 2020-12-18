@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { Link } from "gatsby"
 import essay from '../../img/essay.png';
 import front from '../../img/front.png';
-import js from '../../img/js.png';
-import ts from '../../img/ts.png';
-// import marketing from '../../img/marketing.png';
+import web from '../../img/web.png';
+import script from '../../img/script.png';
+import marketing from '../../img/marketing.png';
 import react from '../../img/react.png';
 
 
@@ -27,11 +27,12 @@ const Thumbnail = ({ title, slug, meta, category, tags }) => {
   return (
     <StyleLi key={slug}>
       <Link to={slug}>
-        {category === 'essay' ? < img src={essay} alt="" className="img" /> :
+        {category === 'web' ? < img src={web} alt="" className="img" /> :
           category === 'front' ? < img src={front} alt="" className="img" /> :
-            category === 'react' ? < img src={react} alt="" className="img" /> :
-              category === 'js' ? < img src={js} alt="" className="img" /> :
-                < img src={ts} alt="" className="img" />}
+            category === 'script' ? < img src={script} alt="" className="img" /> :
+              category === 'react' ? < img src={react} alt="" className="img" /> :
+                category === 'marketing' ? < img src={marketing} alt="" className="img" /> :
+                  < img src={essay} alt="" className="img" />}
         <div className="info">
           <h2 className="title">{title}</h2>
           <p className="date">{meta}</p>

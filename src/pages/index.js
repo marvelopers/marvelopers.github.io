@@ -39,7 +39,7 @@ const IndexPage = ({ data }) => {
     <>
       <Layout>
         <title>Home Page</title>
-        <div>Hello world!<span role="img" aria-label="Party popper emojis">🎉🎉🎉</span></div>
+        {/* <div>Hello world!<span role="img" aria-label="Party popper emojis">🎉🎉🎉</span></div> */}
         <PostList
           posts={data.allMarkdownRemark.nodes.map(node => ({
             slug: node.fields.slug,

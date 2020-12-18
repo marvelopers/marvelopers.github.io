@@ -16,17 +16,7 @@ const PostToc: React.FC<P> = ({ tableOfContents }) => {
       post.querySelectorAll("h1,h2,h3,h4,h5,h6")
     ).filter((h: HTMLElement) => h.id)
 
-    // const headings = Array.from(
-    //   post.querySelectorAll("h1,h2,h3,h4,h5,h6")
-    // ).filter((h: HTMLElement) => h.id)
-
     const toc = document.querySelector("#post-toc")
-    console.log('headings', headings);
-    console.log('--->', post.querySelectorAll("h1,h2,h3,h4,h5,h6"));
-    console.log('--->', Array.from(
-      post.querySelectorAll("h1,h2,h3,h4,h5,h6")
-    ).filter((h: HTMLElement) => { console.log(h); h.id }));
-
     new ScrollSpy(toc as HTMLElement, headings as HTMLElement[])
   }, [])
 
@@ -66,7 +56,7 @@ const StyledAside = styled.div`
  
 `;
 
-const StyledToc: any = styled.div`
+const StyledToc = styled.div`
   ul{
     width: 240px;
   }
@@ -81,6 +71,8 @@ const StyledToc: any = styled.div`
     line-height: 1rem;
     font-size: 14px;
     color: #494949;
+    transition: all 1s ease-in;
+
     &.active{
       font-weight: 700;
       color: #2B092B;

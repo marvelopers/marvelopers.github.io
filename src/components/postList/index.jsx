@@ -18,7 +18,6 @@ const PostList = ({ posts }) => {
             tags={tags}
           />)
       })}
-      <Thumbnail title={<>여기는 두 줄짜리 제목입니다. 이렇게하면 두 줄이됩니다. < span role="img" aria-label="Party popper emojis">🎉🎉🎉</span> </>} />
     </StyleUl>
   )
 }
