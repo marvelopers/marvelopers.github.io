@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from "styled-components";
 import { Link } from "gatsby"
-import essay from '../../img/essay.png';
-import front from '../../img/front.png';
-import web from '../../img/web.png';
-import script from '../../img/script.png';
-import marketing from '../../img/marketing.png';
-import react from '../../img/react.png';
+import essay from '../../images/essay.png';
+import front from '../../images/front.png';
+import web from '../../images/web.png';
+import script from '../../images/script.png';
+import marketing from '../../images/marketing.png';
+import react from '../../images/react.png';
 
 
 // export interface PostItemType {
