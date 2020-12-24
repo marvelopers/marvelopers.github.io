@@ -52,7 +52,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`, // 코드 하이라이트 플러그인
             options: {
-              showLineNumbers: false,
+              showLineNumbers: true,
             },
           },
           `gatsby-remark-copy-linked-files`,

@@ -15,6 +15,7 @@ export const BlogPostTemplate = ({ data, pageContext }) => {
     <>
       <GlobalStyle />
       <Header />
+      {/* SEO */}
       <div itemScope itemType="http://schema.org/BlogPosting">
         <StyledBlogLayout>
           <article className="content">
@@ -39,7 +40,6 @@ export const BlogPostTemplate = ({ data, pageContext }) => {
           <div className="aside">
             {markdownRemark.tableOfContents && (
               <PostToc tableOfContents={markdownRemark.tableOfContents} />)}
-
             {/* {series && (
               <SeriesNav
                 lite
@@ -99,6 +99,15 @@ const StyledPostContent = styled.div`
   font-size: 16px;
   width : 720px;
   border-bottom: 2px solid #F3F3F3;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.8;
+  }
+
   h1 {
     font-size: 32px;
     line-height: 1.8;
@@ -110,37 +119,57 @@ const StyledPostContent = styled.div`
     font-weight: 700;
   }
   h3 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
+    line-height: 1;
+    margin-block-start: 1.4em;
   }
   h4 {
     font-size: 18px;
-    font-weight: 700;
-    margin-top: 14px;
+    font-weight: 600;
+    margin-block-start: 1.4em;
   }
   h5 {
     font-size: 120%;
     margin-top: 12px;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    line-height: 1.8;
-  }
+  
   img {
     border-radius: 3px;
     display: block;
     max-width: 100%;
   }
   p {
-    margin-block-start: 1em;
-    margin-block-end: 1em;
+    margin-block-start: 0.8em;
+    margin-block-end: 0.8em;
   }
+  ol, ul {
+    margin-block-start: 0.8em;
+    margin-block-end: 0.8em;
+  }
+  ul>li{
+    list-style: square;
+    list-style-position: inside;
+    margin-left: 8px;
+  }
+  ol>li{
+    list-style: decimal;
+    list-style-position: inside;
+    margin-left: 8px;
+  }
+
+  li::marker {
+    font-weight: 500;
+    color: #2B092B;
+  }
+
+  hr{
+    height: 1px;
+    border: 1px solid #E8E8E8;
+    background: #E8E8E8;
+    margin: 20px 0;
+  }
+
   blockquote {
     position: relative;
     &::before {

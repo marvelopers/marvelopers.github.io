@@ -2,7 +2,7 @@ export const DARK_PURPLE = '#2B092B';
 export const PURPLE = '#4A154B';
 export const BLUE = '#1264A3';
 export const PINK = '#FF3E88';
-export const GREEN = '#2BACT6';
+export const GREEN = '#2BAC76';
 export const YELLOW = '#ECB22E';
 
 export const DEEP_PINK = '#E01E5A';

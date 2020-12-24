@@ -1,7 +1,7 @@
 import * as React from "react"
-// import { GlobalStyle } from "../styles/GlobalStyle"
 import { Layout } from "../components/layout"
 import PostList from "../components/postList"
+
 
 
 // data
@@ -33,12 +33,11 @@ import PostList from "../components/postList"
 // ]
 
 
-// markup
 const IndexPage = ({ data }) => {
   return (
     <>
       <Layout>
-        <title>Home Page</title>
+        <title>marveloper.io</title>
         {/* <div>Hello world!<span role="img" aria-label="Party popper emojis">🎉🎉🎉</span></div> */}
         <PostList
           posts={data.allMarkdownRemark.nodes.map(node => ({
@@ -54,9 +53,6 @@ const IndexPage = ({ data }) => {
           }))}
         />
       </Layout>
-      {/* <BlogLayout>
-        내용을 입력합니다. 여기는 블로그 글입니다. 이렇게 나옵니다. 짠짠내용을 입력합니다. 여기는 블로그 글입니다. 이렇게 나옵니다. 짠짠내용을 입력합니다. 여기는 블로그 글입니다. 이렇게 나옵니다. 짠짠내용을 입력합니다. 여기는 블로그 글입니다. 이렇게 나옵니다. 짠짠내용을 입력합니다. 여기는 블로그 글입니다. 이렇게 나옵니다. 짠짠내용을 입력합니다. 여기는 블로그 글입니다. 이렇게 나옵니다. 짠짠내용을 입력합니다. 여기는 블로그 글입니다. 이렇게 나옵니다. 짠짠
-      </BlogLayout> */}
     </>
   )
 }
