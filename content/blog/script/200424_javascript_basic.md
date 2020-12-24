@@ -9,9 +9,9 @@ layout: post
 
 ## 1.JavaScript
 객체(object) 기반의 스크립트 언어, 구문은 Java 및 C언어를 기반으로 한다.
-대부분의 프로그래밍 언어와 달리 입출력 개념이 없음!! 
+대부분의 프로그래밍 언어와 달리 입출력 개념이 없음!! <br/>
 객체프로토 타입을 사용한 객체 지향 프로그래밍 + 함수형 프로그래밍 지원.
-주로 웹 브라우저에 사용되나, Node.js와 같은 프레임 워크를 사용하면 서버 프로그래밍도 가능
+주로 웹 브라우저에 사용되나, Node.js와 같은 프레임 워크를 사용하면 서버 프로그래밍도 가능<br/>
 HTML의 내용, 속성, 스타일을 변경할 수 있음.
 
 JS표준 : ECMA(European Computer Manufacuurers Association)
@@ -45,9 +45,9 @@ JS표준 : ECMA(European Computer Manufacuurers Association)
 
 ## JavaScript출력
 
-1.window.alert() 메소드
+1. window.alert() 메소드 <br/>
 가장 간단하게 데이터를 출력할 수 있는 방법.
-브라우저와는 별도의 대화상자를 띄워 데이터를 전달.
+브라우저와는 별도의 대화상자를 띄워 데이터를 전달. <br/>
 
 ```
 function alertDialogBox(){
@@ -55,8 +55,7 @@ function alertDialogBox(){
 }
 ```
 
-2. HTML DOM요소를 이용한  innerHTML 프로퍼티
-
+2. HTML DOM요소를 이용한  innerHTML 프로퍼티<br/>
 document객체의 getElementById()나 getElementByTagName()등의 메소드를 통해 HTML 요소를 사용한다.
 
 ```
@@ -65,9 +64,8 @@ str.innerHTML = "문장을 변경합니다."
 
 ```
 
-3. decument.write()메소드
-
-document.write()메소드는 웹 페이지가 로딩될 때 실행됨.
+3. decument.write()메소드<br/>
+`document.write()`메소드는 웹 페이지가 로딩될 때 실행됨.
 웹 페이지에 가장 먼저 데이터를 출력, 테스트나 디버깅을 위해서 사용.
 
 웹 페이지에 모든 내용이 로딩된 후에 document.write()메소드가 실행될 경우, 
@@ -77,9 +75,8 @@ document.write()메소드는 웹 페이지가 로딩될 때 실행됨.
 document.write(4*5);
 ```
 
-4. console.log()메소드
-
-console.log()메소드는 웹 브라우저의 콘솔을 통해 데이터를 출력.
+4. console.log()메소드<br/>
+`console.log()`메소드는 웹 브라우저의 콘솔을 통해 데이터를 출력.
 콘솔화면을 통한 출력의 경우 비교적 자세한 사항이 출력되어, 디버깅하는데 적합.
 웹 페이지에 가장 먼저 데이터를 출력, 테스트나 디버깅을 위해서 사용.
 
@@ -92,10 +89,13 @@ console.log(4*5);
 ## JavaScript 적용방법 
 
 1. 내부 자바스크립트 코드로 적용
-```
+
+`<head>` 와 `<body>` 둘 다 삽입가능하며 동작상의 차이는 없음.
+
+```js
 document.getElementById("text").innerHTML = "여러분을 환영합니다."
 ```
-<head>와 <body> 둘 다 삽입가능하며 동작상의 차이는 없음.
+
 
 
 2. 외부 자바스크립트 코드로 적용
@@ -119,11 +119,12 @@ HTML코드와 자바스크립트 코드를 읽기도 편해지고 유지보수�
 여러가지 형태의 타입을 미리 정의하여 제공하고 있으며, 이것을 기본 타입이라고 함.
 자바스크립트의 기본 타입은 원시 타입과 객체 타입으로 구분.
 
-원시타입 : 숫자(number), 문자열(string), 불리언(boolean), 심볼(symbol), null,undefined
+- 원시타입 : 숫자(number), 문자열(string), 불리언(boolean), 심볼(symbol), null, undefined
 
-객체 타입 : 객체(Object)는 자바스크립트의 기본 타입, 
-여러 프로퍼티나 메소드를 같은 이름으로 묶어놓은 일종의 집합체
-- 함수(Function), 배열(Array), 날짜(Date), 정규식(RegExp)    
+- 객체 타입 : 함수(Function), 배열(Array), 날짜(Date), 정규식(RegExp)<br/>
+ 객체(Object)는 자바스크립트의 기본 타입,여러 프로퍼티나 메소드를 같은 이름으로 묶어놓은 일종의 집합체 <br/>
+
+
 ```
 const num = 10;
 const myName = "김서현"
@@ -137,9 +138,9 @@ document.getElementById("result").innerHTML = man.name+"는 "+man.age+"살 입�
 #### 타입변환
 자바스크립트의 변수는 타입이 정해져 있지 않아, 같은 변수에 다른 타입의 값을 다시 대입할 수 있음.
 
-묵시적 타입변환(implicit type conversion)
-다른 타입의 값이 오면, 자동으로 타입을 변환.
-자바스크립트에서 주로 사용되는 변환법.
+- 묵시적 타입변환(implicit type conversion)<br/>
+다른 타입의 값이 오면, 자동으로 타입을 변환. 자바스크립트에서 주로 사용되는 변환법.
+
 ```
 1-"문자열" // NaN 
 ```
@@ -186,45 +187,43 @@ Number(false); // 0
 ```
 
 ***
-연산자
-산술연산자
-대입연산자
-증감연산자
-대입연산자
-비교연산자
-논리연산자
-비트연산자
-문자열 결합 연산자
-삼항연산자
-쉼표연사자
-delete 연산자
-typeof 연산자
-instanceof 연산자 : 
-void 연산자 : 피연산자로 값의 타입과 상관없이 undefined 값만을 반환. 
+- 연산자
+- 산술연산자
+- 대입연산자
+- 증감연산자
+- 대입연산자
+- 비교연산자
+- 논리연산자
+- 비트연산자
+- 문자열 결합 연산자
+- 삼항연산자
+- 쉼표연사자
+- delete 연산자
+- typeof 연산자
+- instanceof 연산자 : 
+- void 연산자 : 피연산자로 값의 타입과 상관없이 undefined 값만을 반환. 
 
 ***
 
 ## 제어문(control flow statements)
-조건문
-if문
-삼항 연산자에 의한 조건문
+- 조건문
+- if문
+- 삼항 연산자에 의한 조건문
+
 ```
 표현식?반환값1:반환값2
 ```
-switch문
-반복문
-while문
-```
-```
-for문 
-```
-```
-기타 제어문
-continue : 루프의 나머지 부분을 건너뛰고, 바로 다음 표현식으로 넘어감.
+
+- switch문
+- 반복문
+- while문
+- for문 
+- 기타 제어문 <br/>
+continue : 루프의 나머지 부분을 건너뛰고, 바로 다음 표현식으로 넘어감.<br/>
 break : 반복문을 완전히 종료시키고, 다음 실행문으로 이동.
 
 ## 배열
-element : 배열을 구성하는 각각의 값
+element : 배열을 구성하는 각각의 값<br/>
 index : 값의 위치를 가리키는 숫자
 
 js에서 배열의 특징
@@ -244,6 +243,7 @@ const arr = [element1, element2];
 ## arrow 함수 
 1. 매개변수가 하나인 경우 () 생략 가능
 2. 함수의  body가 한줄이라면, {} return 생략 가능
+
 ```
 
 const f1=(name)=>{
@@ -252,10 +252,3 @@ const f1=(name)=>{
 //매개변수가 하나인 경우
 const f2 = name => `Hello, ${name}`;
 ```
-
-
-# JavaScript
-
-## JavaScript_base
-# HTML
-# CSS
