@@ -4,6 +4,7 @@ import { GlobalStyle } from "../styles/GlobalStyle"
 import styled from "styled-components";
 import Footer from "../components/footer/Footer"
 import Header from "../components/header/Header"
+import SEO from "../components/seo"
 import PostTag from "./PostTag";
 import PostToc from "./PostToc.tsx";
 
@@ -15,7 +16,16 @@ export const BlogPostTemplate = ({ data, pageContext }) => {
     <>
       <GlobalStyle />
       <Header />
-      {/* SEO */}
+      <SEO
+        title={markdownRemark.frontmatter.title}
+        description={markdownRemark.excerpt}
+        date={markdownRemark.fields.date}
+        siteUrl={site.siteMetadata.siteUrl + markdownRemark.fields.slug}
+        image={
+          markdownRemark.frontmatter.featured_image ||
+          markdownRemark.frontmatter.featuredImage?.childImageSharp.fluid.src
+        }
+      />
       <div itemScope itemType="http://schema.org/BlogPosting">
         <StyledBlogLayout>
           <article className="content">

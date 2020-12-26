@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Layout } from "../components/layout"
 import PostList from "../components/postList"
+import SEO from "../components/seo"
 
 
 
@@ -37,8 +38,7 @@ const IndexPage = ({ data }) => {
   return (
     <>
       <Layout>
-        <title>marveloper.io</title>
-        {/* <div>Hello world!<span role="img" aria-label="Party popper emojis">🎉🎉🎉</span></div> */}
+        <SEO title="홈" />
         <PostList
           posts={data.allMarkdownRemark.nodes.map(node => ({
             slug: node.fields.slug,

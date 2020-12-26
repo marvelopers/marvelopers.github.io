@@ -21,7 +21,7 @@ module.exports = {
   ],
   comment: {
     disqusShortName: '',
-    utterances: 'marveloper/marvelopers.io',
+    utterances: 'SeoHyeonKim/marveloper.io',
   },
   configs: {
     countOfInitialPost: 12,
