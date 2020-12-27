@@ -2,6 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import styled from "styled-components";
 import logo from '../../images/logo.png'
+import { Widths } from "../../styles/styleVariables"
 
 const Header = () => {
   return (
@@ -59,5 +60,12 @@ const StyleHeader = styled.header`
     font-size: 16px;
     margin: 0px 20px;
     padding: 5px 10px;
+  }
+  @media (max-width: calc(${Widths.Tablet} - 1px)) {
+    width: calc(100vw - 20px);
+    margin: auto;
+    .categories{
+      display: none;
+    }
   }
 `;

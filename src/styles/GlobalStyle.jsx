@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { GREY_1 } from './styleVariables';
+import { Widths } from './styleVariables';
 import React from "react";
 
 const ResetStyle = createGlobalStyle`

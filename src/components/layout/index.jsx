@@ -1,5 +1,6 @@
 import * as React from "react"
 import { GlobalStyle } from "../../styles/GlobalStyle"
+import { Widths } from "../../styles/styleVariables"
 import styled from "styled-components";
 import Footer from "../footer/Footer"
 import Header from "../header/Header"
@@ -48,6 +49,9 @@ export const BlogLayout = ({ aside, children }) => {
 const StyledLayout = styled.main`
   margin: 0px auto;
   max-width: calc(1020px - (20px * 2));
+  @media (max-width: calc(${Widths.Tablet} - 1px)) {
+    width: 100vw;
+  }
 `;
 
 const StyledBlogLayout = styled.main`

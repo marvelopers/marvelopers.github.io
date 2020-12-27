@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql } from 'gatsby'
 import { GlobalStyle } from "../styles/GlobalStyle"
+import { Widths } from "../styles/styleVariables"
 import styled from "styled-components";
 import Footer from "../components/footer/Footer"
 import Header from "../components/header/Header"
@@ -72,7 +73,7 @@ const StyledBlogLayout = styled.main`
   max-width: calc(1020px - (20px * 2));
   display: flex;
   justify-content: space-between;
-  padding-top: 80px;
+  padding-top: calc(100vw*0.049);
   .title{
     font-size: 34px;
     font-weight: 900;
@@ -86,10 +87,18 @@ const StyledBlogLayout = styled.main`
     font-size: 16px;
     line-height: 1.8;
     width : 720px;
+    @media (max-width: calc(${Widths.Tablet} - 1px)) {
+    width: calc(100vw - 20px);
+    margin: auto;
+   }
   }
   .aside{
     margin-left : 20px;
     margin-top : 110px;
+
+    @media (max-width: calc(${Widths.Tablet} - 1px)) {
+    display: none;
+    }
   }
   .goToMain{
     margin-top: 40px;
@@ -107,7 +116,7 @@ const StyledPostContent = styled.div`
   margin-top: 20px;
   padding-bottom : 40px;
   font-size: 16px;
-  width : 720px;
+  width : 100%;
   border-bottom: 2px solid #F3F3F3;
   h1,
   h2,
@@ -195,6 +204,7 @@ const StyledPostContent = styled.div`
       white-space: pre;
     }
   }
+  
 `;
 
 export const pageQuery = graphql`

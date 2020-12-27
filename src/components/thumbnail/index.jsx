@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import { Link } from "gatsby"
+import { Widths } from "../../styles/styleVariables"
 import essay from '../../images/essay.png';
 import front from '../../images/front.png';
 import web from '../../images/web.png';
@@ -48,9 +49,7 @@ const Thumbnail = ({ title, slug, meta, category, tags }) => {
 export default Thumbnail;
 
 const StyleLi = styled.li`
-  /* 레이아웃 카드 3개 */
-  width: 310px;
-  height: 329px;
+  /* 레이아웃 카드 3개 width: 310px; height: 329px; */
   /* 레이아웃 카드 4개 */
   width: 229px;
   height: 270px;
@@ -65,7 +64,7 @@ const StyleLi = styled.li`
     border-top-left-radius :5px;
     border-top-right-radius :5px;
     /* height: 164px; */
-    width: 229px;
+    width: 100%;
     background : #e8e8e8;
   }
   .info{
@@ -78,21 +77,38 @@ const StyleLi = styled.li`
     font-size: 18px;
     font-weight: 700;
     line-height: 1.49;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; 
   }
   .date{
     color: #929292;
     position: absolute;
-    bottom: 40px;
+    bottom: calc(27%);
     font-size: 12px;
   }
   .tag{
     font-size: 12px;
     font-weight: 600;
     position: absolute;
-    bottom: 20px;
+    bottom: calc(12%);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    word-wrap:normal;
+    width:calc(100% - 20px);
   }
   span{
     color: #4A154B;
     margin-right: 4px;
+  }
+  @media (max-width: calc(${Widths.Tablet} - 1px)) {    
+    width: calc(100vw/2 - 16px);
+    height: calc(100vw*0.587);
+    .info>h2{
+    font-size: 17px;
+    line-height: 1.47;
+    }
   }
 `;

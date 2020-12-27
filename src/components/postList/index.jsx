@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import Thumbnail from '../thumbnail';
+import { Widths } from '../../styles/styleVariables';
 
 // slug, title
 const PostList = ({ posts }) => {
@@ -37,5 +38,9 @@ const StyleUl = styled.ul`
   }
   .date{
     font-size: 14px;
+  }
+  @media (max-width: calc(${Widths.Tablet} - 1px)) {
+    width: 100vw;
+    height: 100%;
   }
 `;

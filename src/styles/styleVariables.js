@@ -16,3 +16,11 @@ export const GREY_4 = '#929292';
 export const GREY_5 = '#E8E8E8';
 export const GREY_6 = '#F3F3F3';
 export const WHITE = '#FFFFFF';
+
+export const Widths = {
+  Site: "1024px",
+  Mobile: "320px", // iphone5
+  Tablet: "768px", // ipad
+  Desktop: "1024px",
+  Content: "800px",
+}
