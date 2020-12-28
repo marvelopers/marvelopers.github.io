@@ -50,8 +50,10 @@ pre[class*="language-"] {
   border-radius: .3em;
 }
 
+
+.token.script.language-javascript,
 .token.parameter{
-  color: #67C1E1 ;
+  color: rgb(126, 212, 244) ;
 }
 
 .token.comment,
@@ -61,6 +63,7 @@ pre[class*="language-"] {
   color: #248d61; /* base1 */
 }
 
+.token.plain-text,
 .token.operator,
 .token.punctuation {
   /* color: #586e75; base01 */
@@ -91,6 +94,7 @@ pre[class*="language-"] {
 
 .token.selector,
 .token.attr-name,
+.token.class-name,
 .token.char,
 .token.builtin,
 .token.url,

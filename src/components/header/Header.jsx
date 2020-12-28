@@ -2,6 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import styled from "styled-components";
 import logo from '../../images/logo.png'
+import blog_logo from '../../images/blog_logo.png'
 import { Widths } from "../../styles/styleVariables"
 
 const Header = () => {
@@ -9,7 +10,7 @@ const Header = () => {
     <StyleHeader>
       <div className="wrapper">
         <Link to={"/"}>
-          <img src={logo} alt="logo" />
+          <img src={blog_logo} alt="logo" />
         </Link>
         <nav>
           <ul className="categories">
@@ -36,7 +37,8 @@ const StyleHeader = styled.header`
   box-shadow : rgba(0, 0, 0, 0.068) 0px 0px 15px;
   img{
     /* border: 1px solid #E8E8E8; */
-    height: 32px;
+    height: 24px;
+    padding-left: 8px;
   }
   .wrapper{
     /* border: 1px solid #E8E8E8; */
