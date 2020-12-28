@@ -34,3 +34,5 @@ $git push
 
 병합 시 conflict이 나지 않도록, 작업 전repository 내부 파일 이름을 확인하고 중복되는 이름은 수정해야 한다.
 
+
+Referred from : https://blog.caplin.com/2013/09/18/merging-two-git-repositories/
