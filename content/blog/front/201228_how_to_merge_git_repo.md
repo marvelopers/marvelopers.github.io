@@ -2,12 +2,12 @@
 title: "git repository merge"
 date: 2020-12-28
 category: front
-tags: [ git, repositories, merge ]
+tags: [git, repositories, merge]
 draft: false
 layout: post
 ---
 
-처음 git를 사용하면서 어떤 기준으로 repository를 만들어야 하는지 몰라 새로운 책을 보기 시작하거나 기존의 repository와 성격이 조금만 다르면 새로운 repository를 만들었다. 
+처음 git를 사용하면서 어떤 기준으로 repository를 만들어야 하는지 몰라 새로운 책을 보기 시작하거나 기존의 repository와 성격이 조금만 다르면 새로운 repository를 만들었다.
 
 그렇게 1년 정도 git을 사용하고나니 안에 무슨 내용이 담겨 있는지 파악하지 못하는 repository가 많아졌다.
 
@@ -22,8 +22,7 @@ layout: post
 ```
 $cd ~/git/project01
 
-$git remote add project02
-$git fetch project02
+$git remote add --fetch project02 :url
 $git merge --allow-unrelated-histories project02/master
 $git remote remove project2
 $git commit -m 'Merge project2 into project1'
@@ -33,6 +32,5 @@ $git push
 ## 주의 : 파일 경로 설정
 
 병합 시 conflict이 나지 않도록, 작업 전repository 내부 파일 이름을 확인하고 중복되는 이름은 수정해야 한다.
-
 
 Referred from : https://blog.caplin.com/2013/09/18/merging-two-git-repositories/
