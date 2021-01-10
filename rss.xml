@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[marveloper.io]]></title><description><![CDATA[digital-marketing & front-end development.]]></description><link>https://marvelopers.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 31 Dec 2020 03:18:05 GMT</lastBuildDate><item><title><![CDATA[React에서 Dayjs로 캘린더 만들기]]></title><description><![CDATA[React에서 Dayjs를 사용해 만든 캘린더 정기배송 프로젝트에서 고객이 원하는 배송일을 선택할 수 있는 달력을 만들었다. 다양한 캘린더 라이브러리가 있지만, 디자인이나 기능 커스텀에 한계가 있기 때문에 달력을 만들기로 결정했다. momentjs…]]></description><link>https://marvelopers.github.io/front/20/1231/dayjs.html</link><guid isPermaLink="false">https://marvelopers.github.io/front/20/1231/dayjs.html</guid><pubDate>Thu, 31 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[marveloper.io]]></title><description><![CDATA[digital-marketing & front-end development.]]></description><link>https://marvelopers.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 10 Jan 2021 14:15:45 GMT</lastBuildDate><item><title><![CDATA[about react]]></title><description><![CDATA[react 페이스북에서 개발하고 관리하는 UI 라이브러리입니다. UI 기능만을 제공하고 있어 전역상태관리, 라우팅, 빌드 시스템 등은 별도의 구축이 필요합니다.  리액트는 변경된 상태값을 기준으로 UI를 자동으로 업데이트 해줍니다. 가상돔은 이전 UI…]]></description><link>https://marvelopers.github.io/react/21/0110/about-react.html</link><guid isPermaLink="false">https://marvelopers.github.io/react/21/0110/about-react.html</guid><pubDate>Sun, 10 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;react&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#react&quot; aria-label=&quot;react permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;react&lt;/h2&gt;
+&lt;p&gt;페이스북에서 개발하고 관리하는 UI 라이브러리입니다. UI 기능만을 제공하고 있어 전역상태관리, 라우팅, 빌드 시스템 등은 별도의 구축이 필요합니다. &lt;/p&gt;
+&lt;p&gt;리액트는 &lt;strong&gt;변경된 상태값을 기준으로 UI를 자동으로 업데이트&lt;/strong&gt; 해줍니다. 가상돔은 이전 UI 상태를 기반으로 변경될 최조 집합만을 계산할 수 있습니다. 함수형 프로그래밍을 적극적으로 사용하는 리액트는 &lt;strong&gt;순수함수와 불변변수&lt;/strong&gt;를 사용합니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;render는 순수함수로 state가 변하지 않는다면 항상 같은 값을 반환합니다.&lt;/li&gt;
+&lt;li&gt;state는 불변변수로 관리하며 상태값을 수정할 때는 &lt;em&gt;새로운 객체&lt;/em&gt;를 생성합니다. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;리액트에서-바벨과-웹팩-cra&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A6%AC%EC%95%A1%ED%8A%B8%EC%97%90%EC%84%9C-%EB%B0%94%EB%B2%A8%EA%B3%BC-%EC%9B%B9%ED%8C%A9-cra&quot; aria-label=&quot;리액트에서 바벨과 웹팩 cra permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;리액트에서 바벨과 웹팩, CRA&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;바벨 : jsx문법으로 작성된 코드를 createElement 함수를 호출하는 코드로 변환해줍니다.&lt;/li&gt;
+&lt;li&gt;웹팩 : js로 만든 프로그램을 배포하기 좋은 형태로 묶어주는 도구입니다. ESM(ES6의 모듈시스템), commonJS를 모두 지원합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;CRA(create-react-app)을 사용하면 별도의 설정없이 바벨과 웹팩을 사용할 수 있습니다. 바벨과 웹팩에 대한 이해도가 낮다면 CRA로 프로젝트를 생성하는 것이 안전합니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-sh line-numbers&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;cra
+ ├─ README.md
+ ├─ node_modules
+ ├─ package.json : 
+ ├─ public
+ │     ├─ favicon.ico
+ │     └─ index.html
+ └─ src
+       ├─ App.css
+       ├─ App.js
+       ├─ App.test.js : jest 기반의 테스트 프레임워크 
+       ├─ index.css 
+       ├─ index.js 
+       ├─ logo.svg 
+       └─ serviceWorker.js&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;참조 : 실전 리액트 프로그래밍&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[React에서 Dayjs로 캘린더 만들기]]></title><description><![CDATA[React에서 Dayjs를 사용해 만든 캘린더 정기배송 프로젝트에서 고객이 원하는 배송일을 선택할 수 있는 달력을 만들었다. 다양한 캘린더 라이브러리가 있지만, 디자인이나 기능 커스텀에 한계가 있기 때문에 달력을 만들기로 결정했다. momentjs…]]></description><link>https://marvelopers.github.io/front/20/1231/dayjs.html</link><guid isPermaLink="false">https://marvelopers.github.io/front/20/1231/dayjs.html</guid><pubDate>Thu, 31 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 371px; &quot;
     &gt;
