@@ -1,0 +1,414 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.dbeb3adf49d034a74a53.css" id="gatsby-global-css">code[class*=language-],pre[class*=language-]{color:#67c1e1;font-family:Noto Sans KR,sans-serif;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{background:#292929}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background-color:#292929}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em}.token.parameter,.token.script.language-javascript{color:#7ed4f4}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#248d61}.token.operator,.token.plain-text,.token.punctuation{color:#e8e8e8}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#0097fc}.token.number{color:#2bac76}.token.boolean{color:#0097fc}.token.attr-name,.token.builtin,.token.char,.token.class-name,.token.inserted,.token.selector,.token.url{color:#2aa198}.token.string{color:#e48870}.token.entity{color:#2eb67d;background:#eee8d5}.token.atrule,.token.attr-value,.token.keyword{color:#ff3e88}.token.function{color:#cccd98}.token.important,.token.regex,.token.variable{color:#cb4b16}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}</style><meta name="generator" content="Gatsby 2.28.2"/><style data-styled="" data-styled-version="5.2.1">*{box-sizing:border-box;}/*!sc*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video,button{margin:0;padding:0;border:none;font-size:100%;font:inherit;vertical-align:baseline;background:transparent;outline:none;font-family:'Noto Sans KR',sans-serif;color:#292929;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}/*!sc*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block;}/*!sc*/
+body{line-height:1;width:100vw;height:100vh;overflow-y:scroll;-webkit-overflow-scrolling:touch;}/*!sc*/
+ol,ul{list-style:none;}/*!sc*/
+blockquote,q{quotes:none;}/*!sc*/
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}/*!sc*/
+table{border-collapse:collapse;border-spacing:0;}/*!sc*/
+button,a{cursor:pointer;}/*!sc*/
+input{-webkit-appearance:none;-moz-appearance:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none;margin:0;padding:0;}/*!sc*/
+input::-ms-clear{display:none;}/*!sc*/
+input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{-webkit-appearance:none;-moz-appearance:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;}/*!sc*/
+select{-webkit-appearance:none;-moz-appearance:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;}/*!sc*/
+select::-ms-expand{display:none;}/*!sc*/
+img{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-moz-user-select:none;-webkit-user-drag:none;-webkit-user-select:none;-ms-user-select:none;}/*!sc*/
+.ReactModal__Body--open{overflow:hidden;}/*!sc*/
+data-styled.g1[id="sc-global-fVEpJT1"]{content:"sc-global-fVEpJT1,"}/*!sc*/
+.bttQuf{border-top:1px solid #E8E8E8;}/*!sc*/
+.bttQuf .wrapper{margin:30px auto;max-width:calc(1020px - (20px * 2));height:40px;}/*!sc*/
+@media (max-width:calc(768px - 1px)){.bttQuf{width:calc(100vw - 20px);margin:auto;}}/*!sc*/
+data-styled.g2[id="Footer__StyledFooter-sc-1qao9xw-0"]{content:"bttQuf,"}/*!sc*/
+.gGSvdw{width:100vw;padding:18px 0px;height:68px;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;box-shadow:rgba(0,0,0,0.068) 0px 0px 15px;}/*!sc*/
+.gGSvdw img{height:24px;padding-left:8px;}/*!sc*/
+.gGSvdw .wrapper{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:0 auto;max-width:calc(1020px - (20px * 2));}/*!sc*/
+.gGSvdw ul{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}/*!sc*/
+.gGSvdw a{-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.gGSvdw li{font-size:16px;margin:0px 20px;padding:5px 10px;}/*!sc*/
+@media (max-width:calc(768px - 1px)){.gGSvdw{width:calc(100vw - 20px);margin:auto;}.gGSvdw .categories{display:none;}}/*!sc*/
+data-styled.g3[id="Header__StyleHeader-qb7121-0"]{content:"gGSvdw,"}/*!sc*/
+.ehrJlm{margin:20px 0px;}/*!sc*/
+.ehrJlm div{display:inline;}/*!sc*/
+.ehrJlm button{margin-right:8px;font-weight:600;font-size:14px;color:#4A154B;}/*!sc*/
+data-styled.g8[id="PostTag__StyledTag-sc-1bactx0-0"]{content:"ehrJlm,"}/*!sc*/
+.haCOvl{position:-webkit-sticky;position:sticky;top:60px;}/*!sc*/
+.haCOvl .goToMain{margin-top:40px;width:100%;height:48px;border-radius:8px;}/*!sc*/
+.haCOvl .goToMain a{-webkit-text-decoration:none;text-decoration:none;font-size:14px;font-weight:600;color:#4A154B;}/*!sc*/
+data-styled.g9[id="PostToc__StyledAside-sc-18p83nd-0"]{content:"haCOvl,"}/*!sc*/
+.dOvrCm ul{width:240px;}/*!sc*/
+.dOvrCm a{border-top:1px solid #E8E8E8;display:block;padding:14px 0px;-webkit-text-decoration:none;text-decoration:none;-webkit-letter-spacing:-0.1px;-moz-letter-spacing:-0.1px;-ms-letter-spacing:-0.1px;letter-spacing:-0.1px;line-height:1rem;font-size:14px;color:#494949;-webkit-transition:all 1s ease-in;transition:all 1s ease-in;}/*!sc*/
+.dOvrCm a.active{font-weight:700;color:#2B092B;}/*!sc*/
+data-styled.g10[id="PostToc__StyledToc-sc-18p83nd-1"]{content:"dOvrCm,"}/*!sc*/
+.hAmcTR{margin:0px auto;max-width:calc(1020px - (20px * 2));display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;padding-top:calc(100vw*0.049);}/*!sc*/
+.hAmcTR .title{font-size:34px;font-weight:900;}/*!sc*/
+.hAmcTR .publishedDate{font-size:14px;color:#494949;}/*!sc*/
+.hAmcTR .content{font-size:16px;line-height:1.8;width:720px;}/*!sc*/
+@media (max-width:calc(768px - 1px)){.hAmcTR .content{width:calc(100vw - 20px);margin:auto;}}/*!sc*/
+.hAmcTR .aside{margin-left:20px;margin-top:110px;}/*!sc*/
+@media (max-width:calc(768px - 1px)){.hAmcTR .aside{display:none;}}/*!sc*/
+.hAmcTR .goToMain{margin-top:40px;width:100%;height:48px;font-size:14px;font-weight:600;background:#F3F3F3;border-radius:8px;color:#4A154B;}/*!sc*/
+data-styled.g11[id="blog-post__StyledBlogLayout-sc-1enxuk1-0"]{content:"hAmcTR,"}/*!sc*/
+.fOANjF{margin-top:20px;padding-bottom:40px;font-size:16px;width:100%;border-bottom:2px solid #F3F3F3;}/*!sc*/
+.fOANjF h1,.fOANjF h2,.fOANjF h3,.fOANjF h4,.fOANjF h5,.fOANjF h6{line-height:1.8;}/*!sc*/
+.fOANjF h1{font-size:32px;line-height:1.8;font-weight:700;}/*!sc*/
+.fOANjF h2{font-size:24px;margin-top:18px;font-weight:700;}/*!sc*/
+.fOANjF h3{font-size:20px;font-weight:700;line-height:1;margin-block-start:1.4em;}/*!sc*/
+.fOANjF h4{font-size:18px;font-weight:600;margin-block-start:1.4em;}/*!sc*/
+.fOANjF h5{font-size:120%;margin-top:12px;}/*!sc*/
+.fOANjF img{border-radius:3px;display:block;max-width:100%;}/*!sc*/
+.fOANjF p{margin-block-start:0.8em;margin-block-end:0.8em;}/*!sc*/
+.fOANjF ol,.fOANjF ul{margin-block-start:0.8em;margin-block-end:0.8em;}/*!sc*/
+.fOANjF ul>li{list-style:square;list-style-position:inside;margin-left:8px;}/*!sc*/
+.fOANjF ol>li{list-style:decimal;list-style-position:inside;margin-left:8px;}/*!sc*/
+.fOANjF li::marker{font-weight:500;color:#2B092B;}/*!sc*/
+.fOANjF hr{height:1px;border:1px solid #E8E8E8;background:#E8E8E8;margin:20px 0;}/*!sc*/
+.fOANjF blockquote{position:relative;}/*!sc*/
+.fOANjF blockquote::before{content:"“";position:absolute;font-size:40px;}/*!sc*/
+.fOANjF .gatsby-highlight pre{overflow:auto;word-wrap:normal;white-space:pre;}/*!sc*/
+data-styled.g12[id="blog-post__StyledPostContent-sc-1enxuk1-1"]{content:"fOANjF,"}/*!sc*/
+</style><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><style>.gatsby-image-wrapper img{all:inherit;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}</style><noscript><style>.gatsby-image-wrapper [data-main-image]{opacity:1!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function e(t){if(void 0===t.target.dataset.mainImage)return;if(void 0===t.target.dataset.gatsbyImageSsr)return void document.body.removeEventListener("load",e,!0);const a=t.target;let n=null,o=a;for(;null===n&&o;)void 0!==o.parentNode.dataset.gatsbyImageWrapper&&(n=o.parentNode),o=o.parentNode;const r=n.querySelector("[data-placeholder-image]"),d=new Image;d.src=a.currentSrc,d.decode().catch((()=>{})).then((()=>{a.style.opacity=1,r&&(r.style.opacity=0,r.style.transition="opacity 500ms linear")}))}),!0);</script><title data-react-helmet="true">[디자인패턴] 팩토리 패턴 | marveloper.io</title><meta data-react-helmet="true" property="og:locale" content="ko_KR"/><meta data-react-helmet="true" property="og:locale:alternate" content="en_US"/><meta data-react-helmet="true" property="og:site_name" content="marveloper.io"/><meta data-react-helmet="true" property="description" content="팩토리 패턴 팩토리 패턴의 핵심 이름처럼 객체 생성을 하는 공장을 가지고 있는 패턴 메인 클래스에는 변하지 않는 부분을 서브클래스에는 변할가능성이 있는 부분을 나눠 관리한다. 클래스의 인스턴스를 서브 클래스에서 결정한다는 것! 서브클래스가 new…"/><meta data-react-helmet="true" property="og:url" content="https://marvelopers.github.io/front/21/0204/design_patterns_factory.html"/><meta data-react-helmet="true" property="og:title" content="[디자인패턴] 팩토리 패턴"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:description" content="팩토리 패턴 팩토리 패턴의 핵심 이름처럼 객체 생성을 하는 공장을 가지고 있는 패턴 메인 클래스에는 변하지 않는 부분을 서브클래스에는 변할가능성이 있는 부분을 나눠 관리한다. 클래스의 인스턴스를 서브 클래스에서 결정한다는 것! 서브클래스가 new…"/><meta data-react-helmet="true" property="og:image" content="undefined/assets/favicon.png"/><meta data-react-helmet="true" property="article:published_time" content="2021-02-04T00:00:00.000Z"/><script data-react-helmet="true" type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "siteUrl": "https://marvelopers.github.io/front/21/0204/design_patterns_factory.html",
+        "headline": "[디자인패턴] 팩토리 패턴",
+        "datePublished": "2021-02-04T00:00:00.000Z",
+        "dateModified": "2021-02-04T00:00:00.000Z",
+        "image": "undefined/assets/favicon.png"
+      }
+      </script><script data-react-helmet="true" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="icon" href="/favicon-32x32.png?v=6bef392bbdb39c788c3dd69cad56d6b6" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#a2466c"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=6bef392bbdb39c788c3dd69cad56d6b6"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=6bef392bbdb39c788c3dd69cad56d6b6"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=6bef392bbdb39c788c3dd69cad56d6b6"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=6bef392bbdb39c788c3dd69cad56d6b6"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=6bef392bbdb39c788c3dd69cad56d6b6"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=6bef392bbdb39c788c3dd69cad56d6b6"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=6bef392bbdb39c788c3dd69cad56d6b6"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=6bef392bbdb39c788c3dd69cad56d6b6"/><link as="script" rel="preload" href="/webpack-runtime-110b0bcd170056f2734a.js"/><link as="script" rel="preload" href="/styles-8fab2804fb6f85b824b6.js"/><link as="script" rel="preload" href="/framework-d585a04b7d285a7760d6.js"/><link as="script" rel="preload" href="/app-e1140e97d832d2a64300.js"/><link as="script" rel="preload" href="/01d4e8872ca93d6dd10194f771e997edc2527af0-96b44dff1eff1ea00260.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-jsx-7e1f03b00d9cbd391410.js"/><link as="fetch" rel="preload" href="/page-data/front/21/0204/design_patterns_factory.html/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/764694655.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><header class="Header__StyleHeader-qb7121-0 gGSvdw"><div class="wrapper"><a href="/"><img src="/static/blog_logo-77bec2f15b997965660502c674f0945e.png" alt="logo"/></a><nav><ul class="categories"><a href="/front"><li>Front-end</li></a><a href="/script"><li>JS/TS</li></a><a href="/react"><li>React</li></a><a href="/marketing"><li>Marketing</li></a><a href="/essay"><li>Essay</li></a></ul></nav></div></header><div itemscope="" itemType="http://schema.org/BlogPosting"><main class="blog-post__StyledBlogLayout-sc-1enxuk1-0 hAmcTR"><article class="content"><div class="title">[디자인패턴] 팩토리 패턴</div><div class="publishedDate">2021.02.04</div><div id="post-content" itemProp="articleBody" class="blog-post__StyledPostContent-sc-1enxuk1-1 fOANjF"><h1 id="팩토리-패턴" style="position:relative;"><a href="#%ED%8C%A9%ED%86%A0%EB%A6%AC-%ED%8C%A8%ED%84%B4" aria-label="팩토리 패턴 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>팩토리 패턴</h1>
+<h2 id="팩토리-패턴의-핵심" style="position:relative;"><a href="#%ED%8C%A9%ED%86%A0%EB%A6%AC-%ED%8C%A8%ED%84%B4%EC%9D%98-%ED%95%B5%EC%8B%AC" aria-label="팩토리 패턴의 핵심 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>팩토리 패턴의 핵심</h2>
+<ul>
+<li>이름처럼 객체 생성을 하는 공장을 가지고 있는 패턴</li>
+<li>메인 클래스에는 변하지 않는 부분을 서브클래스에는 변할가능성이 있는 부분을 나눠 관리한다.</li>
+<li>클래스의 인스턴스를 서브 클래스에서 결정한다는 것!</li>
+<li>서브클래스가 new 키워드를 담당하도록 하여 객체 생성을 캡슐화 하고 구상 클래스에 대한 의존성과 결합도를 줄인다.</li>
+<li>클래스 간의 결합도가 낮아 하나의 클래스가 수정되더라도 다른 클래스가 영향을 덜 받기 때문에 전체 프로젝트의 확장성를 높일 수 있다.</li>
+</ul>
+<h2 id="팩토리-패턴-1" style="position:relative;"><a href="#%ED%8C%A9%ED%86%A0%EB%A6%AC-%ED%8C%A8%ED%84%B4-1" aria-label="팩토리 패턴 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>팩토리 패턴</h2>
+<ul>
+<li>팩토리 메서드 패턴 : 객체를 생성하기 위한 인터페이스를 정의해야 하는데,  어떤 클래스의 인스턴스를 만들지 서브 클래스에서 결정하도록 한다.</li>
+<li>추상 팩토리 패턴 : ‘추상화된 것에 의존하도록 구성한다. 구상 클래스에 의존하지 않도록 만든다’라는 디자인 원칙에 기인한 패턴이다. 인터페이스를 이용하여 서로 연관된 객체를 구상 클래스를 지정하지 않고도 생성할 수 잇다. 추상 팩토리 패턴에는 팩토리 메서드 패턴이 포함될 수 있다.</li>
+<li>모든 팩토리 패턴에서는 객체 생성을 ‘캡슐화’한다.</li>
+</ul>
+<h3 id="의존성-뒤집기-원칙-dependency-inversion-principledi" style="position:relative;"><a href="#%EC%9D%98%EC%A1%B4%EC%84%B1-%EB%92%A4%EC%A7%91%EA%B8%B0-%EC%9B%90%EC%B9%99-dependency-inversion-principledi" aria-label="의존성 뒤집기 원칙 dependency inversion principledi permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>의존성 뒤집기 원칙 (Dependency Inversion Principle:DI)</h3>
+<ul>
+<li>싱글톤 패턴과 함께 가장 유명하고 널리 쓰이는 디자인 패턴 중 하나로 Spring 프레임워크의 핵심 개념 중 하나이다.</li>
+<li>‘추상화 된 것에 의존하도록 만들어라’는 원칙에 따른다.</li>
+<li>
+<p>고수준 구성요소와 저수준 구성요소들은 모두 하나의 추상 클래스에 의존한다.</p>
+<ul>
+<li>
+<p>의존성 뒤집기의 3가지 원칙</p>
+<ol>
+<li>어떤 변수에도 구상 클래스에 대한 레퍼런스를 지정하지 않는다.</li>
+<li>구상 클래스에서 유도된 클래스를 만들지 않는다.</li>
+<li>메인 클래스에서 이미 구현되어 있던 메서드를 오버라이드 하지 않는다.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="ex-pizzastore" style="position:relative;"><a href="#ex-pizzastore" aria-label="ex pizzastore permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EX) PizzaStore</h2>
+<h3 id="1-팩토리-메서드-패턴" style="position:relative;"><a href="#1-%ED%8C%A9%ED%86%A0%EB%A6%AC-%EB%A9%94%EC%84%9C%EB%93%9C-%ED%8C%A8%ED%84%B4" aria-label="1 팩토리 메서드 패턴 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. 팩토리 메서드 패턴</h3>
+<ol>
+<li>피자가게 → 피자 종류 : 치즈, 페퍼로니 등등
+→ 피자가게 지점 : 뉴욕, 시카고, 캘리포니아 등등
+⇒ 모든 피자 만드는 방식을 통일해야 한다!?</li>
+</ol>
+<p>1.1 PizzaStore : Pizza 인스턴스를 만드는 일은 팩토리 역할을 하는 메소드에서 맡아 처리한다. </p>
+<div class="gatsby-highlight" data-language="java"><pre style="counter-reset: linenumber NaN" class="language-java line-numbers"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">PizzaStore</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token class-name">Pizza</span> <span class="token function">orderPizza</span><span class="token punctuation">(</span><span class="token class-name">String</span> type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		 <span class="token class-name">Pizza</span> pizza<span class="token punctuation">;</span>
+		 pizza <span class="token operator">=</span> <span class="token function">createPizza</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		 pizza<span class="token punctuation">.</span><span class="token function">prepare</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		 pizza<span class="token punctuation">.</span><span class="token function">bake</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+		 pizza<span class="token punctuation">.</span><span class="token function">cut</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+		 pizza<span class="token punctuation">.</span><span class="token function">box</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+		<span class="token keyword">return</span> pizza<span class="token punctuation">;</span> 
+	<span class="token punctuation">}</span> 
+<span class="token keyword">abstract</span> <span class="token class-name">Pizza</span> <span class="token function">createPizza</span><span class="token punctuation">(</span><span class="token class-name">String</span> type<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>1.2 ChicagoPizzaStore : PizzaStore를 상속받아 시카고 피자조리법을 만든다. </p>
+<div class="gatsby-highlight" data-language="java"><pre style="counter-reset: linenumber NaN" class="language-java line-numbers"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ChicagoPizzaStore</span> <span class="token keyword">extends</span> <span class="token class-name">PizzaStore</span> <span class="token punctuation">{</span>
+	<span class="token annotation punctuation">@override</span>
+	<span class="token class-name">Pizza</span> createPizza <span class="token punctuation">(</span><span class="token class-name">String</span> type<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token class-name">Pizza</span> pizza <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+		
+		<span class="token keyword">if</span><span class="token punctuation">(</span>type<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">'cheese'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+			<span class="token class-name">Pizza</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChicagoStyleCheesePizza</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>type<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">'pepper'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+			<span class="token class-name">Pizza</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChicagoStylepepperPizza</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>type<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">'veggie'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+			<span class="token class-name">Pizza</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChicagoStyleVeggiePizza</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">return</span> pizza<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>1.3 Pizza 피자 제조 과정은 이렇게 정한다. </p>
+<div class="gatsby-highlight" data-language="java"><pre style="counter-reset: linenumber NaN" class="language-java line-numbers"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Pizza</span> <span class="token punctuation">{</span>
+	<span class="token class-name">String</span> name<span class="token punctuation">;</span>
+	<span class="token class-name">String</span> dough<span class="token punctuation">;</span>
+	<span class="token class-name">String</span> sauce<span class="token punctuation">;</span>
+	<span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> toppings <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">void</span> <span class="token function">prepar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Preparing "</span> <span class="token operator">+</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Toppings dough..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Adding sauce..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Adding toppings..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> toppings<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>toppings<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">void</span> <span class="token function">bake</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Bake for 25 minutes at 350"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+	<span class="token punctuation">}</span>
+	<span class="token keyword">void</span> <span class="token function">cut</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Cutting the pizza into diagonal slice"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+	<span class="token punctuation">}</span>
+	<span class="token keyword">void</span> <span class="token function">box</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Place pizza in official PizzaStroe box"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>1.4 ChicagoStyleCheesePizza를 Pizza를 상속받아서 만든다. </p>
+<div class="gatsby-highlight" data-language="java"><pre style="counter-reset: linenumber NaN" class="language-java line-numbers"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ChicagoStyleCheesePizza</span> <span class="token keyword">extends</span> <span class="token class-name">Pizza</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token class-name">ChicagoStyleCheesePizza</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    name <span class="token operator">=</span> <span class="token string">"Chicago Style Deep Dish Cheese Pizza"</span><span class="token punctuation">;</span>
+    dough <span class="token operator">=</span> <span class="token string">"Extra Thick Crust Dough"</span><span class="token punctuation">;</span>
+    sauce <span class="token operator">=</span> <span class="token string">"Plum Tomato Sauce"</span><span class="token punctuation">;</span> 
+    toppings<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Shredded Mozzarella Cheese"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token annotation punctuation">@Override</span> <span class="token keyword">void</span> <span class="token function">cut</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Cutting the pizza into sqaare slices"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<div class="gatsby-highlight" data-language="java"><pre style="counter-reset: linenumber NaN" class="language-java line-numbers"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PizzaTestDrive</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">PizzaStore</span> chicagoStore <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChicagoPizzaStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">Pizza</span> chicagoStylePizza <span class="token operator">=</span> chicagoStore<span class="token punctuation">.</span><span class="token function">orderPizza</span><span class="token punctuation">(</span><span class="token string">"cheese"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>chicagoStylePizza<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<h3 id="2-추상-팩토리-패턴" style="position:relative;"><a href="#2-%EC%B6%94%EC%83%81-%ED%8C%A9%ED%86%A0%EB%A6%AC-%ED%8C%A8%ED%84%B4" aria-label="2 추상 팩토리 패턴 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. 추상 팩토리 패턴</h3>
+<ol>
+<li>PizzaingredientFactory : 지역별로 공장을 만든다.</li>
+<li>ReggianoCheese, RedPeppers, ThickCrustDough : 공장에서 사용할 재료 클래스를 구현한다.</li>
+<li>PizzaStore : 모든 것을 조합해 피자를 만든다.</li>
+</ol>
+<p>2.1 PizzaingredientFactory : 지역별로 공장을 만든다.</p>
+<div class="gatsby-highlight" data-language="java"><pre style="counter-reset: linenumber NaN" class="language-java line-numbers"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">PizzaIngredientFactory</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token class-name">Dough</span> <span class="token function">createDough</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">public</span> <span class="token class-name">Sauce</span> <span class="token function">createSauce</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">public</span> <span class="token class-name">Cheese</span> <span class="token function">createCheese</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">public</span> <span class="token class-name">Veggies</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">createVeggies</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">public</span> <span class="token class-name">Pepperoni</span> <span class="token function">createPepperoni</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">public</span> <span class="token class-name">Clams</span> <span class="token function">createClams</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>2.2 ReggianoCheese, RedPeppers, ThickCrustDough : 공장에서 사용할 재료 클래스를 구현한다.</p>
+<div class="gatsby-highlight" data-language="java"><pre style="counter-reset: linenumber NaN" class="language-java line-numbers"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">NYPizzaIngredientFactory</span> <span class="token keyword">implements</span> <span class="token class-name">PizzaIngredientFactory</span> <span class="token punctuation">{</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token class-name">Dough</span> <span class="token function">createDough</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token class-name">Sauce</span> <span class="token function">createSauce</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token class-name">Cheese</span> <span class="token function">createCheese</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token class-name">Veggies</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">createVeggies</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token class-name">Pepperoni</span> <span class="token function">createPepperoni</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token class-name">Clams</span> <span class="token function">createClams</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>2.3 PizzaStore : 모든 것을 조합해 피자를 만든다.</p>
+<div class="gatsby-highlight" data-language="java"><pre style="counter-reset: linenumber NaN" class="language-java line-numbers"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CheesePizza</span> <span class="token keyword">extends</span> <span class="token class-name">Pizza</span> <span class="token punctuation">{</span>
+  <span class="token class-name">PizzaIngredientFactory</span> ingredientFactory<span class="token punctuation">;</span>
+  <span class="token keyword">public</span> <span class="token class-name">CheesePizza</span><span class="token punctuation">(</span><span class="token class-name">PizzaIngredientFactory</span> ingredientFactory<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>ingredientFactory <span class="token operator">=</span> ingredientFactory<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">prepare</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>dough <span class="token operator">=</span> ingredientFactory<span class="token punctuation">.</span><span class="token function">createDough</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>sauce <span class="token operator">=</span> ingredientFactory<span class="token punctuation">.</span><span class="token function">createSauce</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>cheese <span class="token operator">=</span> ingredientFactory<span class="token punctuation">.</span><span class="token function">createCheese</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">public</span> <span class="token class-name">PizzaIngredientFactory</span> <span class="token function">getIngredientFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> ingredientFactory<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setIngredientFactory</span><span class="token punctuation">(</span><span class="token class-name">PizzaIngredientFactory</span> ingredientFactory<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>ingredientFactory <span class="token operator">=</span> ingredientFactory<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>2.5 지점 별로 피자가게를 만든다.</p>
+<div class="gatsby-highlight" data-language="java"><pre style="counter-reset: linenumber NaN" class="language-java line-numbers"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ChicagoPizzaStore</span> <span class="token keyword">extends</span> <span class="token class-name">PizzaStore</span> <span class="token punctuation">{</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token class-name">Pizza</span> <span class="token function">createPizza</span><span class="token punctuation">(</span><span class="token class-name">String</span> type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Pizza</span> pizza <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token class-name">PizzaIngredientFactory</span> ingredientFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChicagoPizzaingredientFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>type<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"cheese"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      pizza <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CheesePizza</span><span class="token punctuation">(</span>ingredientFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      pizza<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span>ingredientFactory<span class="token punctuation">.</span><span class="token class-name">Chicago_STYLE</span> <span class="token operator">+</span> <span class="token string">" Cheese Pizza"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>type<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"peper"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      pizza <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PepperoniPizza</span><span class="token punctuation">(</span>ingredientFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      pizza<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span>ingredientFactory<span class="token punctuation">.</span><span class="token class-name">Chicago_STYLE</span> <span class="token operator">+</span> <span class="token string">" Pepperoni Pizza"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>type<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"clam"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      pizza <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClamPizza</span><span class="token punctuation">(</span>ingredientFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      pizza<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span>ingredientFactory<span class="token punctuation">.</span><span class="token class-name">Chicago_STYLE</span> <span class="token operator">+</span> <span class="token string">" Clam Pizza"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>type<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"veggie"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      pizza <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VeggiePizza</span><span class="token punctuation">(</span>ingredientFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      pizza<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span>ingredientFactory<span class="token punctuation">.</span><span class="token class-name">Chicago_STYLE</span> <span class="token operator">+</span> <span class="token string">" Veggie Pizza"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> pizza<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<div class="gatsby-highlight" data-language="java"><pre style="counter-reset: linenumber NaN" class="language-java line-numbers"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">NYPizzaStore</span> <span class="token keyword">extends</span> <span class="token class-name">PizzaStore</span> <span class="token punctuation">{</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token class-name">Pizza</span> <span class="token function">createPizza</span><span class="token punctuation">(</span><span class="token class-name">String</span> type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Pizza</span> pizza <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token class-name">PizzaIngredientFactory</span> ingredientFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">NYPizzaingredientFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>type<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"cheese"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      pizza <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CheesePizza</span><span class="token punctuation">(</span>ingredientFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      pizza<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span>ingredientFactory<span class="token punctuation">.</span>NY_STYLE <span class="token operator">+</span> <span class="token string">" Cheese Pizza"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>type<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"peper"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      pizza <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PepperoniPizza</span><span class="token punctuation">(</span>ingredientFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      pizza<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span>ingredientFactory<span class="token punctuation">.</span>NY_STYLE <span class="token operator">+</span> <span class="token string">" Pepperoni Pizza"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>type<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"clam"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      pizza <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClamPizza</span><span class="token punctuation">(</span>ingredientFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      pizza<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span>ingredientFactory<span class="token punctuation">.</span>NY_STYLE <span class="token operator">+</span> <span class="token string">" Clam Pizza"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>type<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"veggie"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      pizza <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VeggiePizza</span><span class="token punctuation">(</span>ingredientFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      pizza<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span>ingredientFactory<span class="token punctuation">.</span>NY_STYLE <span class="token operator">+</span> <span class="token string">" Veggie Pizza"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> pizza<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<blockquote>
+<blockquote>
+<p>사용 </p>
+</blockquote>
+</blockquote>
+<ol>
+<li>NY 피자가게를 만든다.</li>
+</ol>
+<div class="gatsby-highlight" data-language="java"><pre style="counter-reset: linenumber NaN" class="language-java line-numbers"><code class="language-java"><span class="token comment">//1. 뉴욕 피자가게를 만든다.</span>
+<span class="token class-name">PizzaStore</span> nyPizzaStore <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">NYPizzaStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//2.주문을 한다</span>
+nyPizzaStore<span class="token punctuation">.</span><span class="token function">orderPizza</span><span class="token punctuation">(</span>“cheese”<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//3.orderPizza 메소드에서 우선 createPizza() 메서드를 호출한다</span>
+<span class="token class-name">Pizza</span> pizza <span class="token operator">=</span> <span class="token function">createPizza</span><span class="token punctuation">(</span>“cheese”<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//4.createPizza() 메서드가 호출되면 원재료 공장이 돌아가기 시작한다.</span>
+<span class="token class-name">Pizza</span> pizza <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CheesePizza</span><span class="token punctuation">(</span>nyIngredientFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//5.피자를 준비하는 prepare() 메서드가 호출되면 팩토리에 원재료 주문이 들어간다.</span>
+<span class="token keyword">void</span> <span class="token function">prepare</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	dough <span class="token operator">=</span> nyIngredientFactory<span class="token punctuation">.</span><span class="token function">createDough</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	sauce <span class="token operator">=</span> nyIngredientFactory<span class="token punctuation">.</span><span class="token function">createSauce</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	cheese <span class="token operator">=</span> nyIngredientFactory<span class="token punctuation">.</span><span class="token function">createCheese</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//6. 준비단계가 끝나고 orderPizza() 메소드에서는 피자를 굽고, 자르고, 포장한다.</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div></div><div><div class="PostTag__StyledTag-sc-1bactx0-0 ehrJlm"><div><button to="/tags/#java">#<!-- -->java</button></div><div><button to="/tags/#design-patterns">#<!-- -->design-patterns</button></div></div></div></article><div class="aside"><div class="PostToc__StyledAside-sc-18p83nd-0 haCOvl"><div id="post-toc" class="PostToc__StyledToc-sc-18p83nd-1 dOvrCm"><ul>
+<li>
+<p><a href="#%ED%8C%A9%ED%86%A0%EB%A6%AC-%ED%8C%A8%ED%84%B4">팩토리 패턴</a></p>
+<ul>
+<li><a href="#%ED%8C%A9%ED%86%A0%EB%A6%AC-%ED%8C%A8%ED%84%B4%EC%9D%98-%ED%95%B5%EC%8B%AC">팩토리 패턴의 핵심</a></li>
+<li>
+<p><a href="#%ED%8C%A9%ED%86%A0%EB%A6%AC-%ED%8C%A8%ED%84%B4-1">팩토리 패턴</a></p>
+<ul>
+<li><a href="#%EC%9D%98%EC%A1%B4%EC%84%B1-%EB%92%A4%EC%A7%91%EA%B8%B0-%EC%9B%90%EC%B9%99-dependency-inversion-principledi">의존성 뒤집기 원칙 (Dependency Inversion Principle:DI)</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#ex-pizzastore">EX) PizzaStore</a></p>
+<ul>
+<li><a href="#1-%ED%8C%A9%ED%86%A0%EB%A6%AC-%EB%A9%94%EC%84%9C%EB%93%9C-%ED%8C%A8%ED%84%B4">1. 팩토리 메서드 패턴</a></li>
+<li><a href="#2-%EC%B6%94%EC%83%81-%ED%8C%A9%ED%86%A0%EB%A6%AC-%ED%8C%A8%ED%84%B4">2. 추상 팩토리 패턴</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div><button class="goToMain"><a href="/">메인으로 돌아가기</a></button></div></div></main></div><footer class="Footer__StyledFooter-sc-1qao9xw-0 bttQuf"><div class="wrapper">© Copyright 2020 marveloper All rights reserved.</div></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-166868950-1', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/front/21/0204/design_patterns_factory.html";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-092c4c6a41bb38cca3d9.js"],"app":["/app-e1140e97d832d2a64300.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-16703ee5599528db9f93.js"],"component---src-pages-index-js":["/component---src-pages-index-js-4f049e00bf9137fd46d3.js"],"component---src-templates-blog-post-jsx":["/component---src-templates-blog-post-jsx-7e1f03b00d9cbd391410.js"]};/*]]>*/</script><script src="/polyfill-092c4c6a41bb38cca3d9.js" nomodule=""></script><script src="/component---src-templates-blog-post-jsx-7e1f03b00d9cbd391410.js" async=""></script><script src="/01d4e8872ca93d6dd10194f771e997edc2527af0-96b44dff1eff1ea00260.js" async=""></script><script src="/app-e1140e97d832d2a64300.js" async=""></script><script src="/framework-d585a04b7d285a7760d6.js" async=""></script><script src="/styles-8fab2804fb6f85b824b6.js" async=""></script><script src="/webpack-runtime-110b0bcd170056f2734a.js" async=""></script></body></html>
