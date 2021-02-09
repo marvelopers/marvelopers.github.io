@@ -2,7 +2,7 @@
 title: "[디자인패턴] 팩토리 패턴"
 date: 2021-02-04
 category: front
-tags: [java]
+tags: [java,design-patterns]
 draft: false
 layout: post
 ---
