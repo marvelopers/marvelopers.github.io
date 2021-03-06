@@ -5,7 +5,7 @@ import { Widths } from '../../styles/styleVariables';
 
 // slug, title
 const PostList = ({ posts }) => {
-  console.log("---->posts", posts);
+  // console.log("---->posts", posts);
 
   return (
     <StyleUl>
