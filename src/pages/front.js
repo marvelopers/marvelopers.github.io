@@ -39,7 +39,7 @@ export const pageQuery = graphql`
         }
         frontmatter {
           title
-          category : front
+          category
           tags
         }
       }
