@@ -20,9 +20,6 @@ import react from '../../images/react.png';
 //   posts: PostItemType[]
 // }
 
-// slug, title
-
-// console.log(thumbnailImg);
 
 const Thumbnail = ({ title, slug, meta, category, tags }) => {
   return (
