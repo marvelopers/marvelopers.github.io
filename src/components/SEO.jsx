@@ -18,7 +18,6 @@ const SEO = p => {
           siteMetadata{
             title
             description
-            author
             siteUrl
           }
         }
