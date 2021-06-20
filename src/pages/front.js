@@ -1,13 +1,13 @@
-import * as React from "react"
+import React from 'react'
 import { Layout } from "../components/layout"
 import PostList from "../components/postList"
 import SEO from "../components/seo"
 
-const IndexPage = ({ data }) => {
+const FrontPage = ({ data }) => {
   return (
     <>
       <Layout>
-        <SEO title="홈" />
+        <SEO title="Front-end" />
         <PostList
           posts={data.allMarkdownRemark.nodes.map(node => ({
             slug: node.fields.slug,
@@ -26,11 +26,13 @@ const IndexPage = ({ data }) => {
   )
 }
 
-export default IndexPage
+export default FrontPage;
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(limit: 10, sort: {order: DESC, fields: fields___date}) {
+    allMarkdownRemark(limit: 10, 
+      filter: { frontmatter: { category: { eq: "front"} } }
+      sort: {order: DESC, fields: fields___date}) {
       nodes {
         excerpt(pruneLength: 20, format: PLAIN, truncate: true)
         fields {

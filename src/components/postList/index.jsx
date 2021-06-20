@@ -26,11 +26,6 @@ const PostList = ({ posts }) => {
 export default PostList;
 
 const StyleUl = styled.ul`
-  /* width: 290px;
-  height: 270px;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.068) 0px 5px 12px;
-  margin: 15px 10px; */
   display: flex;
   flex-wrap: wrap;
   .title{
