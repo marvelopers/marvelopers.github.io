@@ -1,5 +1,5 @@
 ---
-title: "[협업의 기술] OKKYCON: 2021"
+title: "[OKKYCON] 협업의 기술 : 2021"
 date: 2021-03-06
 category: front
 tags: [dev]
