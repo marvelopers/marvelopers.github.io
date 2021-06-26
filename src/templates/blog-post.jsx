@@ -1,16 +1,15 @@
 import * as React from "react"
-import { graphql } from 'gatsby'
+import { graphql } from "gatsby"
 import { GlobalStyle } from "../styles/GlobalStyle"
 import { Widths } from "../styles/styleVariables"
-import styled from "styled-components";
+import styled from "styled-components"
 import Footer from "../components/footer/Footer"
 import Header from "../components/header/Header"
 import SEO from "../components/seo"
-import PostTag from "./PostTag";
-import PostToc from "./PostToc.tsx";
+import PostTag from "./PostTag"
+import PostToc from "./PostToc.tsx"
 
-
-export const BlogPostTemplate = ({ data, pageContext }) => {
+const BlogPostTemplate = ({ data, pageContext }) => {
   const { site, markdownRemark, series } = data
   const { previous, next } = pageContext
   return (
@@ -50,7 +49,8 @@ export const BlogPostTemplate = ({ data, pageContext }) => {
           </article>
           <div className="aside">
             {markdownRemark.tableOfContents && (
-              <PostToc tableOfContents={markdownRemark.tableOfContents} />)}
+              <PostToc tableOfContents={markdownRemark.tableOfContents} />
+            )}
             {/* {series && (
               <SeriesNav
                 lite
@@ -64,7 +64,7 @@ export const BlogPostTemplate = ({ data, pageContext }) => {
       <Footer />
     </>
   )
-};
+}
 
 export default BlogPostTemplate
 
@@ -73,51 +73,51 @@ const StyledBlogLayout = styled.main`
   max-width: calc(1020px - (20px * 2));
   display: flex;
   justify-content: space-between;
-  padding-top: calc(100vw*0.049);
-  .title{
+  padding-top: calc(100vw * 0.049);
+  .title {
     font-size: 34px;
     font-weight: 900;
   }
-  .publishedDate{
+  .publishedDate {
     /* margin-top: 8px; */
     font-size: 14px;
     color: #494949;
   }
-  .content{
+  .content {
     font-size: 16px;
     line-height: 1.8;
-    width : 720px;
+    width: 720px;
     @media (max-width: calc(${Widths.Tablet} - 1px)) {
-    width: calc(100vw - 20px);
-    margin: auto;
-   }
-  }
-  .aside{
-    margin-left : 20px;
-    margin-top : 110px;
-
-    @media (max-width: calc(${Widths.Tablet} - 1px)) {
-    display: none;
+      width: calc(100vw - 20px);
+      margin: auto;
     }
   }
-  .goToMain{
+  .aside {
+    margin-left: 20px;
+    margin-top: 110px;
+
+    @media (max-width: calc(${Widths.Tablet} - 1px)) {
+      display: none;
+    }
+  }
+  .goToMain {
     margin-top: 40px;
     width: 100%;
     height: 48px;
     font-size: 14px;
     font-weight: 600;
-    background: #F3F3F3;
+    background: #f3f3f3;
     border-radius: 8px;
-    color: #4A154B;
+    color: #4a154b;
   }
-`;
+`
 
 const StyledPostContent = styled.div`
   margin-top: 20px;
-  padding-bottom : 40px;
+  padding-bottom: 40px;
   font-size: 16px;
-  width : 100%;
-  border-bottom: 2px solid #F3F3F3;
+  width: 100%;
+  border-bottom: 2px solid #f3f3f3;
   h1,
   h2,
   h3,
@@ -152,7 +152,7 @@ const StyledPostContent = styled.div`
     font-size: 120%;
     margin-top: 12px;
   }
-  
+
   img {
     border-radius: 3px;
     display: block;
@@ -162,16 +162,17 @@ const StyledPostContent = styled.div`
     margin-block-start: 0.8em;
     margin-block-end: 0.8em;
   }
-  ol, ul {
+  ol,
+  ul {
     margin-block-start: 0.8em;
     margin-block-end: 0.8em;
   }
-  ul>li{
+  ul > li {
     list-style: square;
     list-style-position: inside;
     margin-left: 8px;
   }
-  ol>li{
+  ol > li {
     list-style: decimal;
     list-style-position: inside;
     margin-left: 8px;
@@ -179,13 +180,13 @@ const StyledPostContent = styled.div`
 
   li::marker {
     font-weight: 500;
-    color: #2B092B;
+    color: #2b092b;
   }
 
-  hr{
+  hr {
     height: 1px;
-    border: 1px solid #E8E8E8;
-    background: #E8E8E8;
+    border: 1px solid #e8e8e8;
+    background: #e8e8e8;
     margin: 20px 0;
   }
 
@@ -204,8 +205,7 @@ const StyledPostContent = styled.div`
       white-space: pre;
     }
   }
-  
-`;
+`
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -231,4 +231,4 @@ export const pageQuery = graphql`
       tableOfContents(absolute: false, maxDepth: 6, heading: null)
     }
   }
-`;
+`

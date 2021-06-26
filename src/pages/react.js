@@ -4,11 +4,11 @@ import { Layout } from "../components/layout"
 import PostList from "../components/postList"
 import SEO from "../components/seo"
 
-const FrontPage = ({ data }) => {
+const ReactPage = ({ data }) => {
   return (
     <>
       <Layout>
-        <SEO title="Front-end" />
+        <SEO title="React" />
         <PostList
           posts={data.allMarkdownRemark.nodes.map(node => ({
             slug: node.fields.slug,
@@ -27,14 +27,14 @@ const FrontPage = ({ data }) => {
   )
 }
 
-export default FrontPage
+export default ReactPage
 
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
       limit: 10
       sort: { order: DESC, fields: fields___date }
-      filter: { frontmatter: { category: { eq: "front" } } }
+      filter: { frontmatter: { category: { eq: "react" } } }
     ) {
       nodes {
         excerpt(pruneLength: 20, format: PLAIN, truncate: true)

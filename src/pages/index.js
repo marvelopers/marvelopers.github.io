@@ -1,4 +1,5 @@
 import * as React from "react"
+import { graphql } from "gatsby"
 import { Layout } from "../components/layout"
 import PostList from "../components/postList"
 import SEO from "../components/seo"
@@ -30,7 +31,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(limit: 10, sort: {order: DESC, fields: fields___date}) {
+    allMarkdownRemark(limit: 10, sort: { order: DESC, fields: fields___date }) {
       nodes {
         excerpt(pruneLength: 20, format: PLAIN, truncate: true)
         fields {
