@@ -1,8 +1,7 @@
-import { Link } from 'gatsby';
-import React from 'react';
-import styled from "styled-components";
-import logo from '../../images/logo.png'
-import blog_logo from '../../images/blog_logo.png'
+import { Link } from "gatsby"
+import React from "react"
+import styled from "styled-components"
+import blog_logo from "../../images/blog_logo.png"
 import { Widths } from "../../styles/styleVariables"
 
 const Header = () => {
@@ -14,42 +13,52 @@ const Header = () => {
         </Link>
         <nav>
           <ul className="categories">
-            <Link to={"/front"}><li>Front-end</li></Link>
-            <Link to={"/script"}><li>JS/TS</li></Link>
-            <Link to={"/react"}><li>React</li></Link>
-            <Link to={"/marketing"}><li>Marketing</li></Link>
-            <Link to={"/essay"}><li>Essay</li></Link>
+            <Link to={"/front"}>
+              <li>Front-end</li>
+            </Link>
+            <Link to={"/script"}>
+              <li>JS/TS</li>
+            </Link>
+            <Link to={"/react"}>
+              <li>React</li>
+            </Link>
+            <Link to={"/marketing"}>
+              <li>Marketing</li>
+            </Link>
+            <Link to={"/essay"}>
+              <li>Essay</li>
+            </Link>
             {/* TODO GIT  */}
           </ul>
         </nav>
       </div>
     </StyleHeader>
-  );
+  )
 }
 
-export default Header;
+export default Header
 
 const StyleHeader = styled.header`
   width: 100vw;
   padding: 18px 0px;
   height: 68px;
   justify-content: center;
-  box-shadow : rgba(0, 0, 0, 0.068) 0px 0px 15px;
-  img{
+  box-shadow: rgba(0, 0, 0, 0.068) 0px 0px 15px;
+  img {
     /* border: 1px solid #E8E8E8; */
     height: 24px;
     padding-left: 8px;
   }
-  .wrapper{
+  .wrapper {
     /* border: 1px solid #E8E8E8; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    max-width: calc(1020px - (20px * 2)); 
+    max-width: calc(1020px - (20px * 2));
   }
 
-  ul{
+  ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,7 +67,7 @@ const StyleHeader = styled.header`
     text-decoration: none;
   }
 
-  li{
+  li {
     font-size: 16px;
     margin: 0px 20px;
     padding: 5px 10px;
@@ -66,8 +75,8 @@ const StyleHeader = styled.header`
   @media (max-width: calc(${Widths.Tablet} - 1px)) {
     width: calc(100vw - 20px);
     margin: auto;
-    .categories{
+    .categories {
       display: none;
     }
   }
-`;
+`
