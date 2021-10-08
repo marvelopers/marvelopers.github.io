@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components";
+import styled from "@emotion/styled"
 
 const PostTag = ({ tags }) => {
   return (
@@ -21,13 +21,13 @@ export default PostTag
 
 const StyledTag = styled.div`
   margin: 20px 0px;
-  div{
+  div {
     display: inline;
   }
-  button{
+  button {
     margin-right: 8px;
     font-weight: 600;
-    font-size : 14px;
-    color: #4A154B;
+    font-size: 14px;
+    color: #4a154b;
   }
-`;
+`

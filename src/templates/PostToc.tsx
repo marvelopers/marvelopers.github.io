@@ -1,16 +1,15 @@
-import React, { useEffect } from 'react';
-import styled from "styled-components";
+import React, { useEffect } from "react"
+import styled from "@emotion/styled"
 import ScrollSpy from "./scroll-spy"
-import { Link } from 'gatsby';
+import { Link } from "gatsby"
 
 interface P {
   tableOfContents: string
 }
 
 const PostToc: React.FC<P> = ({ tableOfContents }) => {
-
   useEffect(() => {
-    const post = document.querySelector('#post-content')
+    const post = document.querySelector("#post-content")
 
     const headings = Array.from(
       post.querySelectorAll("h1,h2,h3,h4,h5,h6")
@@ -27,9 +26,7 @@ const PostToc: React.FC<P> = ({ tableOfContents }) => {
         dangerouslySetInnerHTML={{ __html: tableOfContents }}
       />
       <button className="goToMain">
-        <Link to={'/'}>
-          메인으로 돌아가기
-        </Link>
+        <Link to={"/"}>메인으로 돌아가기</Link>
       </button>
     </StyledAside>
   )
@@ -41,29 +38,28 @@ const StyledAside = styled.div`
   position: sticky;
   top: 60px;
 
-  .goToMain{
+  .goToMain {
     margin-top: 40px;
     width: 100%;
     height: 48px;
     border-radius: 8px;
-      a{
+    a {
       text-decoration: none;
       font-size: 14px;
       font-weight: 600;
-      color: #4A154B;
+      color: #4a154b;
     }
   }
- 
-`;
+`
 
 const StyledToc = styled.div`
-  ul{
+  ul {
     width: 240px;
   }
-  li{
+  li {
   }
-  a{
-    border-top: 1px solid #E8E8E8;
+  a {
+    border-top: 1px solid #e8e8e8;
     display: block;
     padding: 14px 0px;
     text-decoration: none;
@@ -73,9 +69,9 @@ const StyledToc = styled.div`
     color: #494949;
     transition: all 1s ease-in;
 
-    &.active{
+    &.active {
       font-weight: 700;
-      color: #2B092B;
+      color: #2b092b;
     }
   }
-`;
+`

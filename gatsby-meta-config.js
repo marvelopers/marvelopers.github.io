@@ -20,15 +20,15 @@ module.exports = {
     `marketing`,
   ],
   comment: {
-    disqusShortName: '',
-    utterances: 'SeoHyeonKim/marveloper.io',
+    disqusShortName: "",
+    utterances: "SeohyeonKim/marveloper.io",
   },
   configs: {
     countOfInitialPost: 12,
   },
   sponsor: {
-    buyMeACoffeeId: 'marveloper',
+    buyMeACoffeeId: "marveloper",
   },
-  ga: 'UA-166868950-1', //UA > GA4: 256103960
-  // sentryDsn: 
+  ga: "UA-166868950-1", //UA > GA4: 256103960
+  // sentryDsn:
 }

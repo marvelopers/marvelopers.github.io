@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from "styled-components";
-import { Widths } from '../../styles/styleVariables'
+import React from "react"
+import styled from "@emotion/styled"
+import { Widths } from "../../styles/styleVariables"
 
 function Footer() {
   return (
@@ -10,15 +10,15 @@ function Footer() {
       </div>
       {/* git */}
       {/* contact */}
-    </StyledFooter >
-  );
+    </StyledFooter>
+  )
 }
 
-export default Footer;
+export default Footer
 
 const StyledFooter = styled.footer`
-  border-top: 1px solid #E8E8E8;
-  .wrapper{
+  border-top: 1px solid #e8e8e8;
+  .wrapper {
     margin: 30px auto;
     max-width: calc(1020px - (20px * 2));
     height: 40px;
@@ -27,4 +27,4 @@ const StyledFooter = styled.footer`
     width: calc(100vw - 20px);
     margin: auto;
   }
-`;
+`

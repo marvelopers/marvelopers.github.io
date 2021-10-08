@@ -1,25 +1,93 @@
-import { createGlobalStyle } from "styled-components";
-import { GREY_1 } from './styleVariables';
-import { Widths } from './styleVariables';
-import React from "react";
+import React from "react"
+import { Global, css } from "@emotion/react"
+import { GREY_1 } from "./styleVariables"
+import { Widths } from "./styleVariables"
 
-const ResetStyle = createGlobalStyle`
+const ResetStyle = css`
   * {
     box-sizing: border-box;
   }
-  html, body, div, span, applet, object, iframe,
-  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-  a, abbr, acronym, address, big, cite, code,
-  del, dfn, em, img, ins, kbd, q, s, samp,
-  small, strike, strong, sub, sup, tt, var,
-  b, u, i, center,
-  dl, dt, dd, ol, ul, li,
-  fieldset, form, label, legend,
-  table, caption, tbody, tfoot, thead, tr, th, td,
-  article, aside, canvas, details, embed,
-  figure, figcaption, footer, header, hgroup,
-  menu, nav, output, ruby, section, summary,
-  time, mark, audio, video,
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video,
   button {
     margin: 0;
     padding: 0;
@@ -30,18 +98,30 @@ const ResetStyle = createGlobalStyle`
     background: transparent;
     outline: none;
     /* 기본 글꼴 설정, iOS와 IE에서 기기 회전시에 사용자가 확대하지 않아도 글씨 크기가 재조정되는 것을 예방 */
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
     color: ${GREY_1};
-    -ms-text-size-adjust: 100%; 
-    -webkit-text-size-adjust: 100%; 
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
   }
   /** 
   * IE8/9에서 정의되지 않은 HTML5 요소를 'block'으로 지정. 
   * IE10/11, Firefox에서 정의되지 않은 detail 혹은 summary 를 block으로 지정. 
   * IE11에서 정의되지 않은 main을 block으로 지정 
-  */ 
-  article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { 
-    display: block; 
+  */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  main,
+  menu,
+  nav,
+  section,
+  summary {
+    display: block;
   }
   body {
     line-height: 1;
@@ -50,22 +130,27 @@ const ResetStyle = createGlobalStyle`
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
   }
-  ol, ul {
+  ol,
+  ul {
     list-style: none;
   }
-  blockquote, q {
+  blockquote,
+  q {
     quotes: none;
   }
-  blockquote:before, blockquote:after,
-  q:before, q:after {
-    content: '';
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: "";
     content: none;
   }
   table {
     border-collapse: collapse;
     border-spacing: 0;
   }
-  button, a {
+  button,
+  a {
     cursor: pointer;
   }
   /* input 기본 스타일 초기화 */
@@ -110,10 +195,10 @@ const ResetStyle = createGlobalStyle`
   .ReactModal__Body--open {
     overflow: hidden;
   }
-`;
+`
 
 export const GlobalStyle = () => (
   <>
-    <ResetStyle />
+    <Global styles={ResetStyle} />
   </>
-);
+)

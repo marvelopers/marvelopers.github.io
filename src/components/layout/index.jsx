@@ -1,23 +1,20 @@
 import * as React from "react"
 import { GlobalStyle } from "../../styles/GlobalStyle"
 import { Widths } from "../../styles/styleVariables"
-import styled from "styled-components";
+import styled from "@emotion/styled"
 import Footer from "../footer/Footer"
 import Header from "../header/Header"
-
 
 export const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
       <Header />
-      <StyledLayout>
-        {children}
-      </StyledLayout>
+      <StyledLayout>{children}</StyledLayout>
       <Footer />
     </>
   )
-};
+}
 
 export const BlogLayout = ({ aside, children }) => {
   return (
@@ -35,16 +32,15 @@ export const BlogLayout = ({ aside, children }) => {
       <Footer />
     </>
   )
-};
+}
 
-
-//필요한 레이아웃은 몇개인가요? 
-//Route 
+//필요한 레이아웃은 몇개인가요?
+//Route
 /*
-* /
-* /fornt
-* /ContentsLayout
-*/
+ * /
+ * /fornt
+ * /ContentsLayout
+ */
 
 const StyledLayout = styled.main`
   margin: 0px auto;
@@ -52,22 +48,20 @@ const StyledLayout = styled.main`
   @media (max-width: calc(${Widths.Tablet} - 1px)) {
     width: 100vw;
   }
-`;
+`
 
 const StyledBlogLayout = styled.main`
   margin: 0px auto;
   max-width: calc(1020px - (20px * 2));
   display: flex;
   justify-content: center;
-  padding-top: 80px;  
-  .content{
+  padding-top: 80px;
+  .content {
     font-size: 16px;
     line-height: 1.8;
-    width : 720px;
-    border: 1px solid #FF3E88;
+    width: 720px;
+    border: 1px solid #ff3e88;
   }
-  .aside{
-    
+  .aside {
   }
-`;
-
+`

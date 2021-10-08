@@ -1,40 +1,26 @@
-const metaConfig = require('./gatsby-meta-config');
+const metaConfig = require("./gatsby-meta-config")
 
 module.exports = {
   // pathPrefix: "/",
   siteMetadata: metaConfig,
   plugins: [
-    "gatsby-plugin-styled-components",
+    "gatsby-plugin-emotion",
+    `gatsby-plugin-image`,
     {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: "UA-166868950-1",
-      },
-    },
-    "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-offline",
-    // "gatsby-plugin-manifest",
-    "gatsby-plugin-feed",
-    "gatsby-plugin-mdx",
-    "gatsby-plugin-sharp",
-    // gatsby-remark-images 마크다운 문서 안에 이미지 파일 
-    "gatsby-transformer-sharp",
-    {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
       },
     },
+
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -42,21 +28,78 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 720,
-              showCaptions: true,
+              maxWidth: 712,
             },
           },
           {
-            resolve: `gatsby-remark-autolink-headers`, // heading태그에 link를 추가해주는 플러그인, presimjs 보다 먼저 위치해야 함.
-          },
-          {
-            resolve: `gatsby-remark-prismjs`, // 코드 하이라이트 플러그인
+            resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              showLineNumbers: true,
+              wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
+          `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+        ],
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: "UA-166868950-1",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.nodes.map(node => {
+                return Object.assign({}, node.frontmatter, {
+                  description: node.excerpt,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  custom_elements: [{ "content:encoded": node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  nodes {
+                    excerpt
+                    html
+                    fields {
+                      slug
+                    }
+                    frontmatter {
+                      title
+                      date
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+          },
         ],
       },
     },
@@ -73,5 +116,9 @@ module.exports = {
         icon: metaConfig.icon,
       },
     },
+    `gatsby-plugin-react-helmet`,
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-offline",
+    // gatsby-remark-images 마크다운 문서 안에 이미지 파일
   ],
-};
+}
