@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import Thumbnail from "../thumbnail"
-import { Widths } from "../../styles/styleVariables"
+import { TABLET_SCREEN_OFFSET } from "../../styles/layout"
 
 // slug, title
 const PostList = ({ posts }) => {
@@ -36,7 +36,7 @@ const StyleUl = styled.ul`
   .date {
     font-size: 14px;
   }
-  @media (max-width: calc(${Widths.Tablet} - 1px)) {
+  @media (max-width: calc(${TABLET_SCREEN_OFFSET} - 1px)) {
     width: 100vw;
     height: 100%;
   }

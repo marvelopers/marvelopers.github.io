@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import { Widths } from "../../styles/styleVariables"
+import { TABLET_SCREEN_OFFSET } from "../../styles/layout"
 
 function Footer() {
   return (
@@ -23,7 +23,7 @@ const StyledFooter = styled.footer`
     max-width: calc(1020px - (20px * 2));
     height: 40px;
   }
-  @media (max-width: calc(${Widths.Tablet} - 1px)) {
+  @media (max-width: calc(${TABLET_SCREEN_OFFSET} - 1px)) {
     width: calc(100vw - 20px);
     margin: auto;
   }

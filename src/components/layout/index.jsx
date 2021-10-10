@@ -1,6 +1,6 @@
 import * as React from "react"
 import { GlobalStyle } from "../../styles/GlobalStyle"
-import { Widths } from "../../styles/styleVariables"
+import { TABLET_SCREEN_OFFSET } from "../../styles/layout"
 import styled from "@emotion/styled"
 import Footer from "../footer/Footer"
 import Header from "../header/Header"
@@ -45,7 +45,7 @@ export const BlogLayout = ({ aside, children }) => {
 const StyledLayout = styled.main`
   margin: 0px auto;
   max-width: calc(1020px - (20px * 2));
-  @media (max-width: calc(${Widths.Tablet} - 1px)) {
+  @media (max-width: calc(${TABLET_SCREEN_OFFSET} - 1px)) {
     width: 100vw;
   }
 `

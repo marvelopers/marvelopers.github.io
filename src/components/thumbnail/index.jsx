@@ -1,13 +1,13 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
-import { Widths } from "../../styles/styleVariables"
 import essay from "../../images/essay.png"
 import front from "../../images/front.png"
 import web from "../../images/web.png"
 import script from "../../images/script.png"
 import marketing from "../../images/marketing.png"
 import react from "../../images/react.png"
+import { TABLET_SCREEN_OFFSET } from "../../styles/layout"
 
 // export interface PostItemType {
 //   title: ReactNode
@@ -23,6 +23,7 @@ const Thumbnail = ({ title, slug, meta, category, tags }) => {
   return (
     <StyleLi key={slug}>
       <Link to={slug}>
+        {/* TODO: MAPD 타입으로 변경 */}
         {category === "web" ? (
           <img src={web} alt="" className="img" />
         ) : category === "front" ? (
@@ -40,7 +41,7 @@ const Thumbnail = ({ title, slug, meta, category, tags }) => {
           <h2 className="title">{title}</h2>
           <p className="date">{meta}</p>
           <div className="tag">
-            {tags && tags.map(tag => <span>#{tag}</span>)}
+            {tags && tags.map(tag => <span key={tag}>#{tag}</span>)}
           </div>
         </div>
       </Link>
@@ -55,7 +56,7 @@ const StyleLi = styled.li`
   /* 레이아웃 카드 4개 */
   width: 229px;
   height: 270px;
-  letter-spacing: -0.1px;
+  letter-spacing: -0.025rem;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.068) 0px 5px 12px;
   margin: 20px 8px;
@@ -105,7 +106,7 @@ const StyleLi = styled.li`
     color: #4a154b;
     margin-right: 4px;
   }
-  @media (max-width: calc(${Widths.Tablet} - 1px)) {
+  @media (max-width: calc(${TABLET_SCREEN_OFFSET} - 1px)) {
     width: calc(100vw / 2 - 16px);
     height: calc(100vw * 0.587);
     .info > h2 {

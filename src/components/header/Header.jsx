@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import React from "react"
 import styled from "@emotion/styled"
 import blog_logo from "../../images/blog_logo.png"
-import { Widths } from "../../styles/styleVariables"
+import { TABLET_SCREEN_OFFSET } from "../../styles/layout"
 
 const Header = () => {
   return (
@@ -72,7 +72,7 @@ const StyleHeader = styled.header`
     margin: 0px 20px;
     padding: 5px 10px;
   }
-  @media (max-width: calc(${Widths.Tablet} - 1px)) {
+  @media (max-width: calc(${TABLET_SCREEN_OFFSET} - 1px)) {
     width: calc(100vw - 20px);
     margin: auto;
     .categories {
