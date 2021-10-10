@@ -1,6 +1,6 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby'
+import React from "react"
+import { Helmet } from "react-helmet"
+import { useStaticQuery, graphql } from "gatsby"
 
 // interface P {
 //   title: string;
@@ -13,9 +13,9 @@ import { useStaticQuery, graphql } from 'gatsby'
 const SEO = p => {
   const { site } = useStaticQuery(
     graphql`
-      query{
-        site{
-          siteMetadata{
+      query {
+        site {
+          siteMetadata {
             title
             description
             siteUrl
@@ -83,7 +83,7 @@ const SEO = p => {
   return (
     <Helmet
       htmlAttributes={{
-        lang: 'ko',
+        lang: "ko",
       }}
       title={p.title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
@@ -103,8 +103,8 @@ const SEO = p => {
       `}</script>
       )}
       <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
-    </Helmet >
+    </Helmet>
   )
-};
+}
 
-export default SEO;
+export default SEO

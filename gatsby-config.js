@@ -45,6 +45,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-remark-emoji`,
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
