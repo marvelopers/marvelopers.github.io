@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Layout } from "../components/layout"
 import PostList from "../components/postList"
-import SEO from "../components/seo"
+import SEO from "../components/SEO"
 
 const ScriptPage = ({ data }) => {
   return (

@@ -5,13 +5,9 @@ import * as Styles from "./styles"
 
 const BlogArticle = ({ title, dateStr, html, tags, tableOfContents }) => {
   return (
-    <Styles.Article
-      className="blog-post"
-      itemScope
-      itemType="http://schema.org/BlogPosting"
-    >
-      <Styles.Content className="content">
-        <h1 className="title">{title}</h1>
+    <Styles.Article itemScope itemType="http://schema.org/BlogPosting">
+      <Styles.Content>
+        <h1>{title}</h1>
         <Styles.Date>{dateStr}</Styles.Date>
         <div
           id="post-content"

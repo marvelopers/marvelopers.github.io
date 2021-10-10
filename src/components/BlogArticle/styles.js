@@ -6,6 +6,7 @@ import {
   SPACE_6,
   SPACE_8,
   SPACE_12,
+  SPACE_2,
 } from "../../styles/space"
 import {
   LINE_HEIGHT_TIGHT,
@@ -18,8 +19,10 @@ import {
   FONT_SIZE_4,
   FONT_SIZE_5,
   FONT_SIZE_6,
+  SEMI_BOLD,
 } from "../../styles/size"
-import { PURPLE } from "../../styles/colors"
+import { GREY_3, PURPLE, GREY_1 } from "../../styles/colors"
+import { TABLET_SCREEN_OFFSET } from "../../styles/layout"
 
 export const Article = styled.article`
   margin: 0px auto;
@@ -30,10 +33,14 @@ export const Article = styled.article`
 `
 
 export const Date = styled.p`
+  color: ${GREY_3};
   font-size: ${FONT_SIZE_2};
 `
 
 export const Content = styled.section`
+  max-width: ${TABLET_SCREEN_OFFSET}px;
+  word-break: break-word;
+
   h1,
   h2,
   h3,
@@ -96,6 +103,23 @@ export const Content = styled.section`
     margin: ${SPACE_0} ${SPACE_0} ${SPACE_8} ${SPACE_0};
     padding: ${SPACE_0};
   }
+  p + p {
+    margin-top: -${SPACE_4};
+  }
+
+  b {
+    line-height: ${LINE_HEIGHT_TIGHT};
+    letter-spacing: -0.025em;
+    font-weight: ${SEMI_BOLD};
+    font-size: ${FONT_SIZE_1};
+    display: block;
+  }
+  p > b {
+    padding-top: ${SPACE_4};
+  }
+  li > b {
+    padding-bottom: ${SPACE_2};
+  }
 
   ul,
   ol {
@@ -124,7 +148,7 @@ export const Content = styled.section`
     list-style: decimal;
   }
 
-  ol > p > span,
+  ol span,
   li > p > span {
     display: block;
     padding-bottom: calc(${SPACE_4} / 4);
@@ -183,6 +207,8 @@ export const Content = styled.section`
   }
 
   .gatsby-highlight {
+    color: ${GREY_1};
+    font-size: 14px;
     margin-bottom: ${SPACE_8};
   }
 `

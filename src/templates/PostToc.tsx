@@ -2,8 +2,10 @@ import React, { useEffect } from "react"
 import styled from "@emotion/styled"
 import ScrollSpy from "./scroll-spy"
 import { Link } from "gatsby"
-import { SPACE_40 } from "../styles/space"
-import { PURPLE } from "../styles/colors"
+import { SPACE_40, SPACE_4 } from "../styles/space"
+import { PURPLE, GREY_2, GREY_5 } from "../styles/colors"
+import { FONT_SIZE_1 } from "../styles/size"
+import { Button } from "../components/common/button/button"
 
 interface PostTocProps {
   tableOfContents: string
@@ -26,51 +28,53 @@ const PostToc = ({ tableOfContents }: PostTocProps) => {
         id="post-toc"
         dangerouslySetInnerHTML={{ __html: tableOfContents }}
       />
-      <button className="goToMain">
+      <MainButton>
         <Link to={"/"}>메인으로 돌아가기</Link>
-      </button>
+      </MainButton>
     </StyledAside>
   )
 }
 
 export default PostToc
 
+const MainButton = styled(Button)`
+  margin-top: 40px;
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  background: rgb(243, 243, 243);
+  a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: ${PURPLE};
+  }
+`
+
 const StyledAside = styled.div`
   position: sticky;
   top: 60px;
   margin-top: ${SPACE_40};
   margin-left: 20px;
-
-  .goToMain {
-    margin-top: 40px;
-    width: 100%;
-    height: 48px;
-    border-radius: 8px;
-    background: rgb(243, 243, 243);
-    a {
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      color: ${PURPLE};
-    }
-  }
 `
 
 const StyledToc = styled.div`
   ul {
+    border-top: 1px solid ${GREY_5};
     width: 240px;
   }
   li {
     list-style: none;
+    border-bottom: 1px solid ${GREY_5};
   }
   a {
-    border-top: 1px solid #e8e8e8;
     display: block;
     padding: 14px 0px;
     text-decoration: none;
-    line-height: 1rem;
-    font-size: 14px;
-    color: #494949;
+    line-height: ${SPACE_4};
+    font-size: ${FONT_SIZE_1};
+    letter-spacing: -0.025rem;
+    color: ${GREY_2};
     transition: all 1s ease-in;
 
     &.active {

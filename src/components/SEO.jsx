@@ -107,4 +107,4 @@ const Seo = p => {
   )
 }
 
-export default SEO
+export default Seo
