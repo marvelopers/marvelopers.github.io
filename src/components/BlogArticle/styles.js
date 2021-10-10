@@ -8,8 +8,9 @@ import {
   SPACE_12,
 } from "../../styles/space"
 import {
-  LINE_HEIGHT_RELAXED,
   LINE_HEIGHT_TIGHT,
+  LINE_HEIGHT_NORMAL,
+  LINE_HEIGHT_RELAXED,
   BOLD,
   FONT_SIZE_1,
   FONT_SIZE_2,
@@ -110,6 +111,7 @@ export const Content = styled.section`
 
   ul li,
   ol li {
+    line-height: ${LINE_HEIGHT_NORMAL};
     padding-left: ${SPACE_0};
     margin-bottom: calc(${SPACE_8} / 2);
   }
@@ -122,6 +124,13 @@ export const Content = styled.section`
     list-style: decimal;
   }
 
+  ol > p > span,
+  li > p > span {
+    display: block;
+    padding-bottom: calc(${SPACE_4} / 4);
+  }
+
+  ol > p,
   li > p {
     margin-bottom: calc(${SPACE_8} / 2);
   }

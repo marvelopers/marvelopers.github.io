@@ -10,7 +10,7 @@ import { useStaticQuery, graphql } from "gatsby"
 //   image?: string
 // }
 
-const SEO = p => {
+const Seo = p => {
   const { site } = useStaticQuery(
     graphql`
       query {
