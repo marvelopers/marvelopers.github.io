@@ -1,7 +1,6 @@
 import React from "react"
 import { Global, css } from "@emotion/react"
-import { GREY_1 } from "./styleVariables"
-import { Widths } from "./styleVariables"
+import { GREY_1 } from "./colors"
 
 const ResetStyle = css`
   * {
