@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-pages-script-js","path":"/script/","result":{"data":{"allMarkdownRemark":{"nodes":[{"excerpt":"1.JavaScript 객체(obj…","fields":{"slug":"/script/20/0424/javascript_basic.html","date":"2020.04.24"},"frontmatter":{"title":"자바스크립트 기초","category":"script","tags":["javascript","react","react","react","react"]}}]}},"pageContext":{}},"staticQueryHashes":[]}
+{
+    "componentChunkName": "component---src-pages-script-js",
+    "path": "/script/",
+    "result": {"data":{"allMarkdownRemark":{"nodes":[{"excerpt":"클로저는 함수를 일급객체로 사용하는…","fields":{"slug":"/script/21/0425/closure.html","date":"2021.04.25"},"frontmatter":{"title":"클로저(Closure)","category":"script","tags":["javascript","Closure","Lexical-scoping"]}},{"excerpt":"1.JavaScript 객체(obj…","fields":{"slug":"/script/20/0424/javascript_basic.html","date":"2020.04.24"},"frontmatter":{"title":"자바스크립트 기초","category":"script","tags":["javascript","react","react","react","react"]}}]}},"pageContext":{}},
+    "staticQueryHashes": ["3764592887"]}
