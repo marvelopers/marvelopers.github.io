@@ -2,13 +2,13 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Layout } from "../components/layout"
 import PostList from "../components/postList"
-import Seo from "../components/seo"
+import SEO from "../components/SEO"
 
 const EssayPage = ({ data }) => {
   return (
     <>
       <Layout>
-        <Seo title="essay" />
+        <SEO title="essay" />
         <PostList
           posts={data.allMarkdownRemark.nodes.map(node => ({
             slug: node.fields.slug,

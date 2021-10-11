@@ -48,7 +48,7 @@ exports.createMarkdown = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   const slug = getSlug(node, getNode)
-  console.log('THIS IS SLUG', slug)
+  console.log("THIS IS SLUG", slug)
   createNodeField({ name: `slug`, value: slug, node })
 
   const date = getDate(node, getNode)

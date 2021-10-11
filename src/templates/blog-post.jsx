@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { GlobalStyle } from "../styles/GlobalStyle"
 import Footer from "../components/footer/Footer"
 import Header from "../components/header/Header"
-import Seo from "../components/seo"
+import SEO from "../components/SEO"
 import BlogArticle from "../components/BlogArticle"
 
 const BlogPostTemplate = ({ data, pageContext }) => {
@@ -13,7 +13,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
     <>
       <GlobalStyle />
       <Header />
-      <Seo
+      <SEO
         title={markdownRemark.frontmatter.title}
         description={markdownRemark.excerpt}
         date={markdownRemark.fields.date}
