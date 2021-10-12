@@ -22,7 +22,7 @@ const BlogArticle = ({ title, dateStr, html, tags, tableOfContents }) => {
       /> */}
         </div>
       </Styles.Content>
-      <section className="aside">
+      <Styles.Aside>
         {tableOfContents && <PostToc tableOfContents={tableOfContents} />}
         {/* {series && (
         <SeriesNav
@@ -31,7 +31,7 @@ const BlogArticle = ({ title, dateStr, html, tags, tableOfContents }) => {
           nodeId={markdownRemark.id}
           posts={data.allMarkdownRemark.nodes}
         /> */}
-      </section>
+      </Styles.Aside>
     </Styles.Article>
   )
 }

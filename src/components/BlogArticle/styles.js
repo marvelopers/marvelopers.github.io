@@ -211,4 +211,15 @@ export const Content = styled.section`
     font-size: 14px;
     margin-bottom: ${SPACE_8};
   }
+
+  @media (max-width: ${TABLET_SCREEN_OFFSET}) {
+    width: calc(100vw - 20px);
+    margin: auto;
+  }
+`
+
+export const Aside = styled.section`
+  @media (max-width: ${TABLET_SCREEN_OFFSET}) {
+    display: none;
+  }
 `
