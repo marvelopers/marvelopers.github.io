@@ -1,4 +1,50 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[marveloper.io]]></title><description><![CDATA[digital-marketing & front-end development.]]></description><link>https://marvelopers.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 18 Oct 2021 07:35:40 GMT</lastBuildDate><item><title><![CDATA[이벤트 루프(Event Loop)]]></title><description><![CDATA[자바스트립트는 이벤트 루프(Event Loop)에 기반한 concurrency model…]]></description><link>https://marvelopers.github.io/script/21/1012/event-loop.html</link><guid isPermaLink="false">https://marvelopers.github.io/script/21/1012/event-loop.html</guid><pubDate>Tue, 12 Oct 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바스트립트는 이벤트 루프(Event Loop)에 기반한 concurrency model을 가지고 있습니다. 이벤트 루프는 코드 실행, 이벤트 수집 및 처리, 대기 중인 하위작업 실행 등을 담당합니다. 싱글 쓰레드 기반의 자바스크립트는 이벤트 루프를 사용해 비동기 방식으로 동시성을 지원합니다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[marveloper.io]]></title><description><![CDATA[digital-marketing & front-end development.]]></description><link>https://marvelopers.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 02 Dec 2021 13:59:53 GMT</lastBuildDate><item><title><![CDATA[[CSS] GlobalStyle]]></title><description><![CDATA[GlobalStyle 모든 브라우저에서 동일한 화면을 구현하기 위해서는 Reset CSS 작업이 필수적입니다. React 프로젝트에서는 브라우저마다 적용되어 있는 default 스타일을 일괄적으로 reset 시켜주기 위해서 GlobalStyle…]]></description><link>https://marvelopers.github.io/front/21/1202/GlobalStyle.html</link><guid isPermaLink="false">https://marvelopers.github.io/front/21/1202/GlobalStyle.html</guid><pubDate>Thu, 02 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;GlobalStyle&lt;/h2&gt;
+&lt;p&gt;모든 브라우저에서 동일한 화면을 구현하기 위해서는 Reset CSS 작업이 필수적입니다. React 프로젝트에서는 브라우저마다 적용되어 있는 default 스타일을 일괄적으로 reset 시켜주기 위해서 GlobalStyle을 설정합니다. GlobalStyle에는 normalize뿐만 아니라 폰트 등 전역 스타일을 정의합니다. styled-components의 createGlobalStyle를 사용해 아래와 같이 설정하면 됩니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import { createGlobalStyle } from &apos;styled-components&apos;
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;  
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+`
+export default GlobalStyle
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Mobile을 위한 GlobalStyle 요소&lt;/h3&gt;
+&lt;p&gt;보통 프론트엔드 작업은 PC 환경에서 진행됩니다. 웹뷰 작업을 하더라도 PC 크롬의 모바일 모드에서 작업을 하게되는데요. 컴퓨터에서 작업을 완료하고 모바일 기기에서 화면을 열면 폰트나 스타일이 깨져 있는 경우가 발생하는데요. 이런 경우는 GlobalStyle에 몇가지 요소를 추가해 해결할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;특정 브라우저에서만 나타나는 현상들이 많이 때문에 비표준 속성을 사용합니다. 비표준 속성은 벤더 프리픽스를 붙여 사용하면 됩니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;-webkit /* 크롬, 사파리, 오페라 신버전 */
+-moz 100%; /* 파이어폭스 */
+-ms /* IE */&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;text-size-adjust&lt;/h4&gt;
+&lt;p&gt;일부 모바일 기기나 태블릿에서 폰트 사이즈가 변형되는 현상을 잡아주는 속성입니다.
+none, auto, % 등으로 설정할 수 있습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;-webkit-text-size-adjust: 100%; 
+-moz-text-size-adjust: 100%; 
+-ms-text-size-adjust: 100%; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;text-size-adjust&lt;/h4&gt;
+&lt;p&gt;일부 모바일 기기나 태블릿에서 폰트 사이즈가 변형되는 현상을 잡아주는 속성입니다.
+none, auto, % 등으로 설정할 수 있습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;-webkit-text-size-adjust: 100%; 
+-moz-text-size-adjust: 100%; 
+-ms-text-size-adjust: 100%; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;font-smoothing&lt;/h4&gt;
+&lt;p&gt;폰트 렌더링 시, 텍스트의 가장자리를 부드럽게 만들어주는 앤리 앨리어싱을 사용하는 속성입니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;-webkit-font-smoothing: antialiased;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;safe-area&lt;/h4&gt;
+&lt;p&gt;아이폰X 이후 출시 된 기종부터는 노치 영역까지 커버하기 위해 safe-area 속성을 적용합니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// iOS 11.0 버전
+--safe-area-inset-top: constant(safe-area-inset-top);
+--safe-area-inset-bottom: constant(safe-area-inset-bottom);
+
+// iOS 11.2 버전 이상
+--safe-area-inset-top: env(safe-area-inset-top);
+--safe-area-inset-bottom: env(safe-area-inset-bottom);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[이벤트 루프(Event Loop)]]></title><description><![CDATA[자바스트립트는 이벤트 루프(Event Loop)에 기반한 concurrency model…]]></description><link>https://marvelopers.github.io/script/21/1012/event-loop.html</link><guid isPermaLink="false">https://marvelopers.github.io/script/21/1012/event-loop.html</guid><pubDate>Tue, 12 Oct 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바스트립트는 이벤트 루프(Event Loop)에 기반한 concurrency model을 가지고 있습니다. 이벤트 루프는 코드 실행, 이벤트 수집 및 처리, 대기 중인 하위작업 실행 등을 담당합니다. 싱글 쓰레드 기반의 자바스크립트는 이벤트 루프를 사용해 비동기 방식으로 동시성을 지원합니다.&lt;/p&gt;
 &lt;h4&gt;Event Loop&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;span&gt;Heap: &lt;/span&gt; 메모리 할당이 발생&lt;/li&gt;
@@ -754,7 +800,28 @@ $git push&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;li&gt;자료구조와 알고리즘을 공부하자&lt;/li&gt;
 &lt;li&gt;스킬보다는 코어에 집중해서 공부하자&lt;/li&gt;
 &lt;li&gt;개인적인 소망으로 three.js 를 시도라도 해보자.&lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[redux-toolkit]]></title><description><![CDATA[about Redux Toolkit Redux 로직 작성을 위해 공식적으로 권장하는 방법이 Redux Toolkit이다. 목적 : 스토어 설정, 상태에 포함된 내용, 리듀서 빌드 방법 등을 처리하는 것 탄생 배경 : Redux store…]]></description><link>https://marvelopers.github.io/react/20/1211/redux_toolkit.html</link><guid isPermaLink="false">https://marvelopers.github.io/react/20/1211/redux_toolkit.html</guid><pubDate>Fri, 11 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;about Redux Toolkit&lt;/h2&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[redux-toolkit]]></title><description><![CDATA[Redux-Saga saga는 action에 대한 listener역할을 한다. 미들웨어로 action에서 store…]]></description><link>https://marvelopers.github.io/react/20/0705/redux-saga.html</link><guid isPermaLink="false">https://marvelopers.github.io/react/20/0705/redux-saga.html</guid><pubDate>Fri, 11 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Redux-Saga&lt;/h3&gt;
+&lt;p&gt;saga는 action에 대한 listener역할을 한다. 미들웨어로 action에서 store 상태 변경 프로세스 중간에 비동기 로직을 관리한다.&lt;/p&gt;
+&lt;h4&gt;사용목적&lt;/h4&gt;
+&lt;p&gt;사이드 이팩트를 더 쉽게 관리하고 효과적으로 실행하며, 더 쉽게 테스트하고 에러를 처리할 수 있게 만들어준다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;action=&gt;saga =&gt; action=&gt;reducer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Redux-Saga&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;미들웨어로 action에서 store 상태 변경 프로세스 중간에 비동기 로직을 관리한다.
+&lt;ul&gt;
+&lt;li&gt;saga : action에 대한 listener&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;사용목적 : 사이드 이팩트를 더 쉽게 관리하고 효과적으로 실행하며, 더 쉽게 테스트하고 에러를 처리할 수 있게 만드는 것이다.
+&lt;ul&gt;
+&lt;li&gt;action=&gt;saga =&gt; action=&gt;reducer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;제너레이터 함수
+커링&lt;/p&gt;</content:encoded></item><item><title><![CDATA[redux-toolkit]]></title><description><![CDATA[about Redux Toolkit Redux 로직 작성을 위해 공식적으로 권장하는 방법이 Redux Toolkit이다. 목적 : 스토어 설정, 상태에 포함된 내용, 리듀서 빌드 방법 등을 처리하는 것 탄생 배경 : Redux store…]]></description><link>https://marvelopers.github.io/react/20/1211/redux_toolkit.html</link><guid isPermaLink="false">https://marvelopers.github.io/react/20/1211/redux_toolkit.html</guid><pubDate>Fri, 11 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;about Redux Toolkit&lt;/h2&gt;
 &lt;p&gt;Redux 로직 작성을 위해 공식적으로 권장하는 방법이 Redux Toolkit이다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;목적 : 스토어 설정, 상태에 포함된 내용, 리듀서 빌드 방법 등을 처리하는 것&lt;/li&gt;
@@ -826,28 +893,7 @@ document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span c
 &lt;p&gt;Simple (스토어 설정, 리듀서 생성, immer 업데이트 로직 ), Opinionated (), Powerful (불변 업데이트 로직을 작성하고 전체 상태 슬라이드를 자동으로 생성) , Effective (적은 코드로 더 많은 작업을 수행)&lt;/p&gt;
 &lt;h3&gt;Adding Redux Toolkit to the Project&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;  npm install @reduxjs&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;toolkit
-  yarn add @reduxjs&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;toolkit&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[redux-toolkit]]></title><description><![CDATA[Redux-Saga saga는 action에 대한 listener역할을 한다. 미들웨어로 action에서 store…]]></description><link>https://marvelopers.github.io/react/20/0705/redux-saga.html</link><guid isPermaLink="false">https://marvelopers.github.io/react/20/0705/redux-saga.html</guid><pubDate>Fri, 11 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Redux-Saga&lt;/h3&gt;
-&lt;p&gt;saga는 action에 대한 listener역할을 한다. 미들웨어로 action에서 store 상태 변경 프로세스 중간에 비동기 로직을 관리한다.&lt;/p&gt;
-&lt;h4&gt;사용목적&lt;/h4&gt;
-&lt;p&gt;사이드 이팩트를 더 쉽게 관리하고 효과적으로 실행하며, 더 쉽게 테스트하고 에러를 처리할 수 있게 만들어준다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;action=&gt;saga =&gt; action=&gt;reducer&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Redux-Saga&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;미들웨어로 action에서 store 상태 변경 프로세스 중간에 비동기 로직을 관리한다.
-&lt;ul&gt;
-&lt;li&gt;saga : action에 대한 listener&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;사용목적 : 사이드 이팩트를 더 쉽게 관리하고 효과적으로 실행하며, 더 쉽게 테스트하고 에러를 처리할 수 있게 만드는 것이다.
-&lt;ul&gt;
-&lt;li&gt;action=&gt;saga =&gt; action=&gt;reducer&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;제너레이터 함수
-커링&lt;/p&gt;</content:encoded></item><item><title><![CDATA[React에서 GTM 스니펫 삽입하는 함수]]></title><description><![CDATA[구글 공식 페이지에서 제공하는 가이드에 따르면, GTM 스니펫 코드를 홈페이지  영역에 추가하면 된다.
+  yarn add @reduxjs&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;toolkit&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[React에서 GTM 스니펫 삽입하는 함수]]></title><description><![CDATA[구글 공식 페이지에서 제공하는 가이드에 따르면, GTM 스니펫 코드를 홈페이지  영역에 추가하면 된다.
 하지만, 홈페이지가 리액트를 사용해 구축되었을 경우 위와 같은 방법은 사용할 수 없다. 리액트에서 GTM…]]></description><link>https://marvelopers.github.io/marketing/20/1023/how_to_use_gtm.html</link><guid isPermaLink="false">https://marvelopers.github.io/marketing/20/1023/how_to_use_gtm.html</guid><pubDate>Fri, 23 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;구글 공식 페이지에서 제공하는 가이드에 따르면, GTM 스니펫 코드를 홈페이지 &lt;header&gt; 영역에 추가하면 된다.
 하지만, 홈페이지가 리액트를 사용해 구축되었을 경우 위와 같은 방법은 사용할 수 없다.&lt;/p&gt;
 &lt;p&gt;리액트에서 GTM 스니펫 코드를 삽입하는 기능의 함수는 다음과 같다.&lt;/p&gt;
