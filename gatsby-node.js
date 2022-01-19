@@ -1,10 +1,12 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 // /**
 //  * Implement Gatsby's Node APIs in this file.
 //  *
 //  * See: https://www.gatsbyjs.org/docs/node-apis/
 //  */
 
-const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin")
+const TsconfigPathsWebpackPlugin = require("tsconfig-paths-webpack-plugin")
+const path = require("path")
 
 const nodes = require("./gatsby/nodes")
 const pages = require("./gatsby/pages")
@@ -25,10 +27,15 @@ exports.createPages = async ({ graphql, actions }) => {
 //   sourceNodes.createVideoNode({ actions, createNodeId, createContentDigest })
 // }
 
-exports.onCreateWebpackConfig = ({ actions, stage }) => {
-  if (stage === "develop" || stage === "build-javascript") {
-    actions.setWebpackConfig({
-      plugins: [new CaseSensitivePathsPlugin()],
-    })
-  }
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      extensions: [".js", ".ts", ".tsx"],
+      plugins: [
+        new TsconfigPathsWebpackPlugin({
+          configFile: path.resolve(__dirname, "./tsconfig.json"),
+        }),
+      ],
+    },
+  })
 }
