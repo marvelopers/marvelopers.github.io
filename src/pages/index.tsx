@@ -1,16 +1,19 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as React from "react"
 import { graphql } from "gatsby"
-import { Layout } from "../components/layout"
-import PostList from "../components/postList"
-import SEO from "../components/SEO"
+// import PostList from "../components/postList"
+// import SEO from "../components/SEO"
+import { Layout } from "src/components/layout"
+import SEO from "src/components/SEO"
+import PostList from "src/components/postList"
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data }: any) => {
   return (
     <>
       <Layout>
         <SEO title="홈" />
         <PostList
-          posts={data.allMarkdownRemark.nodes.map(node => ({
+          posts={data.allMarkdownRemark.nodes.map((node: any) => ({
             slug: node.fields.slug,
             title: node.frontmatter.title,
             category: node.frontmatter.category,
