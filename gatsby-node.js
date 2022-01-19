@@ -5,8 +5,8 @@
 //  * See: https://www.gatsbyjs.org/docs/node-apis/
 //  */
 
-const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin")
 const TsconfigPathsWebpackPlugin = require("tsconfig-paths-webpack-plugin")
+const path = require("path")
 
 const nodes = require("./gatsby/nodes")
 const pages = require("./gatsby/pages")
@@ -29,6 +29,13 @@ exports.createPages = async ({ graphql, actions }) => {
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
-    plugins: [new CaseSensitivePathsPlugin(), new TsconfigPathsWebpackPlugin()],
+    resolve: {
+      extensions: [".js", ".ts", ".tsx"],
+      plugins: [
+        new TsconfigPathsWebpackPlugin({
+          configFile: path.resolve(__dirname, "./tsconfig.json"),
+        }),
+      ],
+    },
   })
 }
