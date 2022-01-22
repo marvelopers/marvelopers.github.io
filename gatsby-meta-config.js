@@ -6,7 +6,7 @@ module.exports = {
   siteUrl: `https://marvelopers.github.io/`,
   icon: `src/images/favicon.png`,
   social: {
-    email: "briller015@gmail.com",
+    email: 'briller015@gmail.com',
     github: `marvelopers`,
   },
   keywords: [
@@ -20,15 +20,15 @@ module.exports = {
     `marketing`,
   ],
   comment: {
-    disqusShortName: "",
-    utterances: "SeohyeonKim/marveloper.io",
+    disqusShortName: '',
+    utterances: 'SeohyeonKim/marveloper.io',
   },
   configs: {
     countOfInitialPost: 12,
   },
   sponsor: {
-    buyMeACoffeeId: "marveloper",
+    buyMeACoffeeId: 'marveloper',
   },
-  ga: "UA-166868950-1", //UA > GA4: 256103960
+  ga: 'UA-166868950-1', //UA > GA4: 256103960
   // sentryDsn:
-}
+};

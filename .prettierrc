@@ -1,4 +1,17 @@
 {
-  "arrowParens": "avoid",
-  "semi": false
+  "semi": true,
+  "useTabs": false,
+  "tabWidth": 2,
+  "arrowParens": "always",
+  "jsxBracketSameLine": true,
+  "bracketSpacing": true,
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "options": {
+        "parser": "typescript"
+      }
+    }
+  ]
 }
