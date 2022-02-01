@@ -19,6 +19,6 @@
     "removeComments": true,
     "jsx": "preserve"
   },
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*", "types/global.d.ts"],
   "exclude": ["node_modules", "public", ".cache"]
 }

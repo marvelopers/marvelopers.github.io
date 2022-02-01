@@ -1,8 +1,7 @@
-const path = require(`path`)
-const qs = require("querystring")
+const path = require(`path`);
+const qs = require('querystring');
 
 exports.crateBlogPost = async ({ graphql, actions }) => {
-
   const result = await graphql(`
     {
       allMarkdownRemark(sort: { fields: fields___date, order: DESC }) {
@@ -20,19 +19,19 @@ exports.crateBlogPost = async ({ graphql, actions }) => {
         }
       }
     }
-  `)
+  `);
 
   if (result.errors) {
-    throw result.errors
+    throw result.errors;
   }
 
   // Create blog posts pages.
-  const posts = result.data.allMarkdownRemark.edges.map(e => e.node)
+  const posts = result.data.allMarkdownRemark.edges.map((e) => e.node);
 
   posts.forEach((post, index) => {
     actions.createPage({
       path: qs.unescape(post.fields.slug),
-      component: path.resolve(`./src/templates/blog-post.jsx`),
+      component: path.resolve(`./src/templates/blog-post.tsx`),
       context: {
         slug: post.fields.slug,
         date: post.fields.date,
@@ -41,6 +40,6 @@ exports.crateBlogPost = async ({ graphql, actions }) => {
         previous: index === posts.length - 1 ? null : posts[index + 1],
         next: index === 0 ? null : posts[index - 1],
       },
-    })
-  })
-}
+    });
+  });
+};

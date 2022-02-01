@@ -1,27 +1,27 @@
-import React, { useEffect } from "react"
-import styled from "@emotion/styled"
-import ScrollSpy from "./scroll-spy"
-import { Link } from "gatsby"
-import { SPACE_40, SPACE_4 } from "../styles/space"
-import { PURPLE, GREY_2, GREY_5 } from "../styles/colors"
-import { FONT_SIZE_1 } from "../styles/size"
-import { Button } from "../components/common/button/button"
+import React, { useEffect } from 'react';
+import styled from '@emotion/styled';
+import ScrollSpy from './scroll-spy';
+import { Link } from 'gatsby';
+import { SPACE_40, SPACE_4 } from '../styles/space';
+import { PURPLE, GREY_2, GREY_5 } from '../styles/colors';
+import { FONT_SIZE_1 } from '../styles/size';
+import { Button } from '../components/common/button/button';
 
 interface PostTocProps {
-  tableOfContents: string
+  tableOfContents: string;
 }
 
 const PostToc = ({ tableOfContents }: PostTocProps) => {
   useEffect(() => {
-    const post = document.querySelector("#post-content")
+    const post = document.querySelector('#post-content');
 
     const headings = Array.from(
-      post.querySelectorAll("h1,h2,h3,h4,h5,h6")
-    ).filter((h: HTMLElement) => h.id)
+      post.querySelectorAll('h1,h2,h3,h4,h5,h6')
+    ).filter((h: HTMLElement) => h.id);
 
-    const toc = document.querySelector("#post-toc")
-    new ScrollSpy(toc as HTMLElement, headings as HTMLElement[])
-  }, [])
+    const toc = document.querySelector('#post-toc');
+    new ScrollSpy(toc as HTMLElement, headings as HTMLElement[]);
+  }, []);
   return (
     <StyledAside>
       <StyledToc
@@ -29,13 +29,13 @@ const PostToc = ({ tableOfContents }: PostTocProps) => {
         dangerouslySetInnerHTML={{ __html: tableOfContents }}
       />
       <MainButton>
-        <Link to={"/"}>메인으로 돌아가기</Link>
+        <Link to={'/'}>메인으로 돌아가기</Link>
       </MainButton>
     </StyledAside>
-  )
-}
+  );
+};
 
-export default PostToc
+export default PostToc;
 
 const MainButton = styled(Button)`
   margin-top: 40px;
@@ -49,14 +49,14 @@ const MainButton = styled(Button)`
     font-weight: 600;
     color: ${PURPLE};
   }
-`
+`;
 
 const StyledAside = styled.div`
   position: sticky;
   top: 60px;
   margin-top: ${SPACE_40};
   margin-left: 20px;
-`
+`;
 
 const StyledToc = styled.div`
   ul {
@@ -82,4 +82,4 @@ const StyledToc = styled.div`
       color: #2b092b;
     }
   }
-`
+`;

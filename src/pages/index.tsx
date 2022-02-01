@@ -1,11 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import * as React from "react"
-import { graphql } from "gatsby"
-// import PostList from "../components/postList"
-// import SEO from "../components/SEO"
-import { Layout } from "src/components/layout"
-import SEO from "src/components/SEO"
-import PostList from "src/components/postList"
+import * as React from 'react';
+import { graphql } from 'gatsby';
+import { Layout } from 'src/components/layout';
+import PostList from 'src/components/postList';
+import SEO from 'src/components/SEO';
 
 const IndexPage = ({ data }: any) => {
   return (
@@ -27,10 +24,10 @@ const IndexPage = ({ data }: any) => {
         />
       </Layout>
     </>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query {
@@ -49,4 +46,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
