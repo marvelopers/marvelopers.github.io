@@ -1,4 +1,4 @@
-import styled from "@emotion/styled"
+import styled from '@emotion/styled';
 import {
   SPACE_0,
   SPACE_1,
@@ -7,7 +7,8 @@ import {
   SPACE_8,
   SPACE_12,
   SPACE_2,
-} from "../../styles/space"
+} from 'src/styles/space';
+
 import {
   LINE_HEIGHT_TIGHT,
   LINE_HEIGHT_NORMAL,
@@ -20,9 +21,9 @@ import {
   FONT_SIZE_5,
   FONT_SIZE_6,
   SEMI_BOLD,
-} from "../../styles/size"
-import { GREY_3, PURPLE, GREY_1 } from "../../styles/colors"
-import { TABLET_SCREEN_OFFSET } from "../../styles/layout"
+} from '../../styles/size';
+import { GREY_3, PURPLE, GREY_1 } from '../../styles/colors';
+import { TABLET_SCREEN_OFFSET } from '../../styles/layout';
 
 export const Article = styled.article`
   margin: 0px auto;
@@ -30,12 +31,12 @@ export const Article = styled.article`
   display: flex;
   justify-content: space-between;
   padding-top: ${SPACE_12};
-`
+`;
 
 export const Date = styled.p`
   color: ${GREY_3};
   font-size: ${FONT_SIZE_2};
-`
+`;
 
 export const Content = styled.section`
   max-width: ${TABLET_SCREEN_OFFSET}px;
@@ -47,7 +48,6 @@ export const Content = styled.section`
   h4,
   h5,
   h6 {
-    /* /* font-family: var(--font-heading); */
     margin-top: ${SPACE_12};
     margin-bottom: ${SPACE_6};
     line-height: ${LINE_HEIGHT_TIGHT};
@@ -216,10 +216,10 @@ export const Content = styled.section`
     width: calc(100vw - 20px);
     margin: auto;
   }
-`
+`;
 
 export const Aside = styled.section`
   @media (max-width: ${TABLET_SCREEN_OFFSET}) {
     display: none;
   }
-`
+`;
