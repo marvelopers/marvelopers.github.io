@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { TABLET_SCREEN_OFFSET } from '../../styles/layout';
 
+import { TABLET_SCREEN_OFFSET } from 'src/styles/layout';
 const Footer = () => (
   <Wrapper>
-    <Copyright>© copyright 2020 marveloper All rights reserved.</Copyright>
+    <Copyright>© copyright 2022 marveloper All rights reserved.</Copyright>
   </Wrapper>
 );
 
