@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
+import { BlogPostBySlugQuery } from 'src/types/graphql-types';
 
-// interface P {
-//   title: string;
-//   description?: string
-//   date?: string
-//   siteUrl?: string
-//   image?: string
-// }
+interface Props<T> {
+  data: T;
+}
 
-const Seo = (p) => {
+const Seo = <T extends BlogPostBySlugQuery>({
+  data,
+}: Props<T>): ReactElement => {
+  if (!data.markdownRemark) return <></>;
+  const { markdownRemark } = data;
+
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -25,14 +27,14 @@ const Seo = (p) => {
     `
   );
 
-  const description = p.description || site.siteMetadata.description;
+  const title = markdownRemark?.frontmatter?.title || '';
+  const description = markdownRemark.excerpt || site.siteMetadata.description;
+  const date = markdownRemark.fields?.date;
   const defaultImage = `${site.siteMetadata.url}/assets/favicon.png`;
-  const image = p.image
-    ? p.image?.startsWith(site.siteMetadata.url)
-      ? p.image
-      : `${site.siteMetadata.url}${p.image}`
-    : defaultImage;
-  const siteUrl = p.siteUrl || site.siteMetadata.siteUrl;
+  const image = defaultImage;
+  const siteUrl =
+    `${site?.siteMetadata?.siteUrl}${markdownRemark?.fields?.slug}` ||
+    site.siteMetadata.siteUrl;
 
   const meta = [
     {
@@ -57,7 +59,7 @@ const Seo = (p) => {
     },
     {
       property: `og:title`,
-      content: p.title,
+      content: title,
     },
     {
       property: `og:type`,
@@ -73,10 +75,10 @@ const Seo = (p) => {
     },
   ];
 
-  if (p.date) {
+  if (date) {
     meta.push({
       property: 'article:published_time',
-      content: p.date,
+      content: date,
     });
   }
 
@@ -85,18 +87,18 @@ const Seo = (p) => {
       htmlAttributes={{
         lang: 'ko',
       }}
-      title={p.title}
+      title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={meta}>
-      {p.date && (
+      {date && (
         <script type="application/ld+json">{`
       {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "siteUrl": "${siteUrl}",
-        "headline": "${p.title}",
-        "datePublished": "${p.date}",
-        "dateModified": "${p.date}",
+        "headline": "${title}",
+        "datePublished": "${date}",
+        "dateModified": "${date}",
         "image": "${image}"
       }
       `}</script>

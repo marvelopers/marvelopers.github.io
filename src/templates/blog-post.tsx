@@ -1,35 +1,29 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
+import {
+  MarkdownRemarkEdge,
+  BlogPostBySlugQuery,
+} from 'src/types/graphql-types';
 import { GlobalStyle } from '../styles/GlobalStyle';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import SEO from '../components/SEO';
-import BlogArticle from '../components/BlogArticle';
+import Header from 'src/components/layout/Header';
+import Footer from 'src/components/layout/Footer';
+import BlogArticle from 'src/components/BlogArticle';
+import SEO from 'src/components/SEO';
 
-const BlogPostTemplate = ({ data, pageContext }) => {
-  const { site, markdownRemark, series } = data;
-  const { previous, next } = pageContext;
+interface Props<T> {
+  data: T;
+  pageContext: MarkdownRemarkEdge;
+}
+
+const BlogPostTemplate = <T extends BlogPostBySlugQuery>({
+  data,
+}: Props<T>) => {
   return (
     <>
       <GlobalStyle />
       <Header />
-      <SEO
-        title={markdownRemark.frontmatter.title}
-        description={markdownRemark.excerpt}
-        date={markdownRemark.fields.date}
-        siteUrl={site.siteMetadata.siteUrl + markdownRemark.fields.slug}
-        image={
-          markdownRemark.frontmatter.featured_image ||
-          markdownRemark.frontmatter.featuredImage?.childImageSharp.fluid.src
-        }
-      />
-      <BlogArticle
-        title={markdownRemark.frontmatter.title}
-        dateStr={markdownRemark.fields.dateStr}
-        html={markdownRemark.html}
-        tags={markdownRemark.frontmatter.tags}
-        tableOfContents={markdownRemark.tableOfContents}
-      />
+      <SEO data={data} />
+      <BlogArticle data={data} />
       <Footer />
     </>
   );

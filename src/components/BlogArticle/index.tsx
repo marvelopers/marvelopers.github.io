@@ -1,25 +1,40 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
+import {
+  BlogPostBySlugQuery,
+  MarkdownRemarkFrontmatterFilterInput,
+} from 'src/types/graphql-types';
 import PostTag from 'src/templates/PostTag';
 import PostToc from 'src/templates/PostToc';
-import * as Styles from './styles';
+import * as S from './styles';
 
-const BlogArticle = ({ title, dateStr, html, tags, tableOfContents }) => {
+interface Props<T> {
+  data: T;
+}
+
+const BlogArticle = <T extends BlogPostBySlugQuery>({
+  data,
+}: Props<T>): ReactElement => {
+  if (!data.markdownRemark) return <></>;
+  const { frontmatter, html, tableOfContents } = data.markdownRemark;
+  const { title, date, tags } =
+    frontmatter as MarkdownRemarkFrontmatterFilterInput;
+
   return (
-    <Styles.Article itemScope itemType="http://schema.org/BlogPosting">
-      <Styles.Content>
+    <S.Article itemScope itemType="http://schema.org/BlogPosting">
+      <S.Content>
         <h1>{title}</h1>
-        <Styles.Date>{dateStr}</Styles.Date>
+        <S.Date>{date}</S.Date>
         <div
           id="post-content"
           itemProp="articleBody"
-          dangerouslySetInnerHTML={{ __html: html }}
+          dangerouslySetInnerHTML={{ __html: html as string }}
         />
-        <div>{tags.length > 0 && <PostTag tags={tags} />}</div>
-      </Styles.Content>
-      <Styles.Aside>
+        <div>{tags && <PostTag tags={tags} />}</div>
+      </S.Content>
+      <S.Aside>
         {tableOfContents && <PostToc tableOfContents={tableOfContents} />}
-      </Styles.Aside>
-    </Styles.Article>
+      </S.Aside>
+    </S.Article>
   );
 };
 
