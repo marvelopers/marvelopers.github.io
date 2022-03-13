@@ -1,32 +1,29 @@
 import React from 'react';
+import {
+  MarkdownRemarkConnection,
+  MarkdownRemark,
+} from 'src/types/graphql-types';
 import styled from '@emotion/styled';
-import Thumbnail from '../thumbnail';
+import Thumbnail from '../Thumbnail';
 import { TABLET_SCREEN_OFFSET } from 'src/styles/layout';
+import { Nav } from '../layout/Header';
 
-interface ThumbnailType {
-  title: string;
-  slug: string;
-  meta: string;
-  category: string;
-  tags: string;
+interface Props {
+  posts: MarkdownRemarkConnection;
 }
 
 // slug, title
-const PostList = ({ posts }) => {
-  // console.log("---->posts", posts);
-
+const PostList = ({ posts }: Props) => {
+  if (!posts.nodes) return;
   return (
     <StyleUl>
-      {posts &&
-        posts.map(({ title, slug, meta, category, tags }: ThumbnailType) => {
+      {posts.nodes &&
+        posts.nodes.map(({ frontmatter, fields }: MarkdownRemark, index) => {
           return (
             <Thumbnail
-              key={title}
-              title={title}
-              category={category}
-              slug={slug}
-              meta={meta}
-              tags={tags}
+              key={frontmatter?.title || index}
+              frontmatter={frontmatter}
+              fields={fields}
             />
           );
         })}
