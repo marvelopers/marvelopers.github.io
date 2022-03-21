@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Layout } from 'src/components/layout';
-import PostList from 'src/components/postList';
+import { Layout } from 'src/components/layout/Layout';
+import PostList from 'src/components/PostList';
 import SEO from 'src/components/SEO';
 
 const FrontPage = ({ data }) => (

@@ -2,6 +2,8 @@ import React from 'react';
 import {
   MarkdownRemarkConnection,
   MarkdownRemark,
+  MarkdownRemarkFrontmatter,
+  MarkdownRemarkFields,
 } from 'src/types/graphql-types';
 import styled from '@emotion/styled';
 import Thumbnail from '../Thumbnail';
@@ -12,7 +14,6 @@ interface Props {
   posts: MarkdownRemarkConnection;
 }
 
-// slug, title
 const PostList = ({ posts }: Props) => {
   if (!posts.nodes) return;
   return (
@@ -22,8 +23,8 @@ const PostList = ({ posts }: Props) => {
           return (
             <Thumbnail
               key={frontmatter?.title || index}
-              frontmatter={frontmatter}
-              fields={fields}
+              frontmatter={frontmatter as MarkdownRemarkFrontmatter}
+              fields={fields as MarkdownRemarkFields}
             />
           );
         })}

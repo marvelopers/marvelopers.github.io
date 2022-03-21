@@ -1,6 +1,9 @@
 import React, { ReactElement } from 'react';
 import { Link } from 'gatsby';
-import { MarkdownRemark } from 'src/types/graphql-types';
+import {
+  MarkdownRemarkFrontmatter,
+  MarkdownRemarkFields,
+} from 'src/types/graphql-types';
 import front from 'src/images/front.png';
 import script from 'src/images/script.png';
 import marketing from 'src/images/marketing.png';
@@ -8,6 +11,11 @@ import react from 'src/images/react.png';
 import essay from 'src/images/essay.png';
 import { Nav } from '../layout/Header';
 import * as S from './styles';
+
+export interface Props {
+  frontmatter: MarkdownRemarkFrontmatter;
+  fields: MarkdownRemarkFields;
+}
 
 const ImgMap = {
   [Nav.Front]: front,
@@ -17,7 +25,7 @@ const ImgMap = {
   [Nav.Essay]: essay,
 };
 
-const Thumbnail = ({ frontmatter, fields }: MarkdownRemark): ReactElement => {
+const Thumbnail = ({ frontmatter, fields }: Props): ReactElement => {
   if (!frontmatter || !fields) return <></>;
   const { title, tags } = frontmatter;
   const { slug, date } = fields;

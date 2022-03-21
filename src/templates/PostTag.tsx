@@ -1,23 +1,23 @@
-import React from "react"
-import styled from "@emotion/styled"
+import React from 'react';
+import styled from '@emotion/styled';
 
 const PostTag = ({ tags }) => {
   return (
     <StyledTag>
-      {tags.map(tag => {
+      {tags.map((tag) => {
         return (
           <div key={tag}>
             <button link to={`/tags/#${tag}`}>
               #{tag}
             </button>
           </div>
-        )
+        );
       })}
     </StyledTag>
-  )
-}
+  );
+};
 
-export default PostTag
+export default PostTag;
 
 const StyledTag = styled.div`
   margin: 20px 0px;
@@ -30,4 +30,4 @@ const StyledTag = styled.div`
     font-size: 14px;
     color: #4a154b;
   }
-`
+`;

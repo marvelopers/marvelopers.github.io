@@ -1,16 +1,16 @@
-import * as React from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import { Layout } from 'src/components/layout/Layout';
 import PostList from 'src/components/PostList';
 import SEO from 'src/components/SEO';
 
-const IndexPage = ({ data }: any) => {
+const ScriptPage = ({ data }) => {
   return (
     <>
       <Layout>
-        <SEO title="홈" />
+        <SEO title="JavaScript" />
         <PostList
-          posts={data.allMarkdownRemark.nodes.map((node: any) => ({
+          posts={data.allMarkdownRemark.nodes.map((node) => ({
             slug: node.fields.slug,
             title: node.frontmatter.title,
             category: node.frontmatter.category,
@@ -27,11 +27,15 @@ const IndexPage = ({ data }: any) => {
   );
 };
 
-export default IndexPage;
+export default ScriptPage;
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: fields___date }) {
+    allMarkdownRemark(
+      limit: 10
+      sort: { order: DESC, fields: fields___date }
+      filter: { frontmatter: { category: { eq: "script" } } }
+    ) {
       nodes {
         excerpt(pruneLength: 20, format: PLAIN, truncate: true)
         fields {
