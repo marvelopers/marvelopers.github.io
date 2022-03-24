@@ -1,8 +1,24 @@
 import * as React from 'react';
-import type { graphql, PageProps } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/layout/Layout';
-// markup
-const IndexPage = () => {
+
+type Mate = {
+  id: number;
+  frontmatter: {
+    title: string;
+    date: string;
+  };
+  body: string;
+};
+
+type DataProps = {
+  allMdx: {
+    nodes: Mate[];
+  };
+};
+
+const IndexPage = ({ data }: PageProps<DataProps>) => {
   return (
     <Layout>
       <title>Home Page</title>
@@ -11,6 +27,15 @@ const IndexPage = () => {
         <br />
         🎉🎉🎉
       </h1>
+      <section>
+        {data.allMdx.nodes.map((node, index) => (
+          <article key={index}>
+            <h2>{node.frontmatter.title}</h2>
+            <p>Posted: {node.frontmatter.date}</p>
+            <MDXRenderer>{node.body}</MDXRenderer>
+          </article>
+        ))}
+      </section>
       <p>Edit src/pages/index.tsx to see this page update in real-time. 😎</p>
       <img
         alt="Gatsby G Logo"
@@ -21,3 +46,18 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+export const query = graphql`
+  query {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+      nodes {
+        frontmatter {
+          date(formatString: "MMMM D, YYYY")
+          title
+        }
+        id
+        body
+      }
+    }
+  }
+`;
