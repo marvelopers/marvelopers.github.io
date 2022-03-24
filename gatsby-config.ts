@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from 'gatsby';
+import path from 'path';
 import metaConfig from './gatsby/meta-config';
 
 const config: GatsbyConfig = {
@@ -21,38 +22,41 @@ const config: GatsbyConfig = {
       },
     },
     'gatsby-plugin-mdx',
-    'gatsby-transformer-remark',
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 712,
+            },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: 'language-',
+            },
+          },
+          `gatsby-remark-autolink-headers`,
+        ],
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/contents/blog`,
-        name: `blog`,
+        path: path.resolve(`contents/post`),
+        name: `post`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/contents/assets`,
+        path: path.resolve(`contents/assets`),
         name: `assets`,
       },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: './src/images/',
-      },
-      __key: 'images',
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'pages',
-        path: './src/pages/',
-      },
-      __key: 'pages',
     },
   ],
 };
