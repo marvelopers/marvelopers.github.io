@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import GlobalStyle from '../../../styles/GlobalStyle';
 import * as S from './styles';
 
 interface Props {
@@ -6,7 +7,12 @@ interface Props {
 }
 
 const Layout = ({ children }: Props) => {
-  return <S.Layout>{children}</S.Layout>;
+  return (
+    <>
+      <GlobalStyle />
+      <S.Layout>{children}</S.Layout>;
+    </>
+  );
 };
 
 export default Layout;
