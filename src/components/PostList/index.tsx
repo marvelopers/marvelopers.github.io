@@ -1,17 +1,17 @@
 import React from 'react';
 import Thumbnail from '../Thumbnail';
-import { Mate } from '../../models/post';
+import { Node } from '../../models/post';
 
 type DataProps = {
-  posts: Mate[];
+  posts: Node[];
 };
 
 // slug, title
 const PostList = ({ posts }: DataProps) => {
   return (
     <ul>
-      {posts.map(({ frontmatter }) => {
-        return <Thumbnail key={frontmatter.title} frontmatter={frontmatter} />;
+      {posts.map(({ frontmatter, slug }) => {
+        return <Thumbnail key={slug} slug={slug} frontmatter={frontmatter} />;
       })}
     </ul>
   );

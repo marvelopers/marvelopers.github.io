@@ -6,8 +6,9 @@ export type Frontmatter = {
   category: Nav;
 };
 
-export type Mate = {
+export type Node = {
   id: number;
+  slug: string;
   frontmatter: Frontmatter;
   body: string;
 };

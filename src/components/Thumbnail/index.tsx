@@ -19,15 +19,16 @@ import { Frontmatter } from '../../models/post';
 
 type DataProps = {
   frontmatter: Frontmatter;
+  slug: string;
 };
-const Thumbnail = ({ frontmatter }: DataProps) => {
+const Thumbnail = ({ slug, frontmatter }: DataProps) => {
   const { title, date } = frontmatter;
 
   const category = frontmatter.category as Nav;
 
   return (
-    <S.Thumbnail key={title}>
-      <Link to={title}>
+    <S.Thumbnail key={slug}>
+      <Link to={slug}>
         {/* <img src={ImgMap[category]} alt="img" /> */}
         <img alt="img" />
         <S.TextBox>
