@@ -2,15 +2,8 @@ import * as React from 'react';
 import { graphql, PageProps } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/layout/Layout';
-
-type Mate = {
-  id: number;
-  frontmatter: {
-    title: string;
-    date: string;
-  };
-  body: string;
-};
+import PostList from '../components/PostList';
+import { Mate } from '../models/post';
 
 type DataProps = {
   allMdx: {
@@ -28,6 +21,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
         🎉🎉🎉
       </h1>
       <section>
+        <PostList posts={data.allMdx.nodes} />
         {data.allMdx.nodes.map((node, index) => (
           <article key={index}>
             <h2>{node.frontmatter.title}</h2>
