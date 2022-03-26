@@ -2,22 +2,18 @@ import path from 'path';
 
 export const crateBlogPost = async ({ graphql, actions }) => {
   const { data } = await graphql(`
-    {
-      allMarkdownRemark(sort: { fields: fields___date, order: DESC }) {
-        edges {
-          node {
-            fields {
-              slug
-              date
-            }
-            frontmatter {
-              title
-              category
-            }
-          }
+  allMdx(sort: {fields: frontmatter___date, order: DESC}) {
+    edges {
+      node {
+        frontmatter {
+          category
+          date
+          title
         }
+        slug
       }
     }
+  }
   `);
 
   if (!data) {
