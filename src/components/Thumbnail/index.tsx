@@ -22,9 +22,7 @@ type DataProps = {
   slug: string;
 };
 const Thumbnail = ({ slug, frontmatter }: DataProps) => {
-  const { title, date } = frontmatter;
-
-  const category = frontmatter.category as Nav;
+  const { title, date, category, tags = [] } = frontmatter;
 
   return (
     <S.Thumbnail key={slug}>
@@ -32,8 +30,14 @@ const Thumbnail = ({ slug, frontmatter }: DataProps) => {
         {/* <img src={ImgMap[category]} alt="img" /> */}
         <img alt="img" />
         <S.TextBox>
+          <h2>{slug}</h2>
           <h2>{title}</h2>
           <p>{date}</p>
+          <div>
+            {tags.map((tag) => (
+              <span>{tag} </span>
+            ))}
+          </div>
         </S.TextBox>
       </Link>
     </S.Thumbnail>
