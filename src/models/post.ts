@@ -3,6 +3,7 @@ import { Nav } from './../constants/layout';
 export type Frontmatter = {
   title: string;
   date: string;
+  tags?: string[];
   category: Nav;
 };
 

@@ -26,8 +26,10 @@ export const query = graphql`
       nodes {
         slug
         frontmatter {
+          category
           date(formatString: "MMMM D, YYYY")
           title
+          tags
         }
         id
         body

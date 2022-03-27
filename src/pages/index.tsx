@@ -25,6 +25,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
         <PostList posts={data.allMdx.nodes} />
         {data.allMdx.nodes.map((node) => (
           <article key={node.id}>
+            <h2>{node.slug}</h2>
             <h2>{node.frontmatter.title}</h2>
             <p>Posted: {node.frontmatter.date}</p>
             <MDXRenderer>{node.body}</MDXRenderer>
@@ -48,8 +49,10 @@ export const query = graphql`
       nodes {
         slug
         frontmatter {
+          category
           date(formatString: "MMMM D, YYYY")
           title
+          tags
         }
         id
         body

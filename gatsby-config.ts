@@ -21,7 +21,12 @@ const config: GatsbyConfig = {
         icon: path.resolve(`src/images/favicon.png`),
       },
     },
-    'gatsby-plugin-mdx',
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+      },
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
