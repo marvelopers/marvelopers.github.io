@@ -22,8 +22,25 @@ const config: GatsbyConfig = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: path.resolve(`contents/post`),
+        name: `post`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: path.resolve(`contents/assets`),
+        name: `assets`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
+        defaultLayouts: {
+          default: path.resolve(`src/templates/blog-post.tsx`),
+        },
         extensions: [`.mdx`, `.md`],
       },
     },
@@ -49,20 +66,6 @@ const config: GatsbyConfig = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: path.resolve(`contents/post`),
-        name: `post`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: path.resolve(`contents/assets`),
-        name: `assets`,
-      },
-    },
   ],
 };
 
