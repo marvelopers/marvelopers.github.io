@@ -7,9 +7,14 @@ export type Frontmatter = {
   category: Nav;
 };
 
+export type Fields = {
+  slug: string;
+  date: string;
+};
+
 export type Node = {
   id: number;
-  slug: string;
+  fields: Fields;
   frontmatter: Frontmatter;
   body: string;
 };
