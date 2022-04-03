@@ -1,10 +1,8 @@
-import type { GatsbyNode } from 'gatsby';
-import path from 'path';
 import { createMarkdown } from './gatsby/nodes';
 import { crateBlogPost } from './gatsby/pages';
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === 'MarkdownRemark' || node.internal.type === 'Mdx') {
     createMarkdown({ node, actions, getNode });
   }
 };

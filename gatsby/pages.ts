@@ -1,36 +1,46 @@
 import path from 'path';
 
 export const crateBlogPost = async ({ graphql, actions }) => {
-  const { data } = await graphql(`
-  allMdx(sort: {fields: frontmatter___date, order: DESC}) {
-    edges {
-      node {
-        frontmatter {
-          category
-          date
-          title
+  const result = await graphql(`
+    {
+      allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+        edges {
+          node {
+            fields {
+              slug
+              date
+            }
+            frontmatter {
+              category
+              date
+              title
+            }
+          }
         }
-        slug
       }
     }
-  }
   `);
 
-  if (!data) {
-    throw Error('NO DATA');
+  if (result.errors) {
+    throw Error(result.errors);
   }
 
   // Create blog posts pages.
-  const posts = data.allMarkdownRemark.edges.map((e) => e.node);
+  const { createPage } = actions;
+  const blogPostTemplate = path.resolve(`src/templates/blog-post.tsx`);
+  const posts = result.data.allMdx.edges.map((e) => e.node);
+
+  console.log('PAGE', posts);
 
   posts.forEach((post) => {
-    const { slug, date } = post.fields;
+    const { fields, frontmatter } = post;
+    const { date } = frontmatter;
 
-    actions.createPage({
-      path: slug,
-      component: path.resolve(`src/templates/blog-post.tsx`),
+    createPage({
+      path: fields.slug,
+      component: blogPostTemplate,
       context: {
-        slug: slug,
+        slug: fields.slug,
         date: date,
       },
     });
