@@ -30,8 +30,6 @@ export const crateBlogPost = async ({ graphql, actions }) => {
   const blogPostTemplate = path.resolve(`src/templates/blog-post.tsx`);
   const posts = result.data.allMdx.edges.map((e) => e.node);
 
-  console.log('PAGE', posts);
-
   posts.forEach((post) => {
     const { fields, frontmatter } = post;
     const { date } = frontmatter;
