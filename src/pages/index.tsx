@@ -23,14 +23,14 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
       </h1>
       <section>
         <PostList posts={data.allMdx.nodes} />
-        {data.allMdx.nodes.map((node) => (
+        {/* {data.allMdx.nodes.map((node) => (
           <article key={node.id}>
             <h2>{node.fields.slug}</h2>
             <h2>{node.frontmatter.title}</h2>
             <p>Posted: {node.frontmatter.date}</p>
             <MDXRenderer>{node.body}</MDXRenderer>
           </article>
-        ))}
+        ))} */}
       </section>
       <p>Edit src/pages/index.tsx to see this page update in real-time. 😎</p>
       <img

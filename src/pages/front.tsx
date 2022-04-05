@@ -24,7 +24,10 @@ export const query = graphql`
   query {
     allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
-        slug
+        fields {
+          slug
+          date
+        }
         frontmatter {
           category
           date(formatString: "MMMM D, YYYY")
