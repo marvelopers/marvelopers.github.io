@@ -13,7 +13,6 @@ const config: GatsbyConfig = {
       },
     },
     'gatsby-plugin-image',
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
@@ -64,8 +63,9 @@ const config: GatsbyConfig = {
         ],
       },
     },
-    'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-react-helmet',
   ],
 };
 
