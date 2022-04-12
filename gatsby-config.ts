@@ -40,13 +40,8 @@ const config: GatsbyConfig = {
         defaultLayouts: {
           default: path.resolve(`src/templates/blog-post.tsx`),
         },
-        extensions: [`.mdx`, `.md`],
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
+        extensions: [`.md`, `.mdx`],
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
