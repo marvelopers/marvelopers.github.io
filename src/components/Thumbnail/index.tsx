@@ -30,12 +30,12 @@ const Thumbnail = ({ slug, frontmatter }: DataProps) => {
         {/* <img src={ImgMap[category]} alt="img" /> */}
         <img alt="img" />
         <S.TextBox>
-          <h2>{slug}</h2>
+          <h1>{slug}</h1>
           <h2>{title}</h2>
           <p>{date}</p>
           <div>
             {tags.map((tag) => (
-              <span>{tag} </span>
+              <span key={tag}>{tag} </span>
             ))}
           </div>
         </S.TextBox>

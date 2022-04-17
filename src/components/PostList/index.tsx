@@ -10,15 +10,13 @@ type DataProps = {
 const PostList = ({ posts }: DataProps) => {
   return (
     <ul>
-      {posts.map(({ frontmatter, fields }) => {
-        return (
-          <Thumbnail
-            key={fields.slug}
-            slug={fields.slug}
-            frontmatter={frontmatter}
-          />
-        );
-      })}
+      {posts.map(({ frontmatter, fields }) => (
+        <Thumbnail
+          key={fields.slug}
+          slug={fields.slug}
+          frontmatter={frontmatter}
+        />
+      ))}
     </ul>
   );
 };

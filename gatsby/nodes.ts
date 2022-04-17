@@ -35,7 +35,7 @@ export const getDate = (node, getNode) => {
   const base = path.parse(node.fileAbsolutePath).name; // 'yy/mmdd/how_to_be'
   const hasDate = POST_FILENAME_REGEX.test(base);
   if (hasDate) {
-    return new Date(base.substring(0, 10));
+    return new Date(base.substring(0, 10)).toJSON();
   }
 
   return '';

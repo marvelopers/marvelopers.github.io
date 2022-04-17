@@ -6,6 +6,8 @@ export const crateBlogPost = async ({ graphql, actions }) => {
       allMdx(sort: { fields: frontmatter___date, order: DESC }) {
         edges {
           node {
+            id
+            body
             fields {
               slug
               date
@@ -26,20 +28,19 @@ export const crateBlogPost = async ({ graphql, actions }) => {
   }
 
   // Create blog posts pages.
-  const { createPage } = actions;
   const blogPostTemplate = path.resolve(`src/templates/blog-post.tsx`);
-  const posts = result.data.allMdx.edges.map((e) => e.node);
+  const posts = result.data.allMdx.edges.map((post) => post.node);
 
   posts.forEach((post) => {
     const { fields, frontmatter } = post;
-    const { date } = frontmatter;
 
-    createPage({
+    actions.createPage({
       path: fields.slug,
       component: blogPostTemplate,
       context: {
+        pagePath: fields.slug,
         slug: fields.slug,
-        date: date,
+        date: frontmatter.date,
       },
     });
   });

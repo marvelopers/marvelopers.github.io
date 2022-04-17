@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, PageProps } from 'gatsby';
+import { StaticQuery, graphql, PageProps } from 'gatsby';
 import { Frontmatter } from '../models/post';
 
 import Header from '../components/layout/Header';
@@ -28,6 +28,9 @@ type DataProps = {
 
 const Template = ({ data }: PageProps<DataProps>) => {
   console.log('data', data);
+
+  // const query =
+  // StaticQuery
   return (
     <>
       <GlobalStyle />
@@ -39,8 +42,8 @@ const Template = ({ data }: PageProps<DataProps>) => {
 
 export default Template;
 
-export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String = "") {
+export const query = graphql`
+  query ($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       id
       html

@@ -4,7 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 // import PostTag from 'src/templates/PostTag';
 // import PostToc from 'src/templates/PostToc';
 import * as S from './styles';
-import { Mdx, Site } from '../templates/blog-post';
+import { Mdx, Site } from '../../templates/blog-post';
 
 type DataProps = {
   data: {
@@ -14,6 +14,7 @@ type DataProps = {
 };
 
 const BlogArticle = ({ data }: DataProps) => {
+  console.log('DATA', data);
   const { frontmatter, body, tableOfContents } = data.mdx;
   const { title, date } = frontmatter;
 
