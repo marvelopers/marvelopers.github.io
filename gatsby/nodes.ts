@@ -3,10 +3,8 @@ import { createFilePath } from 'gatsby-source-filesystem';
 
 const POST_FILENAME_REGEX = /([0-9]+)\-([0-9]+)\-([0-9]+)\-(.+)/;
 
-export const getSlug = (node, getNode) => {
-  // 날짜로 시작하는 파일 이름을 다음과 같이 변경한다.
-  // yyyy-mm-dd-how-to-be.md -> yyyy/mm/dd/how-to-be
-  const base = path.parse(node.fileAbsolutePath).name; // 'yyyy/mm/dd/how-to-be'
+const getSlug = (node, getNode) => {
+  const base = path.parse(node.fileAbsolutePath).name;
   const hasDate = POST_FILENAME_REGEX.test(base);
 
   if (hasDate) {
@@ -14,7 +12,7 @@ export const getSlug = (node, getNode) => {
 
     let slug = '';
     if (node.frontmatter.category) {
-      slug = `/${node.frontmatter.category}/${year}/${month}/${day}/${filename}.html`;
+      slug = `/${node.frontmatter.category}/${year}/${month}/${day}/${filename}`;
     }
 
     return slug;
@@ -50,8 +48,12 @@ export const createMarkdown = ({ node, actions, getNode }) => {
   const date = getDate(node, getNode);
   createNodeField({ name: `date`, value: date, node });
 
-  if (!slug || !date) {
-    throw 'NO slug or date!!';
+  if (!slug) {
+    throw 'NO slug!!';
+  }
+
+  if (!date) {
+    throw 'NO date!!';
   }
 };
 

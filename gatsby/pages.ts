@@ -35,10 +35,9 @@ export const crateBlogPost = async ({ graphql, actions }) => {
     const { fields, frontmatter } = post;
 
     actions.createPage({
-      path: fields.slug,
+      path: decodeURI(fields.slug),
       component: blogPostTemplate,
       context: {
-        pagePath: fields.slug,
         slug: fields.slug,
         date: frontmatter.date,
       },
