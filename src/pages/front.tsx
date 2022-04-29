@@ -1,50 +1,41 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import { Layout } from 'src/components/layout';
-import PostList from 'src/components/postList';
-import SEO from 'src/components/SEO';
+import { graphql, PageProps } from 'gatsby';
+import Layout from '../components/layout/Layout';
+import PostList from '../components/PostList';
+import { Node } from '../models/post';
 
-const FrontPage = ({ data }) => (
-  <>
+type DataProps = {
+  allMdx: {
+    nodes: Node[];
+  };
+};
+
+const IndexPage = ({ data }: PageProps<DataProps>) => {
+  return (
     <Layout>
-      <SEO title="Front-end" />
-      <PostList
-        posts={data.allMarkdownRemark.nodes.map((node) => ({
-          slug: node.fields.slug,
-          title: node.frontmatter.title,
-          category: node.frontmatter.category,
-          tags: node.frontmatter.tags,
-          meta: node.fields.date,
-          // meta: (
-          //   <time dateTime={node.fields.date}>{node.fields.dateStr}</time>
-          // ),
-          excerpt: node.excerpt,
-        }))}
-      />
+      <PostList posts={data.allMdx.nodes} />
     </Layout>
-  </>
-);
+  );
+};
 
-export default FrontPage;
+export default IndexPage;
 
-export const pageQuery = graphql`
+export const query = graphql`
   query {
-    allMarkdownRemark(
-      limit: 10
-      sort: { order: DESC, fields: fields___date }
-      filter: { frontmatter: { category: { eq: "front" } } }
-    ) {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
-        excerpt(pruneLength: 20, format: PLAIN, truncate: true)
         fields {
           slug
-          date(formatString: "YYYY.MM.DD")
+          date
         }
         frontmatter {
-          title
           category
+          date(formatString: "MMMM D, YYYY")
+          title
           tags
         }
+        id
+        body
       }
     }
   }

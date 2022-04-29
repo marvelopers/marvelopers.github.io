@@ -1,58 +1,93 @@
-import * as React from 'react';
-import { graphql } from 'gatsby';
-import {
-  MarkdownRemarkEdge,
-  BlogPostBySlugQuery,
-} from 'src/types/graphql-types';
-import { GlobalStyle } from '../styles/GlobalStyle';
-import Header from 'src/components/layout/Header';
-import Footer from 'src/components/layout/Footer';
-import BlogArticle from 'src/components/BlogArticle';
-import SEO from 'src/components/SEO';
+import React from 'react';
+import { StaticQuery, graphql, PageProps } from 'gatsby';
+import { Frontmatter } from '../models/post';
 
-interface Props<T> {
-  data: T;
-  pageContext: MarkdownRemarkEdge;
-}
+import Header from '../components/layout/Header';
+import GlobalStyle from '../styles/GlobalStyle';
+import BlogArticle from '../components/BlogArticle';
 
-const BlogPostTemplate = <T extends BlogPostBySlugQuery>({
-  data,
-}: Props<T>) => {
+export type Site = {
+  siteMetadata: {
+    title: string;
+    siteUrl: string;
+  };
+};
+
+export type Mdx = {
+  id: number;
+  body: string;
+  frontmatter: Frontmatter;
+  tableOfContents: any;
+  html: string;
+};
+
+type DataProps = {
+  site: Site;
+  mdx: Mdx;
+};
+
+const Template = ({ data }: PageProps<DataProps>) => {
+  console.log('data', data);
+
   return (
     <>
       <GlobalStyle />
       <Header />
-      <SEO data={data} />
       <BlogArticle data={data} />
-      <Footer />
     </>
   );
 };
 
-export default BlogPostTemplate;
+export default Template;
 
-export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+export const query = graphql`
+  query ($id: String!) {
+    mdx(id: { eq: $id }) {
+      id
+      html
+      body
+      excerpt(pruneLength: 160)
+      frontmatter {
+        title
+        date(formatString: "YYYY.MM.DD")
+        tags
+      }
+      fields {
+        slug
+        # date
+      }
+      tableOfContents
+    }
     site {
       siteMetadata {
         title
         siteUrl
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      excerpt(pruneLength: 160)
-      html
-      fields {
-        dateStr: date(formatString: "YYYY.MM.DD")
-        date
-        slug
-      }
-      frontmatter {
-        title
-        tags
-      }
-      tableOfContents(absolute: false, maxDepth: 6, heading: null)
-    }
   }
 `;
+
+// query ($slug: String!) {
+//   mdx(fields: { slug: { eq: $slug } }) {
+//     id
+//     html
+//     body
+//     excerpt(pruneLength: 160)
+//     frontmatter {
+//       title
+//       date(formatString: "YYYY.MM.DD")
+//       tags
+//     }
+//     fields {
+//       slug
+//       # date
+//     }
+//     tableOfContents
+//   }
+//   site {
+//     siteMetadata {
+//       title
+//       siteUrl
+//     }
+//   }
+// }

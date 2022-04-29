@@ -1,15 +1,8 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import Icon from 'src/images/icon.png';
+import Icon from '../../../images/blog_logo.png';
+import { Nav } from '../../../constants/layout';
 import * as S from './styles';
-
-export enum Nav {
-  Front = 'front',
-  Script = 'script',
-  React = 'react',
-  Marketing = 'marketing',
-  Essay = 'essay',
-}
 
 const NavMap = {
   [Nav.Front]: 'Front-end',
