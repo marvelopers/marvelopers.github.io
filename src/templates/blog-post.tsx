@@ -29,8 +29,6 @@ type DataProps = {
 const Template = ({ data }: PageProps<DataProps>) => {
   console.log('data', data);
 
-  // const query =
-  // StaticQuery
   return (
     <>
       <GlobalStyle />
@@ -43,8 +41,8 @@ const Template = ({ data }: PageProps<DataProps>) => {
 export default Template;
 
 export const query = graphql`
-  query ($slug: String!) {
-    mdx(fields: { slug: { eq: $slug } }) {
+  query ($id: String!) {
+    mdx(id: { eq: $id }) {
       id
       html
       body
@@ -56,7 +54,7 @@ export const query = graphql`
       }
       fields {
         slug
-        date
+        # date
       }
       tableOfContents
     }
@@ -68,3 +66,28 @@ export const query = graphql`
     }
   }
 `;
+
+// query ($slug: String!) {
+//   mdx(fields: { slug: { eq: $slug } }) {
+//     id
+//     html
+//     body
+//     excerpt(pruneLength: 160)
+//     frontmatter {
+//       title
+//       date(formatString: "YYYY.MM.DD")
+//       tags
+//     }
+//     fields {
+//       slug
+//       # date
+//     }
+//     tableOfContents
+//   }
+//   site {
+//     siteMetadata {
+//       title
+//       siteUrl
+//     }
+//   }
+// }

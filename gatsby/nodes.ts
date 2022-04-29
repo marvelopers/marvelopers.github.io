@@ -4,22 +4,13 @@ import { createFilePath } from 'gatsby-source-filesystem';
 const POST_FILENAME_REGEX = /([0-9]+)\-([0-9]+)\-([0-9]+)\-(.+)/;
 
 const getSlug = (node, getNode) => {
-  const base = path.parse(node.fileAbsolutePath).name;
-  const hasDate = POST_FILENAME_REGEX.test(base);
+  // const base = path.parse(node.fileAbsolutePath).name;
+  // const hasDate = POST_FILENAME_REGEX.test(base);
+  const filePath = createFilePath({ node, getNode });
 
-  if (hasDate) {
-    const [_, year, month, day, filename] = POST_FILENAME_REGEX.exec(base);
+  const slug = filePath.replace(POST_FILENAME_REGEX, '$1/$2/$3/$4');
 
-    let slug = '';
-    if (node.frontmatter.category) {
-      slug = `/${node.frontmatter.category}/${year}/${month}/${day}/${filename}`;
-    }
-
-    return slug;
-  }
-
-  // 기본값
-  return createFilePath({ node, getNode });
+  return slug;
 };
 
 export const getDate = (node, getNode) => {
@@ -47,6 +38,8 @@ export const createMarkdown = ({ node, actions, getNode }) => {
 
   const date = getDate(node, getNode);
   createNodeField({ name: `date`, value: date, node });
+
+  createFilePath({ node, getNode });
 
   if (!slug) {
     throw 'NO slug!!';

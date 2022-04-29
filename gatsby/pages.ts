@@ -32,12 +32,13 @@ export const crateBlogPost = async ({ graphql, actions }) => {
   const posts = result.data.allMdx.edges.map((post) => post.node);
 
   posts.forEach((post) => {
-    const { fields, frontmatter } = post;
+    const { id, fields, frontmatter } = post;
 
     actions.createPage({
       path: decodeURI(fields.slug),
       component: blogPostTemplate,
       context: {
+        id: id,
         slug: fields.slug,
         date: frontmatter.date,
       },

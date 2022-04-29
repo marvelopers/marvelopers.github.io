@@ -18,10 +18,11 @@ import { Frontmatter } from '../../models/post';
 // };
 
 type DataProps = {
+  id: string;
   frontmatter: Frontmatter;
   slug: string;
 };
-const Thumbnail = ({ slug, frontmatter }: DataProps) => {
+const Thumbnail = ({ id, slug, frontmatter }: DataProps) => {
   const { title, date, category, tags = [] } = frontmatter;
 
   return (
