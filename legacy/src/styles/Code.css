@@ -1,0 +1,142 @@
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #67C1E1 ; /* base00 */	
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  background: #292929; /* base02 */
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  background: #292929; /* base02 */
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background-color: #292929; /* code block background */
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+}
+
+
+.token.script.language-javascript,
+.token.parameter{
+  color: rgb(126, 212, 244) ;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #248d61; /* base1 */
+}
+
+.token.plain-text,
+.token.operator,
+.token.punctuation {
+  /* color: #586e75; base01 */
+  color: #E8E8E8; /*base01*/
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #0097fc; /* blue */
+}
+
+.token.number{
+  color: #2BAC76;
+}
+
+.token.boolean{
+  color: #0097fc; /* blue */
+}
+
+.token.selector,
+.token.attr-name,
+.token.class-name,
+.token.char,
+.token.builtin,
+.token.url,
+.token.inserted {
+  color: #2aa198; /* cyan */
+}
+
+.token.string{
+  color:#E48870;
+}
+
+
+.token.entity {
+  color: #2EB67D; /* base00 */
+  background: #eee8d5; /* base2 */
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  /* color: #859900; green */
+  color: #FF3E88; 
+}
+
+.token.function {
+  color: #CCCD98; /* yellow */
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #cb4b16; /* orange */
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
