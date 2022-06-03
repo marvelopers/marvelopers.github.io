@@ -1,4 +1,4 @@
-import { Global, css } from "@emotion/react";
+import { Global, css } from '@emotion/react';
 
 const ResetStyle = css`
   html,
@@ -91,9 +91,10 @@ const ResetStyle = css`
     vertical-align: baseline;
     background: transparent;
     outline: none;
+    box-sizing: border-box;
 
     /* 기본 글꼴 설정, iOS와 IE에서 기기 회전시에 사용자가 확대하지 않아도 글씨 크기가 재조정되는 것을 예방 */
-    font-family: "Noto Sans KR", sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
   }
@@ -141,7 +142,7 @@ const ResetStyle = css`
   blockquote:after,
   q:before,
   q:after {
-    content: "";
+    content: '';
     content: none;
   }
 
@@ -172,8 +173,8 @@ const ResetStyle = css`
   }
 
   /* input type number 에서 화살표 제거 */
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
