@@ -1,14 +1,8 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import BlogLogo from 'src/images/blog_logo.png';
+import { Nav } from 'src/model/layout';
 import * as S from './styles';
-
-export const enum Nav {
-  Front = 'front',
-  Script = 'script',
-  React = 'react',
-  Marketing = 'marketing',
-  Essay = 'essay',
-}
 
 const NavMap = {
   [Nav.Front]: 'Front-end',
@@ -23,9 +17,9 @@ const Header = () => {
   return (
     <S.Header>
       <S.Wrapper>
-        <Link href="/">
-          <S.Logo src={BlogLogo} alt="logo" />
-        </Link>
+        <S.Logo href="/">
+          <Image src={BlogLogo} alt="logo" width={160} height={24} />
+        </S.Logo>
         <nav>
           <S.Categories>
             {route.map((item) => (

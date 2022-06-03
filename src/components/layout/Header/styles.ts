@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
 import { TABLET_SCREEN_OFFSET } from 'src/styles/layout';
 
 export const Header = styled.header`
@@ -22,8 +23,8 @@ export const Wrapper = styled.section`
   max-width: calc(1020px - (20px * 2));
 `;
 
-export const Logo = styled.img`
-  height: 24px;
+export const Logo = styled(Link)`
+  cursor: pointer;
   padding-left: 8px;
 `;
 
@@ -46,3 +47,6 @@ export const Categories = styled.ul`
     display: none;
   }
 `;
+function NextLink(NextLink: any) {
+  throw new Error('Function not implemented.');
+}
