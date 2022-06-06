@@ -1,15 +1,8 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "node": true
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
-  ],
+  "root": true,
+  "env": { "browser": true, "es6": true, "node": true },
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "plugins": ["@typescript-eslint"],
   "parser": "@babel/eslint-parser",
   "parserOptions": { "ecmaVersion": 2020, "requireConfigFile": false },
   "overrides": [
@@ -17,20 +10,34 @@
       "files": ["**/*.ts", "**/*.tsx"],
       "plugins": ["react", "@typescript-eslint", "prettier"],
       "extends": [
+        "airbnb-typescript",
         "prettier",
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:prettier/recommended"
+        "prettier/@typescript-eslint",
+        "prettier/react",
+        "plugin:react-hooks/recommended",
+        "plugin:@next/next/recommended"
       ],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
         "ecmaFeatures": { "jsx": true },
-        "ecmaVersion": "latest",
-        "sourceType": "module"
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "project": "./tsconfig.json"
       },
       "rules": {
-        "prettier/prettier": "error",
-        "react/prop-types": "off"
+        "curly": ["error", "all"],
+        "no-param-reassign": [
+          "error",
+          { "ignorePropertyModificationsFor": ["state"] }
+        ],
+        "import/no-extraneous-dependencies": "off",
+        "import/prefer-default-export": "off",
+        "react/require-default-props": "off",
+        "react/prop-types": "off",
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-use-before-define": "off"
       }
     }
   ]
