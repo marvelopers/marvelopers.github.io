@@ -1,9 +1,13 @@
 import React from 'react';
 import { Layout } from 'src/components/layout/Layout';
+import Thumbnail from 'src/components/common/Thumbnail';
+import { Nav } from 'src/model/layout';
 
 const Home = () => (
   <Layout>
-    Home 여기에 씁니다 <button>66</button>
+    <Thumbnail title="rx" category={Nav.Front} />
+    <Thumbnail title={Nav.Essay} category={Nav.Essay} />
+    <Thumbnail title={Nav.Front} category={Nav.Front} />
   </Layout>
 );
 
