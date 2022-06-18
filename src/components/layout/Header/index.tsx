@@ -22,11 +22,15 @@ const Header = () => {
         </S.Logo>
         <nav>
           <S.Categories>
-            {route.map((item) => (
+            <Link href="posts">
+              <li>Dev</li>
+            </Link>
+
+            {/* {route.map((item) => (
               <Link href={`/${item}`} key={item}>
                 <li>{NavMap[item as Nav]}</li>
               </Link>
-            ))}
+            ))} */}
           </S.Categories>
         </nav>
       </S.Wrapper>
