@@ -2,25 +2,30 @@ import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 
-const postsDirectory = join(process.cwd(), '_posts');
+type Items = {
+  [key: string]: string;
+};
 
-export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory);
-}
+type FrontMeta = {
+  title: string;
+  date: string;
+  category: string;
+  tags: string;
+};
 
-export function getPostBySlug(slug: string, fields: string[] = []) {
+const postsDirectory = join(process.cwd(), 'posts');
+
+export const getPostSlugs = () => fs.readdirSync(postsDirectory);
+
+export const getPostBySlug = (slug: string, fields: string[] = []) => {
   const realSlug = slug.replace(/\.md$/, '');
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
-
-  type Items = {
-    [key: string]: string;
-  };
+  const { tags, category } = data as FrontMeta;
 
   const items: Items = {};
 
-  // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
     if (field === 'slug') {
       items[field] = realSlug;
@@ -29,19 +34,27 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
       items[field] = content;
     }
 
+    if (field === 'category') {
+      items[field] = category;
+    }
+
+    if (field === 'tags') {
+      items[field] = tags;
+    }
+
     if (typeof data[field] !== 'undefined') {
       items[field] = data[field];
     }
   });
 
   return items;
-}
+};
 
-export function getAllPosts(fields: string[] = []) {
+export const getAllPosts = (fields: string[] = []) => {
   const slugs = getPostSlugs();
+  console.log('SLUGS', slugs);
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
-    // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
-}
+};
