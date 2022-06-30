@@ -6,7 +6,7 @@ import script from 'src/images/script.png';
 import marketing from 'src/images/marketing.png';
 import react from 'src/images/react.png';
 import essay from 'src/images/essay.png';
-import { Nav } from 'src/model/layout';
+import { FrontMeta, Nav } from 'src/model/layout';
 import * as S from './styles';
 
 const ImgMap = {
@@ -18,36 +18,33 @@ const ImgMap = {
 };
 
 interface ThumbnailProps {
-  category: Nav;
-  title: string;
+  post: FrontMeta;
 }
 
-const Thumbnail = ({ title, category }: ThumbnailProps) => (
-  <ul>
-    <S.Thumbnail>
-      {/* <Link href={`/${category}`}> */}
-      <Image
-        src={ImgMap[category]}
-        alt="img"
-        style={{
-          borderTopLeftRadius: '5px',
-          borderTopRightRadius: '5px',
-        }}
-      />
-      <S.TextBox>
-        {/* <h1>{slug}</h1> */}
-        <h2>{title}</h2>
-        {/* 
+const Thumbnail = ({ post }: ThumbnailProps) => {
+  const { title, category, date, tags, slug } = post;
+  return (
+    <Link href={`/posts/${slug}`}>
+      <S.Thumbnail>
+        <Image
+          src={ImgMap[category]}
+          alt="img"
+          style={{
+            borderTopLeftRadius: '5px',
+            borderTopRightRadius: '5px',
+          }}
+        />
+        <S.TextBox>
+          <h2>{title}</h2>
           <p>{date}</p>
           <div>
             {tags.map((tag) => (
               <span key={tag}>{tag} </span>
             ))}
-          </div> */}
-      </S.TextBox>
-      {/* </Link> */}
-    </S.Thumbnail>
-  </ul>
-);
-
+          </div>
+        </S.TextBox>
+      </S.Thumbnail>
+    </Link>
+  );
+};
 export default Thumbnail;

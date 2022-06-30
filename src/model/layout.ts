@@ -5,3 +5,11 @@ export const enum Nav {
   Marketing = 'marketing',
   Essay = 'essay',
 }
+
+export type FrontMeta = {
+  title: string;
+  date: string;
+  category: Nav;
+  tags: string[];
+  slug: string;
+};

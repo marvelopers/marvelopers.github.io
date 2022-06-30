@@ -20,13 +20,7 @@ const Home = ({ allPosts }: { allPosts: FrontMeta[] }) => {
 export default Home;
 
 export const getStaticProps = async () => {
-  const allPosts = getPostBySlug(sulg, [
-    'title',
-    'date',
-    'slug',
-    'category',
-    'tags',
-  ]);
+  const allPosts = getAllPosts(['title', 'date', 'slug', 'category', 'tags']);
 
   return {
     props: { allPosts },
