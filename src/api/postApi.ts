@@ -2,16 +2,31 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
+const getPostsDirectory = (folderName: string, needType = false) =>
+  needType
+    ? fs.readdirSync(path.join(process.cwd(), `${folderName}`), {
+        withFileTypes: true,
+      })
+    : fs.readdirSync(path.join(process.cwd(), `${folderName}`));
+
 const postsDirectory = path.join(process.cwd(), "posts");
 
-const get = () => {};
+const getSlugs = () => {
+  const dirFiles = getPostsDirectory("posts", true) as fs.Dirent[];
+
+  return dirFiles.map(({ name }) =>
+    !name.includes("mdx")
+      ? `${name}/${getPostsDirectory(`posts/${name}`)}`
+      : name
+  );
+};
 
 const postApi = {
   getAllPosts: () => {
-    const dirFiles = fs.readdirSync(postsDirectory, {
-      withFileTypes: true,
-    });
-    console.log("dirFiles", dirFiles); //[  'forms.mdx', 'test' ]
+    const slugs = getSlugs();
+    console.log("check", slugs); //[  'forms.mdx', 'test' ]
+
+    return { slugs };
   },
   getPostsData: () => {},
   getPostData: (slug: string) => {
