@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import markdownToHtml from "src/utils/markdownToHtml";
 
 const getPostsDirectory = (folderName: string, needType = false) =>
   needType
@@ -11,7 +12,7 @@ const getPostsDirectory = (folderName: string, needType = false) =>
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
-const getSlugs = () => {
+const getFilesSlugs = () => {
   const dirFiles = getPostsDirectory("posts", true) as fs.Dirent[];
 
   return dirFiles.map(({ name }) =>
@@ -21,26 +22,35 @@ const getSlugs = () => {
   );
 };
 
+const getPosts = () => {
+  const filesSlugs = getFilesSlugs();
+  return filesSlugs.map((fileSlug) => {
+    const fileContents = fs.readFileSync(
+      path.join(postsDirectory, fileSlug),
+      "utf8"
+    );
+
+    const [slug, mdx] = fileSlug.split(".");
+    return {
+      ...matter(fileContents).data,
+      slug,
+    };
+  });
+};
+
 const postApi = {
   getAllPosts: () => {
-    const slugs = getSlugs();
-    console.log("check", slugs); //[  'forms.mdx', 'test' ]
-
-    return { slugs };
+    const posts = getPosts();
+    return { posts };
   },
   getPostsData: () => {},
-  getPostData: (slug: string) => {
+  getPostData: async (slug: string) => {
     const fullPath = path.join(postsDirectory, `${slug}.mdx`);
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data: frontMeta, content } = matter(fileContents);
-    // console.log("meta", frontMeta);
-    // console.log("content", content);
-    // console.log(
-    //   "dirFiles",
-    //   fs.readdirSync(path.join(process.cwd(), "posts")).reverse()
-    // ); //[ 'test', 'forms.mdx' ]
+    const html = await markdownToHtml(content);
 
-    return { frontMeta, content };
+    return { frontMeta, content: html };
   },
 };
 

@@ -1,18 +1,19 @@
 import { NextPageContext } from "next";
-import postApi from "../../api/postApi";
+import postApi from "src/api/postApi";
 
-const BlogPost = ({
-  post,
-}: {
+interface BlogPostProps {
   post: { frontMeta: { title: string; date: string }; content: string };
-}) => {
+}
+
+const BlogPost = ({ post }: BlogPostProps) => {
+  const { frontMeta, content } = post;
   console.log("props", post);
 
   return (
     <>
-      <h1>{post.frontMeta.title}</h1>
-      <span>{post.frontMeta.date}</span>
-      <p>{post.content}</p>
+      <h1>{frontMeta.title}</h1>
+      <span>{frontMeta.date}</span>
+      <main dangerouslySetInnerHTML={{ __html: content }} />
     </>
   );
 };
