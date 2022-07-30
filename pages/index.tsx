@@ -10,6 +10,7 @@ interface HomeProps {
 }
 
 const Home = ({ posts }: HomeProps) => {
+  // console.log("posts", posts);
   return (
     <div>
       <Head>
