@@ -157,17 +157,12 @@ export const ResetStyles = css`
     ${FixedStyle};
     position: relative;
     width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     box-sizing: content-box;
     padding-top: constant(safe-area-inset-top);
     padding-top: env(safe-area-inset-top);
     /* padding-bottom: constant(safe-area-inset-bottom);
     padding-bottom: env(safe-area-inset-bottom); */
-
-    @media screen and (min-width: ${SCREEN_OFFSET}px) {
-      margin: 0 auto;
-      background: white;
-    }
   }
 `;
 
