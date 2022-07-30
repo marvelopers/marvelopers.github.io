@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -42,10 +43,12 @@ const Home = ({ posts }: HomeProps) => {
   );
 };
 
-Home.getInitialProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const posts = await postApi.getAllPosts();
 
-  return posts;
+  return {
+    props: posts,
+  };
 };
 
 export default Home;
