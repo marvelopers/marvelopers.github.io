@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import postApi from "src/api/postApi";
-import styles from "../styles/Home.module.css";
+import { Layout } from "src/components/layout/Layout";
 
 interface HomeProps {
   posts: { title: string; category: string; date: string; slug: string }[];
@@ -12,11 +12,8 @@ interface HomeProps {
 const Home = ({ posts }: HomeProps) => {
   // console.log("posts", posts);
   return (
-    <div>
-      <Head>
-        <title>BLOG</title>
-      </Head>
-      <main>
+    <Layout>
+      <section>
         {posts.map((post) => (
           <Link href={`/posts/${post.slug}`} key={post.slug}>
             <div>
@@ -27,20 +24,8 @@ const Home = ({ posts }: HomeProps) => {
             </div>
           </Link>
         ))}
-      </main>
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+      </section>
+    </Layout>
   );
 };
 
