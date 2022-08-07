@@ -1,4 +1,4 @@
-import { GetStaticProps, NextPageContext } from "next";
+import { GetStaticProps } from "next";
 import postApi from "src/api/postApi";
 
 interface BlogPostProps {
