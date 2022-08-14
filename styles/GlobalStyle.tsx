@@ -58,11 +58,11 @@ export const ResetStyles = css`
     -webkit-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-    font-size: 14px;
+    font-size: 10px;
     line-height: 1.6;
 
     @media screen and (min-width: ${SCREEN_OFFSET}px) {
-      font-size: 16px;
+      font-size: 10px;
     }
   }
   body {
