@@ -3,21 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "src/images/blog_logo.png";
 import * as S from "./styles";
-
-export enum Nav {
-  Front = "front",
-  Script = "script",
-  React = "react",
-  Marketing = "marketing",
-  Essay = "essay",
-}
+import { Category } from "src/model/category";
 
 const NavMap = {
-  [Nav.Front]: "Front-end",
-  [Nav.Script]: "JS/TS",
-  [Nav.React]: "React",
-  [Nav.Marketing]: "Marketing",
-  [Nav.Essay]: "Essay",
+  [Category.Front]: "Front-end",
+  [Category.Script]: "JS/TS",
+  [Category.React]: "React",
+  [Category.Marketing]: "Marketing",
+  [Category.Essay]: "Essay",
 };
 
 const Header = () => {
@@ -27,14 +20,16 @@ const Header = () => {
       <S.Wrapper>
         <S.Logo>
           <Link href={"/"}>
-            <Image src={Logo} alt="marveloper Logo" />
+            <a>
+              <Image src={Logo} alt="marveloper Logo" />
+            </a>
           </Link>
         </S.Logo>
         <nav>
           <S.Categories>
             {route.map((item) => (
               <Link href={`/${item}`} key={item}>
-                <li>{NavMap[item as Nav]}</li>
+                <li>{NavMap[item as Category]}</li>
               </Link>
             ))}
           </S.Categories>
