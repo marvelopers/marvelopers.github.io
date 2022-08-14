@@ -1,21 +1,15 @@
 import { GetStaticProps, GetServerSideProps } from "next";
 import postApi from "src/api/postApi";
+import BlogArticle from "src/components/blog/BlogArticle";
+import { BlogLayout } from "src/components/layout/Layout";
+import { BlogPostType } from "src/model/posts";
 
 interface BlogPostProps {
-  post: { frontMeta: { title: string; date: string }; content: string };
+  post: BlogPostType;
 }
 
-const BlogPost = ({ post }: BlogPostProps) => {
-  const { frontMeta, content } = post;
+const BlogPost = ({ post }: BlogPostProps) => <BlogArticle post={post} />;
 
-  return (
-    <>
-      <h1>{frontMeta.title}</h1>
-      <span>{frontMeta.date}</span>
-      <main dangerouslySetInnerHTML={{ __html: content }} />
-    </>
-  );
-};
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const slug = context.params?.slug as string[];
   const post = await postApi.getPostData(slug.join("/"));

@@ -8,7 +8,7 @@ interface LayoutProps {
 }
 
 interface BlogLayoutProps {
-  aside: unknown;
+  aside?: unknown;
   children: React.ReactNode;
 }
 
@@ -27,12 +27,8 @@ export const BlogLayout = ({ aside, children }: BlogLayoutProps) => {
     <>
       <Header />
       <S.BlogLayout>
-        <S.Content>
-          <div className="title"></div>
-          <div className="date"></div>
-          <div className="post_des_wrapper"></div>
-        </S.Content>
-        <div className="aside">aside</div>
+        <S.Content>{children}</S.Content>
+        <S.Aside>aside</S.Aside>
       </S.BlogLayout>
       <Footer />
     </>

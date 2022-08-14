@@ -6,3 +6,8 @@ export type Post = {
   date: string;
   slug: string;
 };
+
+export type BlogPost = {
+  frontMeta: { title: string; date: string };
+  content: string;
+};
