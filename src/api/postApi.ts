@@ -3,44 +3,42 @@ import path from "path";
 import matter from "gray-matter";
 import markdownToHtml from "src/utils/markdownToHtml";
 
-const getPostsDirectory = (folderName: string, needType = false) =>
-  needType
-    ? fs.readdirSync(path.join(process.cwd(), `${folderName}`), {
-        withFileTypes: true,
-      })
-    : fs.readdirSync(path.join(process.cwd(), `${folderName}`));
+const POSTS = "posts";
 
-const postsDirectory = path.join(process.cwd(), "posts");
+const getPostsDirectory = (folderName: string) =>
+  fs.readdirSync(path.join(process.cwd(), `${folderName}`));
+
+const postsDirectory = path.join(process.cwd(), POSTS);
+
+const getPostSlugs = (name: string) =>
+  getPostsDirectory(`${POSTS}/${name}`).map((post) => `${name}/${post}`);
 
 const getFilesSlugs = () => {
-  const dirFiles = getPostsDirectory("posts", true) as fs.Dirent[];
-
-  return dirFiles.map(({ name }) =>
-    !name.includes("mdx")
-      ? `${name}/${getPostsDirectory(`posts/${name}`)}`
-      : name
+  const slugs = getPostsDirectory(POSTS).flatMap((name: string) =>
+    name.includes("mdx") ? name : getPostSlugs(name)
   );
+
+  return slugs;
 };
 
-const getPosts = () => {
-  const filesSlugs = getFilesSlugs();
-  return filesSlugs.map((fileSlug) => {
+const getPosts = () =>
+  getFilesSlugs().map((fileSlug) => {
+    const [slug, mdx] = fileSlug.split(".");
     const fileContents = fs.readFileSync(
       path.join(postsDirectory, fileSlug),
       "utf8"
     );
 
-    const [slug, mdx] = fileSlug.split(".");
     return {
       ...matter(fileContents).data,
       slug,
     };
   });
-};
 
 const postApi = {
   getAllPosts: () => {
     const posts = getPosts();
+
     return { posts };
   },
   getPostsData: () => {},
