@@ -7,7 +7,7 @@ export type Post = {
   slug: string;
 };
 
-export type BlogPost = {
+export type BlogPostType = {
   frontMeta: { title: string; date: string };
   content: string;
 };
