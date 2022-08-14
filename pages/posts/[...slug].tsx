@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetStaticProps, GetServerSideProps } from "next";
 import postApi from "src/api/postApi";
 
 interface BlogPostProps {
@@ -12,24 +12,12 @@ const BlogPost = ({ post }: BlogPostProps) => {
     <>
       <h1>{frontMeta.title}</h1>
       <span>{frontMeta.date}</span>
-      {content}
       <main dangerouslySetInnerHTML={{ __html: content }} />
     </>
   );
 };
-
-export const getStaticPaths = async () => {
-  const { posts } = await postApi.getAllPosts();
-
-  const paths = posts.map((post) => ({
-    params: { slug: post.slug.split("/") },
-  }));
-
-  return { paths, fallback: false };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const slug = params?.slug as string[];
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const slug = context.params?.slug as string[];
   const post = await postApi.getPostData(slug.join("/"));
 
   return {

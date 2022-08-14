@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -5,23 +6,26 @@ import Link from "next/link";
 import postApi from "src/api/postApi";
 import { Layout } from "src/components/layout/Layout";
 
+const Div = styled.div`
+  border: 1px solid red;
+`;
+
 interface HomeProps {
   posts: { title: string; category: string; date: string; slug: string }[];
 }
 
 const Home = ({ posts }: HomeProps) => {
-  // console.log("posts", posts);
   return (
     <Layout>
       <section>
         {posts.map((post) => (
           <Link href={`/posts/${post.slug}`} key={post.slug}>
-            <div>
+            <Div>
               <h3>{post.title}</h3>
               <h5>{post.category}</h5>
-              {post.date}
+              <p>{post.date}</p>
               {post.slug}
-            </div>
+            </Div>
           </Link>
         ))}
       </section>
