@@ -1,16 +1,14 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import Logo from "src/images/blog_logo.png";
-import * as S from "./styles";
-import { Category } from "src/model/category";
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import Logo from 'src/images/blog_logo.png';
+import * as S from './styles';
+import { Category } from 'src/model/category';
 
 const NavMap = {
-  [Category.Front]: "Front-end",
-  [Category.Script]: "JS/TS",
-  [Category.React]: "React",
-  [Category.Marketing]: "Marketing",
-  [Category.Essay]: "Essay",
+  [Category.Front]: 'FRONTEND',
+  [Category.Script]: 'JS/TS',
+  [Category.Programming]: 'PROGRAMMING',
 };
 
 const Header = () => {
@@ -19,7 +17,7 @@ const Header = () => {
     <S.Header>
       <S.Wrapper>
         <S.Logo>
-          <Link href={"/"}>
+          <Link href={'/'}>
             <a>
               <Image src={Logo} alt="marveloper Logo" />
             </a>
