@@ -1,14 +1,14 @@
-import React from "react";
-import Header from "src/components/layout/Header";
-import Footer from "src/components/layout/Footer";
-import * as S from "./styles";
+import React from 'react';
+import Header from 'src/components/layout/Header';
+import Footer from 'src/components/layout/Footer';
+import * as S from './styles';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 interface BlogLayoutProps {
-  aside?: unknown;
+  aside?: React.ReactNode;
   children: React.ReactNode;
 }
 
@@ -28,7 +28,7 @@ export const BlogLayout = ({ aside, children }: BlogLayoutProps) => {
       <Header />
       <S.BlogLayout>
         <S.Content>{children}</S.Content>
-        <S.Aside>aside</S.Aside>
+        <S.Aside>{aside}</S.Aside>
       </S.BlogLayout>
       <Footer />
     </>

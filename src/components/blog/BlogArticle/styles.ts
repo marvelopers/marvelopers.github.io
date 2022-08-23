@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { GREY_1, GREY_3, PURPLE } from "styles/colors";
+import styled from '@emotion/styled';
+import { GREY_1, GREY_3, PURPLE } from 'styles/colors';
 
 export const Article = styled.article`
   margin: 0px auto;
@@ -73,21 +73,20 @@ export const Content = styled.main`
   }
 
   p {
-    line-height: 1.5rem;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
     --baseline-multiplier: 0.179;
     --x-height-multiplier: 0.35;
-    margin: 0 0 2rem 0;
-    padding: 0;
   }
   p + p {
     margin-top: -1rem;
   }
 
   b {
-    line-height: 1.4rem;
-    letter-spacing: -0.025em;
     font-weight: 600;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    letter-spacing: -0.025em;
     display: block;
   }
   p > b {
