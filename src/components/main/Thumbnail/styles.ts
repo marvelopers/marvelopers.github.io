@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { GREY_4, PURPLE } from "styles/colors";
+import styled from '@emotion/styled';
+import { GREY_4, PURPLE } from 'styles/colors';
 
 export const Thumbnail = styled.li`
   width: 30rem;
@@ -16,6 +16,7 @@ export const Thumbnail = styled.li`
 
   img {
     width: 100%;
+    height: 47%;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
   }

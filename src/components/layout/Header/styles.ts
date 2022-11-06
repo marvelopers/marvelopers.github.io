@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { MAX_SCREEN_OFFSET, SCREEN_OFFSET } from "styles/layout";
+import styled from '@emotion/styled';
+import { MAX_SCREEN_OFFSET, SCREEN_OFFSET } from 'styles/layout';
 
 export const Header = styled.header`
   width: 100vw;

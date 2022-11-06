@@ -2,8 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from 'src/images/blog_logo.png';
-import * as S from './styles';
 import { Category } from 'src/model/category';
+import * as S from './styles';
 
 const NavMap = {
   [Category.Front]: 'FRONTEND',
@@ -18,9 +18,7 @@ const Header = () => {
       <S.Wrapper>
         <S.Logo>
           <Link href={'/'}>
-            <a>
-              <Image src={Logo} alt="marveloper Logo" />
-            </a>
+            <Image src={Logo} height={24} alt="marveloper Logo" />
           </Link>
         </S.Logo>
         <nav>
