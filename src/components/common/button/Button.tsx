@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import styled from '@emotion/styled/macro';
+import styled from '@emotion/styled';
 
 export const buttonStyles = css`
   box-sizing: border-box;
@@ -11,5 +11,5 @@ export const buttonStyles = css`
 `;
 
 export const Button = styled.button`
-  ${buttonStyles}
+  ${buttonStyles};
 `;
