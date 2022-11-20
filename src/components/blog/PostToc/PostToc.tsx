@@ -1,39 +1,36 @@
-import React, { useEffect } from "react";
-import styled from "@emotion/styled";
-import { GREY_2, GREY_5, PURPLE } from "styles/colors";
-import Link from "next/link";
-import { Button } from "src/components/common/button/Button";
-// import ScrollSpy from './scroll-spy';
-// import { Link } from 'gatsby';
-// import { SPACE_40, SPACE_4 } from '../styles/space';
-// import { PURPLE, GREY_2, GREY_5 } from '../styles/colors';
-// import { FONT_SIZE_1 } from '../styles/size';
-// import { Button } from '../components/common/button/button';
+import React, { useEffect, useState } from 'react';
+import styled from '@emotion/styled';
+import { GREY_2, GREY_5, PURPLE } from 'styles/colors';
+import Link from 'next/link';
+import { Button } from 'src/components/common/button/Button';
+import { useRouter } from 'next/router';
+import ScrollSpy from 'src/utils/scrollSpy';
 
-interface PostTocProps {
-  tableOfContents: string;
-}
+const PostToc = () => {
+  const [headings, setHeadings] = useState<HTMLElement[]>([]);
 
-const PostToc = ({ tableOfContents }: PostTocProps) => {
   useEffect(() => {
-    const post = document.querySelector("#post-content");
+    const post = document.querySelector('#post-content');
+    const heading = post && (Array.from(post.querySelectorAll('h1,h2,h3,h4,h5,h6')).map((h) => h) as HTMLElement[]);
+    const toc = document.querySelector('#post-toc');
 
-    const headings = Array.from(
-      post.querySelectorAll("h1,h2,h3,h4,h5,h6")
-    ).filter((h: HTMLElement) => h.id);
-
-    const toc = document.querySelector("#post-toc");
-    new ScrollSpy(toc as HTMLElement, headings as HTMLElement[]);
+    heading && setHeadings(heading);
+    new ScrollSpy(toc as HTMLElement, heading as HTMLElement[]);
   }, []);
 
   return (
     <StyledAside>
-      <StyledToc
-        id="post-toc"
-        dangerouslySetInnerHTML={{ __html: tableOfContents }}
-      />
+      <StyledToc id="post-toc">
+        <ul>
+          {headings.map((h) => (
+            <li>
+              <Link href={`${useRouter().basePath}#${h.innerHTML}`}>{h.innerHTML}</Link>
+            </li>
+          ))}
+        </ul>
+      </StyledToc>
       <MainButton>
-        <Link href={"/"}>메인으로 돌아가기</Link>
+        <Link href={'/'}>메인으로 돌아가기</Link>
       </MainButton>
     </StyledAside>
   );
