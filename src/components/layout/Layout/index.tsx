@@ -22,7 +22,7 @@ export const Layout = ({ children }: LayoutProps) => {
   );
 };
 
-export const BlogLayout = ({ aside, children }: BlogLayoutProps) => {
+export const BlogPostLayout = ({ aside, children }: BlogLayoutProps) => {
   return (
     <>
       <Header />
