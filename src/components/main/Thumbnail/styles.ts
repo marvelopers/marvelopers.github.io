@@ -4,6 +4,7 @@ import { GREY_4, PURPLE } from 'styles/colors';
 export const Thumbnail = styled.li`
   width: 30rem;
   height: 32rem;
+  margin-bottom: 4rem;
   letter-spacing: -0.025rem;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.068) 0px 5px 12px;
