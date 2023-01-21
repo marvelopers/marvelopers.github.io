@@ -10,12 +10,12 @@ export const PostToc = () => {
   const [headings, setHeadings] = useState<HTMLElement[]>([]);
 
   useEffect(() => {
-    const post = document.querySelector('#post-content');
-    const heading = post && (Array.from(post.querySelectorAll('h1,h2,h3,h4,h5,h6')).map((h) => h) as HTMLElement[]);
-    const toc = document.querySelector('#post-toc');
-
-    heading && setHeadings(heading);
-    new ScrollSpy(toc as HTMLElement, heading as HTMLElement[]);
+      const post = document.querySelector('#post-content');
+      const heading = post && (Array.from(post.querySelectorAll('h1,h2,h3,h4,h5,h6')).map((h) => h) as HTMLElement[]);
+      const toc = document.querySelector('#post-toc');
+  
+      heading && setHeadings(heading);
+      new ScrollSpy(toc as HTMLElement, heading as HTMLElement[]);  
   }, []);
 
   return (
