@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import markdownToHtml from 'src/utils/markdownToHtml';
+import { markdownToHtml } from 'src/utils/markdownToHtml';
 
 const POSTS = 'posts';
 

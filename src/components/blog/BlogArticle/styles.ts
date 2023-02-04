@@ -17,6 +17,8 @@ export const Date = styled.p`
 
 export const Content = styled.main`
   word-break: break-word;
+  letter-spacing: -0.02em;
+
 
   h1,
   h2,
@@ -24,35 +26,45 @@ export const Content = styled.main`
   h4,
   h5,
   h6 {
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.4rem;
-    letter-spacing: -0.025em;
+    line-height: 140%;
+    letter-spacing: -0.02em;
     font-weight: 700;
   }
 
   h1 {
-    font-size: 2.8rem;
+    font-size: 2rem; //32px
+    line-height: 140%;
+
   }
 
   h2 {
-    font-size: 2.4rem;
+    margin-top: 1.5rem;    
+    font-size: 1.5rem; //24px
+    line-height: 140%;
   }
 
   h3 {
-    font-size: 2rem;
+    margin-top: 1.375rem;  
+    font-size: 1.375rem; //22px
+    line-height: 140%;
   }
 
   h4 {
-    font-size: 1.8rem;
+    margin-top: 1.25rem;    
+    font-size: 1.25rem; //20px
+    line-height: 140%;
   }
 
   h5 {
-    font-size: 1.6rem;
+    margin-top: 1.25rem;    
+    font-size: 1.125rem; //18px
+    line-height: 140%;
   }
 
   h6 {
-    font-size: 1.4rem;
+    margin-top: 1.125rem; 
+    font-size: 1rem; //16px
+    line-height: 140%;
   }
 
   h1 > a,
@@ -73,36 +85,34 @@ export const Content = styled.main`
   }
 
   p {
-    font-size: 1.6rem;
-    line-height: 2.8rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 150%;
     --baseline-multiplier: 0.179;
     --x-height-multiplier: 0.35;
-  }
-  p + p {
-    margin-top: -1rem;
   }
 
   b {
     font-weight: 600;
-    font-size: 1.6rem;
-    line-height: 2.8rem;
-    letter-spacing: -0.025em;
+    font-size: 1rem;
+    line-height: 150%;
     display: block;
   }
   p > b {
-    padding-top: 1rem;
+    // padding-top: 1rem;
   }
   li > b {
-    padding-bottom: 8px;
+    // padding-bottom: 8px;
   }
 
   ul,
   ol {
     margin-left: 0;
     margin-right: 0;
+    margin-top: 1rem;
     padding: 0;
     padding-left: 1rem;
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
     list-style: square;
     list-style-position: outside;
     list-style-image: none;
@@ -110,9 +120,9 @@ export const Content = styled.main`
 
   ul li,
   ol li {
-    line-height: 1.5;
+    font-size: 1rem;
+    line-height: 150%;
     padding-left: 0;
-    margin-bottom: calc(2rem / 2);
   }
 
   ul li {
@@ -126,12 +136,12 @@ export const Content = styled.main`
   ol span,
   li > p > span {
     display: block;
-    padding-bottom: calc(1rem / 4);
+    // padding-bottom: calc(1rem / 4);
   }
 
   ol > p,
   li > p {
-    margin-bottom: calc(2rem / 2);
+    // margin-bottom: calc(2rem / 2);
   }
 
   li *:last-child {
@@ -140,7 +150,7 @@ export const Content = styled.main`
 
   li > ul {
     margin-left: 1rem;
-    margin-top: calc(2rem / 2);
+    // margin-top: calc(2rem / 2);
   }
 
   blockquote {
@@ -149,7 +159,7 @@ export const Content = styled.main`
     margin-right: 2rem;
     padding: 0 0 0 1.5rem;
     border-left: 4px solid inherit;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-style: italic;
     margin-bottom: 2rem;
   }
@@ -179,12 +189,6 @@ export const Content = styled.main`
     border: 1px solid #e8e8e8;
     background: #e8e8e8;
     margin: 20px 0;
-  }
-
-  .gatsby-highlight {
-    color: ${GREY_1};
-    font-size: 14px;
-    margin-bottom: 2rem;
   }
 `;
 

@@ -20,9 +20,19 @@ export const BlogLayout = styled.main`
 `;
 
 export const Content = styled.section`
-  width: 720px;
+  max-width: 720px;
+  padding: 0 1rem;
+
+  @media screen and (min-width: ${SCREEN_OFFSET}px) {
+    padding: 0;
+  }
 `;
 
 export const Aside = styled.section`
-  width: 200px;
+  display: none;
+
+  @media screen and (min-width: ${SCREEN_OFFSET}px) {
+    display: block;
+    width: 200px;
+  }
 `;

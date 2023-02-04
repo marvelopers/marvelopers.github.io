@@ -1,7 +1,7 @@
 import React from 'react';
 import { BlogPostLayout } from 'src/components/layout/Layout';
 import { BlogPostType } from 'src/model/posts';
-import PostToc from '../PostToc/PostToc';
+import { PostToc } from '../PostToc/PostToc';
 import * as S from './styles';
 
 interface BlogArticleProps {

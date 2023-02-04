@@ -6,16 +6,16 @@ import { Button } from 'src/components/common/button/Button';
 import { useRouter } from 'next/router';
 import ScrollSpy from 'src/utils/scrollSpy';
 
-const PostToc = () => {
+export const PostToc = () => {
   const [headings, setHeadings] = useState<HTMLElement[]>([]);
 
   useEffect(() => {
-    const post = document.querySelector('#post-content');
-    const heading = post && (Array.from(post.querySelectorAll('h1,h2,h3,h4,h5,h6')).map((h) => h) as HTMLElement[]);
-    const toc = document.querySelector('#post-toc');
-
-    heading && setHeadings(heading);
-    new ScrollSpy(toc as HTMLElement, heading as HTMLElement[]);
+      const post = document.querySelector('#post-content');
+      const heading = post && (Array.from(post.querySelectorAll('h1,h2,h3,h4,h5,h6')).map((h) => h) as HTMLElement[]);
+      const toc = document.querySelector('#post-toc');
+  
+      heading && setHeadings(heading);
+      new ScrollSpy(toc as HTMLElement, heading as HTMLElement[]);  
   }, []);
 
   return (
@@ -23,7 +23,7 @@ const PostToc = () => {
       <StyledToc id="post-toc">
         <ul>
           {headings.map((h) => (
-            <li>
+            <li key={h.innerHTML}>
               <Link href={`${useRouter().basePath}#${h.innerHTML}`}>{h.innerHTML}</Link>
             </li>
           ))}
@@ -36,7 +36,6 @@ const PostToc = () => {
   );
 };
 
-export default PostToc;
 
 const MainButton = styled(Button)`
   margin-top: 40px;
